@@ -7,24 +7,18 @@ import {Routing} from './app.routing';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {TestService} from './services/test.service.client';
-import { BuyComponent } from './components/src/app/components/Catalog/Catalog.component';
-import { SellComponent } from './components/src/app/components/sell/sell.component';
-import { UserComponent } from './components/src/app/components/user/user.component';
-import { LoginComponent } from './components/user/src/app/components/user/login/login.component';
-import { RegisterComponent } from './components/user/src/app/components/user/register/register.component';
-import { ProfileComponent } from './components/user/src/app/components/user/profile/profile.component';
-import { CatalogComponent } from './components/src/app/components/catalog/catalog.component';
-import { ShipmentComponent } from './components/src/app/components/shipment/shipment.component';
-import { PaymentComponent } from './components/src/app/components/payment/payment.component';
+import { CatalogComponent } from './components/catalog/catalog.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { RegisterComponent } from './components/user/register/register.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { ShipmentComponent } from './components/shipment/shipment.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   // Declare components here
   declarations: [
     AppComponent,
     HomeComponent,
-    BuyComponent,
-    SellComponent,
-    UserComponent,
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
