@@ -9,7 +9,7 @@ export class User {
   public employeeId: string;
   public organizationName: string;
   public buyerName: string;
-  public refineryAddress: string;
+  public buyerAddress: string;
 
 
 
@@ -25,6 +25,6 @@ export class User {
     this.employeeId="";
     this.organizationName="";
     this.buyerName="";
-    this.refineryAddress="";
+    this.buyerAddress="";
   }
 }

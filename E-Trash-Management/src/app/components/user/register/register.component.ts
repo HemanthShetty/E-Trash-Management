@@ -17,7 +17,8 @@ export class RegisterComponent implements OnInit {
   errorFlag: Boolean;
   errorMsg: String;
   userRole: String;
-  roles=['User','Organization','Employee','Buyer']
+  roles=['User','Organization','Employee','Buyer'];
+  refinerAddress='';
 
   constructor(private userService: UserService,
               private router: Router) {
@@ -36,6 +37,12 @@ export class RegisterComponent implements OnInit {
       this.user.firstName = this.registrationForm.value.firstName;
       this.user.lastName = this.registrationForm.value.lastName;
       this.user.email = this.registrationForm.value.email;
+      this.user.role= this.userRole.toString();
+      this.user.employeeId=this.registrationForm.value.empId ;
+      this.user.organizationName = this.registrationForm.value.orgName;
+      this.user.buyerAddress = this.refinerAddress;
+      this.user.buyerName = this.registrationForm.value.buyerName;
+      console.log(JSON.stringify(this.user));
       this.userService.createUser(this.user)
         .subscribe(
           (data: any) => {
