@@ -1,3 +1,173 @@
-<p>
-  register works!
-</p>
+<nav class="navbar-inverse bg-inverse bg-primary" >
+  <div class="container">
+    <a class="navbar-brand" href="#">Home</a>
+    <a class="navbar-brand" href="#">About Us</a>
+    <a class="navbar-brand" href="#">Buy</a>
+    <a class="navbar-brand" href="#">Sell</a>
+    <a class="navbar-brand pull-right" href="#">Login</a>
+    <a class="navbar-brand pull-right" [routerLink]= " [ '/register']">Register</a>
+  </div>
+</nav>
+<div class="container">
+  <form (ngSubmit)="createUser()" #f="ngForm">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input name="userName"
+             id="userName"
+             ngModel=""
+             required=""
+             placeholder="username"
+             type="text"
+             class="form-control"
+             #userName="ngModel"/>
+      <span class="help-block"
+            *ngIf="!userName.valid && userName.touched">
+            Please enter username!
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input name="email"
+             id="email"
+             ngModel=""
+             required=""
+             placeholder="email"
+             type="email"
+             class="form-control"
+             #email="ngModel"
+             email/>
+      <span class="help-block"
+            *ngIf="!email.valid && email.touched">
+            Please enter email!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input name="firstName"
+             id="firstName"
+             ngModel=""
+             required=""
+             placeholder="First Name"
+             type="text"
+             class="form-control"
+             #firstName="ngModel"/>
+      <span class="help-block"
+            *ngIf="!firstName.valid && firstName.touched">
+            Please enter firstName!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input name="lastName"
+             id="lastName"
+             ngModel=""
+             required=""
+             placeholder="Last Name"
+             type="text"
+             class="form-control"
+             #lastName="ngModel"/>
+      <span class="help-block"
+            *ngIf="!lastName.valid && lastName.touched">
+            Please enter lastName!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input name="password"
+             id="password"
+             ngModel=""
+             required=""
+             placeholder="password"
+             type="password"
+             class="form-control"
+             #password="ngModel"/>
+      <span class="help-block"
+            *ngIf="!password.valid && password.touched">
+            Please enter a password!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="verifyPassword">Verify Password</label>
+      <input name="verifyPassword"
+             id="verifyPassword"
+             ngModel=""
+             required
+             placeholder="verify password"
+             type="password"
+             class="form-control"
+             #verifyPassword="ngModel"/>
+      <span class="help-block"
+            *ngIf="!verifyPassword.valid && verifyPassword.touched && isPasswordVerified()">
+            Your passwords do not match!!
+          </span>
+    </div>
+    <div class="form-group">
+      <label>User Type</label>
+      <select name="roleType" [(ngModel)]="userRole">
+        <option *ngFor="let role of roles" [ngValue]="role" >{{role}}</option>
+      </select>
+    </div>
+    <div *ngIf="this.userRole=='Organization'">
+      <div class="form-group">
+        <label>Organization Name</label>
+        <input name="orgName"
+               id="orgName"
+               ngModel=""
+               required=""
+               placeholder="Organization Name"
+               type="text"
+               class="form-control"
+               #lastName="ngModel"/>
+      </div>
+    </div>
+    <div *ngIf="userRole=='Employee'">
+      <div class="form-group">
+        <label>EmployeeId</label>
+        <input name="empId"
+               id="empId"
+               ngModel=""
+               required=""
+               placeholder="Your Employee ID"
+               type="text"
+               class="form-control"
+               #lastName="ngModel"/>
+      </div>
+    </div>
+    <div *ngIf="userRole=='Buyer'">
+      <div class="form-group">
+        <label>Buyer Name</label>
+        <input name="buyerName"
+               id="buyerName"
+               ngModel=""
+               required=""
+               placeholder="Enter the name of the refinery or organization"
+               type="text"
+               class="form-control"
+               #lastName="ngModel"/>
+      </div>
+      <div class="form-group">
+        <label>Refinery Address</label>
+        <textarea id="refineryAddress"  class="form-control" name="refineryAddress" rows="5"  #refineryAddress="ngModel" [(ngModel)]=this.user.refineryAddress required>
+        </textarea>
+      </div>
+    </div>
+    <div *ngIf="errorFlag"
+         class="alert alert-danger">
+      {{errorMsg}}
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block"
+              [disabled]="!f.valid">
+        Register
+      </button>
+    </div>
+    <div class="form-group">
+      <a class="btn btn-danger btn-block"
+         routerLink="/login">
+        Cancel
+      </a>
+    </div>
+  </form>
+</div>
+
+

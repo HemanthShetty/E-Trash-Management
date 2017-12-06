@@ -13,6 +13,7 @@ import { RegisterComponent } from './components/user/register/register.component
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { ShipmentComponent } from './components/shipment/shipment.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import {UserService} from "./services/user.service.client";
 
 @NgModule({
   // Declare components here
@@ -33,7 +34,7 @@ import { PaymentComponent } from './components/payment/payment.component';
     Routing
   ],
   // Client Side services here
-  providers: [ TestService ],
+  providers: [ TestService, UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
