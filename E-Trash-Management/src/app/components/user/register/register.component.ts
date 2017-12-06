@@ -36,8 +36,7 @@ export class RegisterComponent implements OnInit {
       this.user.firstName = this.registrationForm.value.firstName;
       this.user.lastName = this.registrationForm.value.lastName;
       this.user.email = this.registrationForm.value.email;
-      /*
-      this.userService.register(this.user.username, this.user.password)
+      this.userService.createUser(this.user)
         .subscribe(
           (data: any) => {
             if (this.user) {
@@ -52,7 +51,6 @@ export class RegisterComponent implements OnInit {
             this.errorMsg = 'Please enter the correct values';
           }
         );
-      */
     } else {
       this.errorFlag = true;
       this.errorMsg = 'Please enter the correct values';

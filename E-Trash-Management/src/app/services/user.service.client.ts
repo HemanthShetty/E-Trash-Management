@@ -15,19 +15,19 @@ export class UserService {
   baseUrl = environment.baseUrl;
 
 
-  register(username, password) {
-    /*
-    this.options.withCredentials = true;
-    const credentials = {
-      username : username,
-      password : password,
+  createUser(user: any) {
+    const userDetails = {
+      username: user.username,
+      password: user.password,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email
     };
-    return this._http.post(this.baseUrl + '/api/register', credentials, this.options)
+    return this._http.post(this.baseUrl + '/api/user', userDetails)
       .map((res: Response) => {
           return res.json();
         }
       );
-     */
   }
 
   /*
