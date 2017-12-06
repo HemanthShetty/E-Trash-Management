@@ -14,6 +14,19 @@ export class UserService {
   options: RequestOptions = new RequestOptions();
   baseUrl = environment.baseUrl;
 
+  findUserByCredentials(username: String, password: String) {
+    return this._http.get(this.baseUrl + '/api/user?username=' + username + '&password=' + password)
+      .map((res: Response) => {
+          return res.json();
+        }
+      );
+  }
+  register(username, password) {
+    /*
+    this.options.withCredentials = true;
+    const credentials = {
+      username : username,
+      password : password,
 
   createUser(user: any) {
     const userDetails = {
