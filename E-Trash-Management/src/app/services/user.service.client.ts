@@ -21,13 +21,6 @@ export class UserService {
         }
       );
   }
-  register(username, password) {
-    /*
-    this.options.withCredentials = true;
-    const credentials = {
-      username : username,
-      password : password,
-
   createUser(user: any) {
     const userDetails = {
       username: user.username,
@@ -42,6 +35,12 @@ export class UserService {
         }
       );
   }
+
+    /*
+    this.options.withCredentials = true;
+    const credentials = {
+      username : username,
+      password : password,
 
   /*
   login(username, password) {
