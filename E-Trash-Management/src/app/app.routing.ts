@@ -5,7 +5,7 @@
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {ModuleWithProviders} from '@angular/core';
-import {RegisterComponent} from "./components/user/register/register.component";
+import {RegisterComponent} from './components/user/register/register.component';
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},

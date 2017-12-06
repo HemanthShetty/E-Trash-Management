@@ -7,6 +7,7 @@ import {Routing} from './app.routing';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {TestService} from './services/test.service.client';
+import {Userservice} from './services/user.service.client';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
@@ -33,7 +34,7 @@ import { PaymentComponent } from './components/payment/payment.component';
     Routing
   ],
   // Client Side services here
-  providers: [ TestService ],
+  providers: [ TestService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

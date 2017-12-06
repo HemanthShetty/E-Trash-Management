@@ -9,6 +9,7 @@ module.exports = function(app) {
   app.put('/api/user/:userId', updateUser);
   app.delete('api/user/:userId', deleteUser);
 
+
   function findUserById(req, res) {
     var userId = req.params["userId"];
     userModel.findUserById(userId).then(function (user) {
