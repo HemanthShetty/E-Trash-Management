@@ -14,7 +14,13 @@ export class UserService {
   options: RequestOptions = new RequestOptions();
   baseUrl = environment.baseUrl;
 
-
+  findUserByCredentials(username: String, password: String) {
+    return this._http.get(this.baseUrl + '/api/user?username=' + username + '&password=' + password)
+      .map((res: Response) => {
+          return res.json();
+        }
+      );
+  }
   register(username, password) {
     /*
     this.options.withCredentials = true;
@@ -74,15 +80,7 @@ export class UserService {
       );
   }
 
-  findUserByCredentials(username: String, password: String) {
-    return this._http.get(this.baseUrl + '/api/user?username=' + username + '&password=' + password)
-      .map((res: Response) => {
-          return res.json();
-        }
-      );
-  }
-
-  updateUser(userId, user) {
+ updateUser(userId, user) {
     return this._http.put(this.baseUrl + '/api/user/' + userId, user)
       .map((res: Response) => {
           return res.json();
