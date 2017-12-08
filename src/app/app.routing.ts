@@ -6,11 +6,13 @@ import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {ModuleWithProviders} from '@angular/core';
 import {RegisterComponent} from './components/user/register/register.component';
+import {LoginComponent} from "./components/user/login/login.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
   {path: 'home', component : HomeComponent},
-  {path: 'register', component : RegisterComponent}
+  {path: 'register', component : RegisterComponent},
+  {path : 'login' , component: LoginComponent}
 ];
 
 // Export the routes as module providers

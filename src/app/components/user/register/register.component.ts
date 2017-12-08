@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 import {UserService} from '../../../services/user.service.client';
 import {Router} from '@angular/router';
 import {User} from "../../../models/user.model.client";
+import {SharedService} from "../../../services/shared.service.client";
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,7 @@ export class RegisterComponent implements OnInit {
   refinerAddress='';
 
   constructor(private userService: UserService,
-              private router: Router) {
+              private router: Router, private sharedService:SharedService) {
   }
 
   ngOnInit() {
@@ -43,11 +44,13 @@ export class RegisterComponent implements OnInit {
       this.user.buyerAddress = this.refinerAddress;
       this.user.buyerName = this.registrationForm.value.buyerName;
       console.log(JSON.stringify(this.user));
-      this.userService.createUser(this.user)
+      this.userService.register(this.user)
         .subscribe(
           (data: any) => {
+            this.user = data;
             if (this.user) {
-              this.router.navigate(['/user', this.user._id]);
+              this.sharedService.user = data;
+              this.router.navigate(['/user']);
             } else {
               this.errorFlag = true;
               this.errorMsg = 'Failed to create the user';

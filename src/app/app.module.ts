@@ -14,6 +14,7 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { ShipmentComponent } from './components/shipment/shipment.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import {UserService} from "./services/user.service.client";
+import {SharedService} from "./services/shared.service.client";
 
 @NgModule({
   // Declare components here
@@ -34,7 +35,7 @@ import {UserService} from "./services/user.service.client";
     Routing
   ],
   // Client Side services here
-  providers: [ TestService, UserService ],
+  providers: [ TestService, UserService, SharedService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
