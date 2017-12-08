@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {UserService} from '../../../services/user.service.client';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
+import {SharedService} from "../../../services/shared.service.client";
 
 
 
@@ -13,30 +14,37 @@ import {NgForm} from '@angular/forms';
 
 
 export class LoginComponent implements OnInit {
-  @ViewChild('f') loginForm: NgForm;
   username: String;
   password: String;
-  errorFlag: boolean;
-  errorMsg = 'Invalid Username or Password';
+  notificationMessage: String;
+  isInvalid: boolean;
 
-  constructor(private router: Router, private userService: UserService) {}
 
-  login() {
-
-    this.username = this.loginForm.value.username;
-    this.password = this.loginForm.value.password;
-    this.userService.findUserByCredentials(this.username, this.password)
-      .subscribe((data: any) => {
-          this.errorFlag = false;
-          this.router.navigate(['/user/', data._id]);
-        },
-        (error: any) => {
-          this.errorFlag = true;
-        });
-  }
-
+  constructor(private sharedService: SharedService, private userService: UserService,
+              private router: Router) { }
 
   ngOnInit() {
-
   }
+  login(username: String, password: String) {
+    this.userService.login(this.username, this.password)
+      .subscribe(
+        (data: any) => {
+          if ( data == null) {
+            this.notificationMessage = 'Please Enter a Valid User Name and Password';
+            this.isInvalid = true ;
+          } else {
+            this.isInvalid = false;
+            this.sharedService.user = data;
+            this.router.navigate(['/user']);
+          }
+        } ,
+        (error: any) => {
+          this.notificationMessage = 'Please Enter a Valid User Name and Password';
+          this.isInvalid = true ;
+        });
+  }
+  register() {
+    this.router.navigate(['/register']);
+  }
+
 }

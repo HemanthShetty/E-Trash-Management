@@ -1,19 +1,112 @@
 module.exports = function(app,model) {
 
+  var passport=require('passport');
+  var bcrypt = require("bcrypt-nodejs");
+  passport.serializeUser(serializeUser);
+  passport.deserializeUser(deserializeUser);
+  var LocalStrategy = require('passport-local').Strategy;
+  passport.use(new LocalStrategy(localStrategy));
   app.post('/api/user', createUser);
   app.post('/api/register', register);
   app.get('/api/user', findUser);
   app.get('/api/user/:userId', findUserById);
   app.put('/api/user/:userId', updateUser);
   app.delete('/api/user/:userId', deleteUser);
+  app.post('/api/login', passport.authenticate('local'), login);
+  app.post('/api/logout', logout);
+  app.post('/api/loggedIn', loggedin);
 
+  function loggedin(req, res) {
+    res.send(req.isAuthenticated() ? req.user : '0');
+  }
+
+  function login(req, res) {
+    var user = req.user;
+    res.json(user);
+  }
+
+  function logout(req, res) {
+    req.logOut();
+    res.send(200);
+  }
+
+  function localStrategy(username, password, done) {
+    model.userModel
+      .findUserByUsername(username)
+      .then(
+        function(user) {
+          if(user.username === username && bcrypt.compareSync(password, user.password)) {
+            return done(null, user);
+          } else {
+            return done(null, false);
+          }
+        },
+        function(err) {
+          if (err) { return done(err); }
+        }
+      );
+  }
+
+
+  function facebookStrategy(token, refreshToken, profile, done) {
+    model.userModel
+      .findUserByFacebookId(profile.id)
+      .then(function(user) {
+          if(user) {
+            return done(null, user);
+          } else {
+            var names = profile.displayName.split(" ");
+            var newFacebookUser = {
+              firstName:  names[0],
+              lastName:  names[1],
+              facebook: {
+                id:    profile.id,
+                token: token
+              },
+              email: profile.emails[0].value
+            };
+            userModel
+              .createUser(newFacebookUser)
+              .then(function (user) {
+                return done(null, user);
+              });
+          }
+        },
+        function(err) {
+          if (err) { return done(err); }
+        });
+  }
+
+  function serializeUser(user, done) {
+    done(null, user);
+  }
+
+  function deserializeUser(user, done) {
+    model.userModel
+      .findUserById(user._id)
+      .then(
+        function(user){
+          done(null, user);
+        },
+        function(err){
+          done(err, null);
+        }
+      );
+  }
 
   function register(req,res)
   {
     var user = req.body;
+    user.password = bcrypt.hashSync(user.password);
     model.userModel.createUser(user).then(function(data)
     {
-      res.json(data);
+      req.login(data, function(err){
+        if(err) {
+          res.status(400).send(err);
+        } else {
+          res.json(data);
+        }
+      });
     },function(err){
       res.json(null);
     });
@@ -24,9 +117,9 @@ module.exports = function(app,model) {
     var user = req.body;
     model.userModel.createUser(user).then(function(data)
     {
-       res.json(data);
+      res.json(data);
     },function(err){
-       res.json(null);
+      res.json(null);
     });
   }
 
@@ -55,13 +148,20 @@ module.exports = function(app,model) {
   function findUserByCredentails(req,res){
     var username = req.query['username'];
     var password = req.query['password'];
-    model.userModel.findUserByCredentails({'username':username,'password':password}).then(function(data)
-      {
-        res.json(data);
-      },function(err){
-        res.json(null);
-      }
-    );
+    model.userModel
+      .findUserByUsername(username)
+      .then(
+        function(user) {
+          if(user.username === username && bcrypt.compareSync(password, user.password)) {
+
+          } else {
+            res.json(null);
+          }
+        },
+        function(err) {
+          res.json(null);
+        }
+      );
   }
 
   function findUserById(req,res)
@@ -82,20 +182,19 @@ module.exports = function(app,model) {
     userDetails._id=userId;
     model.userModel.updateUser(userDetails).then(function(data)
     {
-       res.json(data);
+      res.json(data);
     },function(err){
-       res.json(null);
+      res.json(null);
     });
   }
 
   function deleteUser(req,res) {
     var userId = req.params.uid;
     model.userModel.deleteUser(userId).then(function(data) {
-      res.json({success: true});
+        res.json({success: true});
       },function(err){
         res.json(null);
       }
     );
   }
-
 }
