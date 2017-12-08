@@ -6,7 +6,7 @@ module.exports = function(app)
     var username = process.env.MLAB_USERNAME_WEBDEV; // get from environment
     var password = process.env.MLAB_PASSWORD_WEBDEV;
     connectionString = 'mongodb://' + username + ':' + password;
-    connectionString += 'ds133816.mlab.com:33816/heroku_nqzdnx12'; // use yours
+    connectionString += '@ds133816.mlab.com:33816/heroku_nqzdnx12'; // use yours
     console.log('connection string is inside test'+connectionString);
   }
 
@@ -14,3 +14,5 @@ module.exports = function(app)
     mongoose.connect(connectionString);
 
 };
+
+
