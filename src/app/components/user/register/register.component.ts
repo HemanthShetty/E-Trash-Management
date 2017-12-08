@@ -43,7 +43,6 @@ export class RegisterComponent implements OnInit {
       this.user.organizationName = this.registrationForm.value.orgName;
       this.user.buyerAddress = this.refinerAddress;
       this.user.buyerName = this.registrationForm.value.buyerName;
-      console.log(JSON.stringify(this.user));
       this.userService.register(this.user)
         .subscribe(
           (data: any) => {

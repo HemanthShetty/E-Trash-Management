@@ -1,14 +1,18 @@
 <nav class="navbar-inverse bg-inverse bg-primary" >
   <div class="container">
-    <a class="navbar-brand" href="#">Home</a>
+    <a class="navbar-brand" [routerLink]= " [ '/home']">Home</a>
     <a class="navbar-brand" href="#">About Us</a>
     <a class="navbar-brand" href="#">Buy</a>
     <a class="navbar-brand" href="#">Sell</a>
-    <a class="navbar-brand pull-right" href="#">Login</a>
+    <a class="navbar-brand pull-right" [routerLink]= " [ '/login']">Login</a>
     <a class="navbar-brand pull-right" [routerLink]= " [ '/register']">Register</a>
   </div>
 </nav>
-<div class="container">
+<div class="panel panel-primary" style="margin:20px;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Registration Form</h3>
+  </div>
+<div class="panel-body">
   <form (ngSubmit)="createUser()" #f="ngForm">
     <div class="form-group">
       <label for="username">Username</label>
@@ -168,6 +172,7 @@
       </a>
     </div>
   </form>
+</div>
 </div>
 
 

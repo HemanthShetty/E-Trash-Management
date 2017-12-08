@@ -39,6 +39,11 @@ body {margin:0;}
   }
 }
 
+input{
+  margin-bottom: 5px;
+}
+
+
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
