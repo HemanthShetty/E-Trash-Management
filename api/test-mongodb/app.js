@@ -14,55 +14,10 @@ module.exports = function(app)
     var password = process.env.MLAB_PASSWORD_WEBDEV;
     connectionString = 'mongodb://' + username + ':' + password;
     connectionString += 'ds133816.mlab.com:33816/heroku_nqzdnx12'; // use yours
+    console.log('connection string is'+connectionString);
   }
 
   var mongoose = require("mongoose");
     mongoose.connect(connectionString);
 
-    var TestSchema = mongoose.Schema({
-        message: String
-    });
-
-    var TestModel = mongoose.model("TestModel", TestSchema);
-
-    function findAllMessages(req, res) {
-
-        TestModel
-            .find()
-            .then(
-                function(tests) {
-                    res.json(tests);
-                },
-                function(err) {
-                    res.status(400).send(err);
-                }
-            );
-    }
-
-    function createMessage(req, res) {
-        console.log("in app");
-        TestModel
-            .create(req.body)
-            .then(
-                function(test) {
-                    res.json(test);
-                },
-                function(err) {
-                    res.status(400).send(err);
-                }
-            );
-    }
-
-    function deleteMessage(req, res) {
-        TestModel
-            .remove({_id: req.params.id})
-            .then(
-                function(result) {
-                    res.json(result);
-                },
-                function(err) {
-                    res.status(400).send(err);
-                }
-            );
-    }
 };
