@@ -2,16 +2,136 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c227eac4-904b-4bf9-99d3-65b5be2a611e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/E-Trash-Management/images/header" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/E-Trash-Management/model/user.model.server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/E-Trash-Management/model/user.schema.server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/E-Trash-Management/services/user.service.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/.angular-cli.json" afterPath="$PROJECT_DIR$/.angular-cli.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/.editorconfig" afterPath="$PROJECT_DIR$/.editorconfig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/Procfile" afterPath="$PROJECT_DIR$/Procfile" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/app.js" afterPath="$PROJECT_DIR$/api/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/db/connection.js" afterPath="$PROJECT_DIR$/api/db/connection.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/model/models.server.js" afterPath="$PROJECT_DIR$/api/model/models.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/model/page/page.model.server.js" afterPath="$PROJECT_DIR$/api/model/page/page.model.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/model/page/page.schema.server.js" afterPath="$PROJECT_DIR$/api/model/page/page.schema.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/model/user/user.model.server.js" afterPath="$PROJECT_DIR$/api/model/user/user.model.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/model/user/user.schema.server.js" afterPath="$PROJECT_DIR$/api/model/user/user.schema.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/model/website/website.model.server.js" afterPath="$PROJECT_DIR$/api/model/website/website.model.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/model/website/website.schema.server.js" afterPath="$PROJECT_DIR$/api/model/website/website.schema.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/model/widget/widget.model.server.js" afterPath="$PROJECT_DIR$/api/model/widget/widget.model.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/model/widget/widget.schema.server.js" afterPath="$PROJECT_DIR$/api/model/widget/widget.schema.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/services/page.service.server.js" afterPath="$PROJECT_DIR$/api/services/page.service.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/services/user.service.server.js" afterPath="$PROJECT_DIR$/api/services/user.service.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/services/website.service.server.js" afterPath="$PROJECT_DIR$/api/services/website.service.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/services/widget.service.server.js" afterPath="$PROJECT_DIR$/api/services/widget.service.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/api/test-mongodb/app.js" afterPath="$PROJECT_DIR$/api/test-mongodb/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/e2e/app.e2e-spec.ts" afterPath="$PROJECT_DIR$/e2e/app.e2e-spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/e2e/app.po.ts" afterPath="$PROJECT_DIR$/e2e/app.po.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/e2e/tsconfig.e2e.json" afterPath="$PROJECT_DIR$/e2e/tsconfig.e2e.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/images/header" afterPath="$PROJECT_DIR$/images/header" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/karma.conf.js" afterPath="$PROJECT_DIR$/karma.conf.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/protractor.conf.js" afterPath="$PROJECT_DIR$/protractor.conf.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/server/app.js" afterPath="$PROJECT_DIR$/server/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/server/test-mongodb/app.js" afterPath="$PROJECT_DIR$/server/test-mongodb/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/services/user.service.server.js" afterPath="$PROJECT_DIR$/services/user.service.server.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/app.component.css" afterPath="$PROJECT_DIR$/src/app/app.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/app.component.html" afterPath="$PROJECT_DIR$/src/app/app.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/app.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/app.component.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/app.component.ts" afterPath="$PROJECT_DIR$/src/app/app.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/app.routing.ts" afterPath="$PROJECT_DIR$/src/app/app.routing.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/catalog/catalog.component.css" afterPath="$PROJECT_DIR$/src/app/components/catalog/catalog.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/catalog/catalog.component.html" afterPath="$PROJECT_DIR$/src/app/components/catalog/catalog.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/catalog/catalog.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/components/catalog/catalog.component.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/catalog/catalog.component.ts" afterPath="$PROJECT_DIR$/src/app/components/catalog/catalog.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.css" afterPath="$PROJECT_DIR$/src/app/components/home/home.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.html" afterPath="$PROJECT_DIR$/src/app/components/home/home.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/components/home/home.component.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.ts" afterPath="$PROJECT_DIR$/src/app/components/home/home.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/payment/payment.component.css" afterPath="$PROJECT_DIR$/src/app/components/payment/payment.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/payment/payment.component.html" afterPath="$PROJECT_DIR$/src/app/components/payment/payment.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/payment/payment.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/components/payment/payment.component.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/payment/payment.component.ts" afterPath="$PROJECT_DIR$/src/app/components/payment/payment.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/shipment/shipment.component.css" afterPath="$PROJECT_DIR$/src/app/components/shipment/shipment.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/shipment/shipment.component.html" afterPath="$PROJECT_DIR$/src/app/components/shipment/shipment.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/shipment/shipment.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/components/shipment/shipment.component.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/shipment/shipment.component.ts" afterPath="$PROJECT_DIR$/src/app/components/shipment/shipment.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/login/login.component.css" afterPath="$PROJECT_DIR$/src/app/components/user/login/login.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/login/login.component.html" afterPath="$PROJECT_DIR$/src/app/components/user/login/login.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/login/login.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/components/user/login/login.component.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/login/login.component.ts" afterPath="$PROJECT_DIR$/src/app/components/user/login/login.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/profile/profile.component.css" afterPath="$PROJECT_DIR$/src/app/components/user/profile/profile.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/profile/profile.component.html" afterPath="$PROJECT_DIR$/src/app/components/user/profile/profile.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/profile/profile.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/components/user/profile/profile.component.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/profile/profile.component.ts" afterPath="$PROJECT_DIR$/src/app/components/user/profile/profile.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/register/register.component.css" afterPath="$PROJECT_DIR$/src/app/components/user/register/register.component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/register/register.component.html" afterPath="$PROJECT_DIR$/src/app/components/user/register/register.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/register/register.component.spec.ts" afterPath="$PROJECT_DIR$/src/app/components/user/register/register.component.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/user/register/register.component.ts" afterPath="$PROJECT_DIR$/src/app/components/user/register/register.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/models/user.model.client.ts" afterPath="$PROJECT_DIR$/src/app/models/user.model.client.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/services/test.service.client.ts" afterPath="$PROJECT_DIR$/src/app/services/test.service.client.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/services/user.service.client.ts" afterPath="$PROJECT_DIR$/src/app/services/user.service.client.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/.gitkeep" afterPath="$PROJECT_DIR$/src/assets/.gitkeep" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/css/styles.css" afterPath="$PROJECT_DIR$/src/assets/css/styles.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/experiments/javascript/hello/hello.html" afterPath="$PROJECT_DIR$/src/assets/experiments/javascript/hello/hello.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/experiments/todo/javascript/todo.html" afterPath="$PROJECT_DIR$/src/assets/experiments/todo/javascript/todo.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/experiments/todo/javascript/todo.js" afterPath="$PROJECT_DIR$/src/assets/experiments/todo/javascript/todo.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/experiments/todo/jquery/todo.html" afterPath="$PROJECT_DIR$/src/assets/experiments/todo/jquery/todo.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/experiments/todo/jquery/todo.js" afterPath="$PROJECT_DIR$/src/assets/experiments/todo/jquery/todo.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/index.html" afterPath="$PROJECT_DIR$/src/assets/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/modules/4-browser-programming/01-js/hello.html" afterPath="$PROJECT_DIR$/src/assets/modules/4-browser-programming/01-js/hello.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/modules/4-browser-programming/01-js/hello.js" afterPath="$PROJECT_DIR$/src/assets/modules/4-browser-programming/01-js/hello.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/modules/4-browser-programming/02-jquery/hello.html" afterPath="$PROJECT_DIR$/src/assets/modules/4-browser-programming/02-jquery/hello.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/modules/4-browser-programming/02-jquery/hello.js" afterPath="$PROJECT_DIR$/src/assets/modules/4-browser-programming/02-jquery/hello.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/modules/4-browser-programming/03-jqueryui/hello.html" afterPath="$PROJECT_DIR$/src/assets/modules/4-browser-programming/03-jqueryui/hello.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/modules/4-browser-programming/03-jqueryui/hello.js" afterPath="$PROJECT_DIR$/src/assets/modules/4-browser-programming/03-jqueryui/hello.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/css/bootstrap-theme.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/css/bootstrap-theme.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/css/bootstrap-theme.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/css/bootstrap-theme.min.css.map" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/css/bootstrap-theme.min.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/css/bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/css/bootstrap.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/css/bootstrap.min.css.map" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/css/bootstrap.min.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/js/bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/bootstrap/dist/js/npm.js" afterPath="$PROJECT_DIR$/src/assets/vendors/bootstrap/dist/js/npm.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/jquery/jquery-3.1.1.min.js" afterPath="$PROJECT_DIR$/src/assets/vendors/jquery/jquery-3.1.1.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/jquery/jquery-ui.min.css" afterPath="$PROJECT_DIR$/src/assets/vendors/jquery/jquery-ui.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/vendors/jquery/jquery-ui.min.js" afterPath="$PROJECT_DIR$/src/assets/vendors/jquery/jquery-ui.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views-experiment/user/login.html" afterPath="$PROJECT_DIR$/src/assets/views-experiment/user/login.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views-experiment/user/profile.html" afterPath="$PROJECT_DIR$/src/assets/views-experiment/user/profile.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views-experiment/user/register.html" afterPath="$PROJECT_DIR$/src/assets/views-experiment/user/register.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views-experiment/user_old/login.html" afterPath="$PROJECT_DIR$/src/assets/views-experiment/user_old/login.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views-experiment/user_old/profile.html" afterPath="$PROJECT_DIR$/src/assets/views-experiment/user_old/profile.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views-experiment/user_old/register.html" afterPath="$PROJECT_DIR$/src/assets/views-experiment/user_old/register.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views-experiment/user_old/register2.html" afterPath="$PROJECT_DIR$/src/assets/views-experiment/user_old/register2.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views-experiment/website/website-edit.html" afterPath="$PROJECT_DIR$/src/assets/views-experiment/website/website-edit.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views-experiment/website/website-list.html" afterPath="$PROJECT_DIR$/src/assets/views-experiment/website/website-list.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views/website/website-edit.html" afterPath="$PROJECT_DIR$/src/assets/views/website/website-edit.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views/website/website-list.html" afterPath="$PROJECT_DIR$/src/assets/views/website/website-list.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/assets/views/widget/widget-list.html" afterPath="$PROJECT_DIR$/src/assets/views/widget/widget-list.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/environments/environment.prod.ts" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/environments/environment.ts" afterPath="$PROJECT_DIR$/src/environments/environment.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/favicon.ico" afterPath="$PROJECT_DIR$/src/favicon.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/main.ts" afterPath="$PROJECT_DIR$/src/main.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/polyfills.ts" afterPath="$PROJECT_DIR$/src/polyfills.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/styles.css" afterPath="$PROJECT_DIR$/src/styles.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/test.ts" afterPath="$PROJECT_DIR$/src/test.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/tsconfig.app.json" afterPath="$PROJECT_DIR$/src/tsconfig.app.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/tsconfig.spec.json" afterPath="$PROJECT_DIR$/src/tsconfig.spec.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/src/typings.d.ts" afterPath="$PROJECT_DIR$/src/typings.d.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/todo/app.js" afterPath="$PROJECT_DIR$/todo/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/E-Trash-Management/tslint.json" afterPath="$PROJECT_DIR$/tslint.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/E-Trash-Management/package.json" afterPath="$PROJECT_DIR$/E-Trash-Management/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/E-Trash-Management/server.js" afterPath="$PROJECT_DIR$/E-Trash-Management/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/app.routing.ts" afterPath="$PROJECT_DIR$/E-Trash-Management/src/app/app.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.html" afterPath="$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/E-Trash-Management/src/styles.css" afterPath="$PROJECT_DIR$/E-Trash-Management/src/styles.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -28,7 +148,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="register.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/components/user/register/register.component.html">
+        <entry file="file://$PROJECT_DIR$/src/app/components/user/register/register.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="38">
               <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="150" selection-end-column="19" />
@@ -38,10 +158,10 @@
         </entry>
       </file>
       <file leaf-file-name="register.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/components/user/register/register.component.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/components/user/register/register.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+            <state relative-caret-position="405">
+              <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -50,7 +170,7 @@
         </entry>
       </file>
       <file leaf-file-name="user.model.client.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/models/user.model.client.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/models/user.model.client.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
@@ -60,9 +180,9 @@
         </entry>
       </file>
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.module.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
+            <state relative-caret-position="330">
               <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
@@ -72,9 +192,9 @@
         </entry>
       </file>
       <file leaf-file-name="user.service.client.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/services/user.service.client.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/services/user.service.client.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="165">
               <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
@@ -106,11 +226,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/E-Trash-Management/node_modules" />
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="height" value="731" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -127,8 +248,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -138,250 +259,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="register" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Trash-Management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e2e" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -396,7 +273,12 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.tslint" value="C:\Users\tarun\E-TrashManage\E-Trash-Management\E-Trash-Management\node_modules\tslint" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../webdev-singh-Tarunpreet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -425,44 +307,37 @@
       <workItem from="1511984040798" duration="3239000" />
       <workItem from="1512097895385" duration="1196000" />
       <workItem from="1512103068527" duration="2104000" />
+      <workItem from="1512762379208" duration="549000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10749000" />
+    <option name="totallyTimeSpent" value="11298000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="731" extended-state="6" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29626688" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28630137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960339" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -472,9 +347,9 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/services/user.service.client.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/services/user.service.client.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="165">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
@@ -482,7 +357,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="36" column="39" lean-forward="false" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
@@ -492,7 +367,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/models/user.model.client.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/models/user.model.client.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
@@ -500,17 +375,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/components/user/register/register.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/components/user/register/register.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+        <state relative-caret-position="405">
+          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/components/user/register/register.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/components/user/register/register.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="150" selection-end-column="19" />
@@ -518,25 +393,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/server.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
           <caret line="42" column="2" lean-forward="false" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.routing.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#41#94#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
@@ -546,70 +417,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/.gitignore">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/assets/index.html">
+    <entry file="file://$PROJECT_DIR$/src/assets/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.spec.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/components/home/home.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/server.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
           <caret line="42" column="2" lean-forward="false" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.routing.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#41#94#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
@@ -619,70 +483,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/.gitignore">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/assets/index.html">
+    <entry file="file://$PROJECT_DIR$/src/assets/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.spec.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/components/home/home.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/server.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
           <caret line="42" column="2" lean-forward="false" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.routing.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#41#94#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
@@ -692,77 +549,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/.gitignore">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/assets/index.html">
+    <entry file="file://$PROJECT_DIR$/src/assets/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.spec.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/components/home/home.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/server.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
           <caret line="42" column="2" lean-forward="false" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.routing.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#41#94#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/.gitignore">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
@@ -772,117 +622,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/assets/index.html">
+    <entry file="file://$PROJECT_DIR$/src/assets/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.spec.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/components/home/home.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/server.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
           <caret line="42" column="2" lean-forward="false" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.routing.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#41#94#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/assets/index.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.component.html">
+    <entry file="file://$PROJECT_DIR$/src/assets/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/components/home/home.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/components/home/home.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/server/app.js">
+    <entry file="file://$PROJECT_DIR$/server/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/E-Trash-Management/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
+        <state relative-caret-position="330">
           <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
