@@ -82,19 +82,22 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_test_service_client__ = __webpack_require__("../../../../../src/app/services/test.service.client.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_catalog_catalog_component__ = __webpack_require__("../../../../../src/app/components/catalog/catalog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_user_login_login_component__ = __webpack_require__("../../../../../src/app/components/user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_user_register_register_component__ = __webpack_require__("../../../../../src/app/components/user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_user_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/user/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_shipment_shipment_component__ = __webpack_require__("../../../../../src/app/components/shipment/shipment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_payment_payment_component__ = __webpack_require__("../../../../../src/app/components/payment/payment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_collectionpoint_collectionpoint_new_collectionpoint_new_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_collectionpoint_collectionpoint_list_collectionpoint_list_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_cpoint_service_client__ = __webpack_require__("../../../../../src/app/services/cpoint.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_user_login_login_component__ = __webpack_require__("../../../../../src/app/components/user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_user_register_register_component__ = __webpack_require__("../../../../../src/app/components/user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_user_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/user/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_shipment_shipment_component__ = __webpack_require__("../../../../../src/app/components/shipment/shipment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_payment_payment_component__ = __webpack_require__("../../../../../src/app/components/payment/payment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_collectionpoint_collectionpoint_new_collectionpoint_new_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_collectionpoint_collectionpoint_list_collectionpoint_list_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_cpoint_service_client__ = __webpack_require__("../../../../../src/app/services/cpoint.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_catalog_catalog_list_catalog_list_component__ = __webpack_require__("../../../../../src/app/components/catalog/catalog-list/catalog-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_catalog_catalog_new_catalog_new_component__ = __webpack_require__("../../../../../src/app/components/catalog/catalog-new/catalog-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_catalog_catalog_edit_catalog_edit_component__ = __webpack_require__("../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_catalog_service_client__ = __webpack_require__("../../../../../src/app/services/catalog.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -102,6 +105,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -134,26 +140,29 @@ AppModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_3__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_user_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_user_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_user_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__components_catalog_catalog_component__["a" /* CatalogComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_shipment_shipment_component__["a" /* ShipmentComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_payment_payment_component__["a" /* PaymentComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__["a" /* CollectionpointEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_collectionpoint_collectionpoint_new_collectionpoint_new_component__["a" /* CollectionpointNewComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_collectionpoint_collectionpoint_list_collectionpoint_list_component__["a" /* CollectionpointListComponent */]
+            __WEBPACK_IMPORTED_MODULE_8__components_user_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_user_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_user_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_catalog_catalog_list_catalog_list_component__["a" /* CatalogListComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_shipment_shipment_component__["a" /* ShipmentComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_payment_payment_component__["a" /* PaymentComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__["a" /* CollectionpointEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_collectionpoint_collectionpoint_new_collectionpoint_new_component__["a" /* CollectionpointNewComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_collectionpoint_collectionpoint_list_collectionpoint_list_component__["a" /* CollectionpointListComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_catalog_catalog_list_catalog_list_component__["a" /* CatalogListComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_catalog_catalog_new_catalog_new_component__["a" /* CatalogNewComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_catalog_catalog_edit_catalog_edit_component__["a" /* CatalogEditComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_4__app_routing__["a" /* Routing */],
-            __WEBPACK_IMPORTED_MODULE_16__agm_core__["a" /* AgmCoreModule */].forRoot({ apiKey: 'AIzaSyCMwJEcq8gK7hFL32MqJ91CwQNy1k6z6dw'
+            __WEBPACK_IMPORTED_MODULE_15__agm_core__["a" /* AgmCoreModule */].forRoot({ apiKey: 'AIzaSyCMwJEcq8gK7hFL32MqJ91CwQNy1k6z6dw'
             })
         ],
         // Client Side services here
-        providers: [__WEBPACK_IMPORTED_MODULE_7__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_14__services_user_service_client__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_15__services_shared_service_client__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_20__services_cpoint_service_client__["a" /* CollectionPointService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_7__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_13__services_user_service_client__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_14__services_shared_service_client__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_19__services_cpoint_service_client__["a" /* CollectionPointService */], __WEBPACK_IMPORTED_MODULE_23__services_catalog_service_client__["a" /* CatalogService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -174,10 +183,16 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_collectionpoint_collectionpoint_list_collectionpoint_list_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_collectionpoint_collectionpoint_new_collectionpoint_new_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_catalog_catalog_list_catalog_list_component__ = __webpack_require__("../../../../../src/app/components/catalog/catalog-list/catalog-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_catalog_catalog_new_catalog_new_component__ = __webpack_require__("../../../../../src/app/components/catalog/catalog-new/catalog-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_catalog_catalog_edit_catalog_edit_component__ = __webpack_require__("../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Routing; });
 /**
  * Created by sesha on 7/26/17.
  */
+
+
+
 
 
 
@@ -194,7 +209,10 @@ var APP_ROUTES = [
     { path: 'user', component: __WEBPACK_IMPORTED_MODULE_4__components_user_profile_profile_component__["a" /* ProfileComponent */] },
     { path: 'user/:userId/cpoint', component: __WEBPACK_IMPORTED_MODULE_5__components_collectionpoint_collectionpoint_list_collectionpoint_list_component__["a" /* CollectionpointListComponent */] },
     { path: 'user/:uid/cpoint/new', component: __WEBPACK_IMPORTED_MODULE_6__components_collectionpoint_collectionpoint_new_collectionpoint_new_component__["a" /* CollectionpointNewComponent */] },
-    { path: 'user/:uid/cpoint/:wid', component: __WEBPACK_IMPORTED_MODULE_7__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__["a" /* CollectionpointEditComponent */] }
+    { path: 'user/:uid/cpoint/:wid', component: __WEBPACK_IMPORTED_MODULE_7__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__["a" /* CollectionpointEditComponent */] },
+    { path: 'user/:uid/catalog', component: __WEBPACK_IMPORTED_MODULE_8__components_catalog_catalog_list_catalog_list_component__["a" /* CatalogListComponent */] },
+    { path: 'user/:uid/catalog/:catalogId', component: __WEBPACK_IMPORTED_MODULE_10__components_catalog_catalog_edit_catalog_edit_component__["a" /* CatalogEditComponent */] },
+    { path: 'user/:uid/catalog/new', component: __WEBPACK_IMPORTED_MODULE_9__components_catalog_catalog_new_catalog_new_component__["a" /* CatalogNewComponent */] }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forRoot(APP_ROUTES);
@@ -202,7 +220,7 @@ var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule 
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/catalog/catalog.component.css":
+/***/ "../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -220,19 +238,19 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/catalog/catalog.component.html":
+/***/ "../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  catalog works!\n</p>\n"
+module.exports = "<p>\n  catalog-edit works!\n</p>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/catalog/catalog.component.ts":
+/***/ "../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -243,23 +261,163 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var CatalogComponent = (function () {
-    function CatalogComponent() {
+var CatalogEditComponent = (function () {
+    function CatalogEditComponent() {
     }
-    CatalogComponent.prototype.ngOnInit = function () {
+    CatalogEditComponent.prototype.ngOnInit = function () {
     };
-    return CatalogComponent;
+    return CatalogEditComponent;
 }());
-CatalogComponent = __decorate([
+CatalogEditComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
-        selector: 'app-catalog',
-        template: __webpack_require__("../../../../../src/app/components/catalog/catalog.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/catalog/catalog.component.css")]
+        selector: 'app-catalog-edit',
+        template: __webpack_require__("../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.css")]
     }),
     __metadata("design:paramtypes", [])
-], CatalogComponent);
+], CatalogEditComponent);
 
-//# sourceMappingURL=catalog.component.js.map
+//# sourceMappingURL=catalog-edit.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/catalog/catalog-list/catalog-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/catalog/catalog-list/catalog-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><span class=\"h4 text-primary\">Catalog</span> <p class=\"pull-right\">\n        <a [routerLink]= \" [ '/user' , userId , 'catalog' , 'new']\" class=\"navbar-link\">\n          <span class=\"glyphicon glyphicon-plus\"></span>\n        </a>\n      </p>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let item of catalog\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\"><a><b>{{item.name}}</b></a>\n          <a [routerLink]= \" [ '/user' , userId , 'catalog' , item._id ,'edit']\"> <span class=\"pull-right glyphicon glyphicon-trash\"></span></a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/catalog/catalog-list/catalog-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__ = __webpack_require__("../../../../../src/app/services/catalog.service.client.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogListComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CatalogListComponent = (function () {
+    function CatalogListComponent(catalogService, activatedRoute) {
+        this.catalogService = catalogService;
+        this.activatedRoute = activatedRoute;
+        this.catalog = [{}];
+    }
+    CatalogListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            _this.userId = params['userId'];
+        });
+        this.catalogService.getItems()
+            .subscribe(function (data) {
+            _this.catalog = data;
+        }, function (error) {
+        });
+    };
+    return CatalogListComponent;
+}());
+CatalogListComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-catalog-list',
+        template: __webpack_require__("../../../../../src/app/components/catalog/catalog-list/catalog-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/catalog/catalog-list/catalog-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object])
+], CatalogListComponent);
+
+var _a, _b;
+//# sourceMappingURL=catalog-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/catalog/catalog-new/catalog-new.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/catalog/catalog-new/catalog-new.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  catalog-new works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/catalog/catalog-new/catalog-new.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogNewComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CatalogNewComponent = (function () {
+    function CatalogNewComponent() {
+    }
+    CatalogNewComponent.prototype.ngOnInit = function () {
+    };
+    return CatalogNewComponent;
+}());
+CatalogNewComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-catalog-new',
+        template: __webpack_require__("../../../../../src/app/components/catalog/catalog-new/catalog-new.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/catalog/catalog-new/catalog-new.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CatalogNewComponent);
+
+//# sourceMappingURL=catalog-new.component.js.map
 
 /***/ }),
 
@@ -345,7 +503,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n<!--\n<div class=\"container-fluid\">\n  <div class=\"container-fluid\">\n  <h3>Collection Points</h3>\n  <p class=\"pull-right\">\n    <a [routerLink]= \" [ '/user' , userId , 'cpoint' , 'new']\" class=\"navbar-link\">\n      <span class=\"glyphicon glyphicon-plus\"></span>\n    </a>\n  </p>\n  </div>\n  <div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n        <a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ]\"> <span class=\"pull-right glyphicon glyphicon-cog\"></span></a>\n      </li>\n    </ul>\n  </div>\n</div>\n\n-->\n\n<div class=\"etm-page-body\">\n<div class=\"container-fluid\">\n  <div class=\"row-fluid\">\n    <div class=\"span3\"><span class=\"h4 text-primary\">Collection Points</span> <p class=\"pull-right\">\n      <a [routerLink]= \" [ '/user' , userId , 'cpoint' , 'new']\" class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n    </div>\n  </div>\n  <div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n        <a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ]\"> <span class=\"pull-right glyphicon glyphicon-cog\"></span></a>\n      </li>\n    </ul>\n  </div>\n</div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n<!--\n<div class=\"container-fluid\">\n  <div class=\"container-fluid\">\n  <h3>Collection Points</h3>\n  <p class=\"pull-right\">\n    <a [routerLink]= \" [ '/user' , userId , 'cpoint' , 'new']\" class=\"navbar-link\">\n      <span class=\"glyphicon glyphicon-plus\"></span>\n    </a>\n  </p>\n  </div>\n  <div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n        <a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ]\"> <span class=\"pull-right glyphicon glyphicon-cog\"></span></a>\n      </li>\n    </ul>\n  </div>\n</div>\n\n-->\n\n<div class=\"etm-page-body\">\n<div class=\"container-fluid\">\n  <div class=\"row-fluid\">\n    <div class=\"span3\"><span class=\"h4 text-primary\">Collection Points</span> <p class=\"pull-right\">\n      <a [routerLink]= \" [ '/user' , userId , 'cpoint' , 'new']\" class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n    </div>\n  </div>\n  <div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n        <a (click)=\"delete(cpoint._id)\"> <span class=\"pull-right glyphicon glyphicon-trash\"></span></a>\n      </li>\n    </ul>\n  </div>\n</div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -387,6 +545,23 @@ var CollectionpointListComponent = (function () {
         }, function (error) {
         });
     };
+    CollectionpointListComponent.prototype.delete = function (cPointId) {
+        var _this = this;
+        this.collectionPointService.deleteCollectionPoint(cPointId)
+            .subscribe(function (data) {
+            if (data.success) {
+                for (var i = 0; i < _this.collectionPoints.length; i++) {
+                    if (_this.collectionPoints[i]['_id'] == cPointId) {
+                        _this.collectionPoints.splice(i, 1);
+                    }
+                }
+            }
+            else {
+                alert('Error deleting the collection point');
+            }
+        }, function (error) {
+        });
+    };
     return CollectionpointListComponent;
 }());
 CollectionpointListComponent = __decorate([
@@ -424,7 +599,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n<div class=\"container-fluid\">\n  <form #f=\"ngForm\">\n    <div class=\"form-group\">\n      <label for=\"cPointName\">Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointName\" name=\"cPointName\" placeholder=\"Name\" ngModel=\"\" #cPointName=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointName.valid && cPointName.touched\">\n            Enter a valid collection point name!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointStreet\">Street</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointStreet\" name=\"cPointStreet\" placeholder=\"Enter the street\" ngModel=\"\" #cPointStreet=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointStreet.valid && cPointStreet.touched\">\n            Enter a street address!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n    <label for=\"cPointCity\">City</label>\n    <input type=\"text\" class=\"form-control\" id=\"cPointCity\" name=\"cPointCity\" placeholder=\"Enter the city\" ngModel=\"\" #cPointCity=\"ngModel\" required>\n    <span class=\"help-block\"\n          *ngIf=\"!cPointCity.valid && cPointCity.touched\">\n            Enter a city name!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointState\">State</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointState\" name=\"cPointState\" placeholder=\"Enter the State\" ngModel=\"\" #cPointState=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointState.valid && cPointState.touched\">\n            Enter a State name!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointPostCode\">PostCode</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointPostCode\" name=\"cPointPostCode\" placeholder=\"Enter the PostCode\" ngModel=\"\" #cPointPostCode=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointPostCode.valid && cPointPostCode.touched\">\n            Enter a PostCode!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointCountry\">Country</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointCountry\" name=\"cPointCountry\" placeholder=\"Enter the Country\" ngModel=\"\" #cPointCountry=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointCountry.valid && cPointCountry.touched\">\n            Enter a Country!!\n          </span>\n    </div>\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      {{errorMsg}}\n    </div>\n    <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"createCollectionPoint()\">OK <span class=\"glyphicon glyphicon-ok\"></span></button>\n  </form>\n</div>\n</div>\n\n\n\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n<div class=\"container-fluid\">\n  <form #f=\"ngForm\">\n    <div class=\"form-group\">\n      <label for=\"cPointName\">Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointName\" name=\"cPointName\" placeholder=\"Name\" ngModel=\"\" #cPointName=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointName.valid && cPointName.touched\">\n            Enter a valid collection point name!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointStreet\">Street</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointStreet\" name=\"cPointStreet\" placeholder=\"Enter the street\" ngModel=\"\" #cPointStreet=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointStreet.valid && cPointStreet.touched\">\n            Enter a street address!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n    <label for=\"cPointCity\">City</label>\n    <input type=\"text\" class=\"form-control\" id=\"cPointCity\" name=\"cPointCity\" placeholder=\"Enter the city\" ngModel=\"\" #cPointCity=\"ngModel\" required>\n    <span class=\"help-block\"\n          *ngIf=\"!cPointCity.valid && cPointCity.touched\">\n            Enter a city name!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointState\">State</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointState\" name=\"cPointState\" placeholder=\"Enter the State\" ngModel=\"\" #cPointState=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointState.valid && cPointState.touched\">\n            Enter a State name!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointPostCode\">PostCode</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointPostCode\" name=\"cPointPostCode\" placeholder=\"Enter the PostCode\" ngModel=\"\" #cPointPostCode=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointPostCode.valid && cPointPostCode.touched\">\n            Enter a PostCode!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointCountry\">Country</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointCountry\" name=\"cPointCountry\" placeholder=\"Enter the Country\" ngModel=\"\" #cPointCountry=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointCountry.valid && cPointCountry.touched\">\n            Enter a Country!!\n          </span>\n    </div>\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      {{errorMsg}}\n    </div>\n    <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"createCollectionPoint()\">OK <span class=\"glyphicon glyphicon-ok\"></span></button>\n  </form>\n</div>\n</div>\n\n\n\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -805,7 +980,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n    <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user']\">\n        <b>Home</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n        <b>Sell</b>\n      </a>\n    </p>\n\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n        <b>Payments</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n        <b>Pickup</b>\n      </a>\n    </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n    <!--tick mark-->\n\n\n  </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n  </div>\n  </div>\n</nav>\n\n\n\n\n\n<div class=\"container-fluid\">\n  <div class=\"panel panel-primary\" style=\"margin:50px;\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Profile</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form #f=\"ngForm\">\n        <div class=\"form-group\">\n          <label for=\"username\">Username</label>\n          <input type=\"text\" name=\"username\" class=\"form-control\" id=\"username\" [(ngModel)]=\"user.username\"  ngModel=\"\" required #username=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!username.valid && username.touched\">\n      Please enter username!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email </label>\n          <input type=\"email\" name=\"email\" class=\"form-control\" id=\"email\" [(ngModel)]=\"user.email\" ngModel=\"\" email #email=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!email.valid && email.touched\">\n      Please enter a valid email!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"first-name\">First Name</label>\n          <input type=\"text\" name=\"firstname\" class=\"form-control\" id=\"first-name\" [(ngModel)]=\"user.firstName\" ngModel=\"\" required #firstname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!firstname.valid && firstname.touched\">\n      Please enter a valid first name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"last-name\">Last Name</label>\n          <input type=\"text\" name=\"lastname\" class=\"form-control\" id=\"last-name\" [(ngModel)]=\"user.lastName\" ngModel=\"\" required #lastname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!lastname.valid && lastname.touched\">\n      Please enter a valid second name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"address\">Address</label>\n          <textarea id=\"address\"  class=\"form-control\" name=\"address\" rows=\"5\"  #buyerAddress=\"ngModel\" [(ngModel)]=user.address required>\n        </textarea>\n        </div>\n\n        <div *ngIf=\"this.user.role=='Organization'\">\n          <div class=\"form-group\">\n            <label for=\"orgName\">Organization Name</label>\n            <input name=\"orgName\"\n                   id=\"orgName\"\n                   [(ngModel)]=\"user.organizationName\"\n                   required=\"\"\n                   placeholder=\"Organization Name\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Employee'\">\n          <div class=\"form-group\">\n            <label>EmployeeId</label>\n            <input name=\"empId\"\n                   id=\"empId\"\n                   [(ngModel)]=\"user.employeeId\"\n                   required=\"\"\n                   placeholder=\"Your Employee ID\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Buyer'\">\n          <div class=\"form-group\">\n            <label>Buyer Name</label>\n            <input name=\"buyerName\"\n                   id=\"buyerName\"\n                   [(ngModel)]=\"user.buyerName\"\n                   required=\"\"\n                   placeholder=\"Enter the name of the refinery or organization\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"isInvalid\"\n             class=\"alert alert-danger\">\n          {{notificationMessage}}\n        </div>\n\n        <a class=\"btn btn-primary btn-block\"\n           (click)=\"editProfile()\">Save Profile</a>\n\n      </form>\n    </div>\n\n\n</div>\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n    <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user']\">\n        <b>Home</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n        <b>Sell</b>\n      </a>\n    </p>\n\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n        <b>Payments</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n        <b>Pickup</b>\n      </a>\n    </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n    <!--tick mark-->\n\n\n  </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n  </div>\n  </div>\n</nav>\n\n\n\n\n\n<div class=\"container-fluid\">\n  <div class=\"panel panel-primary\" style=\"margin:50px;\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Profile</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form #f=\"ngForm\">\n        <div class=\"form-group\">\n          <label for=\"username\">Username</label>\n          <input type=\"text\" name=\"username\" class=\"form-control\" id=\"username\" [(ngModel)]=\"user.username\"  ngModel=\"\" required #username=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!username.valid && username.touched\">\n      Please enter username!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email </label>\n          <input type=\"email\" name=\"email\" class=\"form-control\" id=\"email\" [(ngModel)]=\"user.email\" ngModel=\"\" email #email=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!email.valid && email.touched\">\n      Please enter a valid email!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"first-name\">First Name</label>\n          <input type=\"text\" name=\"firstname\" class=\"form-control\" id=\"first-name\" [(ngModel)]=\"user.firstName\" ngModel=\"\" required #firstname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!firstname.valid && firstname.touched\">\n      Please enter a valid first name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"last-name\">Last Name</label>\n          <input type=\"text\" name=\"lastname\" class=\"form-control\" id=\"last-name\" [(ngModel)]=\"user.lastName\" ngModel=\"\" required #lastname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!lastname.valid && lastname.touched\">\n      Please enter a valid second name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"address\">Address</label>\n          <textarea id=\"address\"  class=\"form-control\" name=\"address\" rows=\"5\"  #buyerAddress=\"ngModel\" [(ngModel)]=user.address required>\n        </textarea>\n        </div>\n\n        <div *ngIf=\"this.user.role=='Organization'\">\n          <div class=\"form-group\">\n            <label for=\"orgName\">Organization Name</label>\n            <input name=\"orgName\"\n                   id=\"orgName\"\n                   [(ngModel)]=\"user.organizationName\"\n                   required=\"\"\n                   placeholder=\"Organization Name\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Employee'\">\n          <div class=\"form-group\">\n            <label>EmployeeId</label>\n            <input name=\"empId\"\n                   id=\"empId\"\n                   [(ngModel)]=\"user.employeeId\"\n                   required=\"\"\n                   placeholder=\"Your Employee ID\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Buyer'\">\n          <div class=\"form-group\">\n            <label>Buyer Name</label>\n            <input name=\"buyerName\"\n                   id=\"buyerName\"\n                   [(ngModel)]=\"user.buyerName\"\n                   required=\"\"\n                   placeholder=\"Enter the name of the refinery or organization\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"isInvalid\"\n             class=\"alert alert-danger\">\n          {{notificationMessage}}\n        </div>\n\n        <a class=\"btn btn-primary btn-block\"\n           (click)=\"editProfile()\">Save Profile</a>\n\n      </form>\n    </div>\n\n\n</div>\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1095,6 +1270,55 @@ var User = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/services/catalog.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogService; });
+/**
+ * Created by hemanthshetty on 12/9/17.
+ */
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var CatalogService = (function () {
+    function CatalogService(_http) {
+        this._http = _http;
+        this.baseUrl = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl;
+    }
+    CatalogService.prototype.getItems = function () {
+        return this._http.get(this.baseUrl + '/api/catalog')
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    return CatalogService;
+}());
+CatalogService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], CatalogService);
+
+var _a;
+//# sourceMappingURL=catalog.service.client.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/cpoint.service.client.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1125,6 +1349,12 @@ var CollectionPointService = (function () {
     }
     CollectionPointService.prototype.findCollectionPoints = function () {
         return this._http.get(this.baseUrl + '/api/collectionpoint')
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    CollectionPointService.prototype.deleteCollectionPoint = function (cPointId) {
+        return this._http.delete(this.baseUrl + '/api/collectionpoint/' + cPointId)
             .map(function (res) {
             return res.json();
         });
