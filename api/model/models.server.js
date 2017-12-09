@@ -11,7 +11,7 @@ var widgetModel = require('./widget/widget.model.server');
 
 var model = {
   userModel: userModel,
-  websiteModel: collectionPointModel,
+  collectionPointModel: collectionPointModel,
   pageModel: pageModel,
   widgetModel: widgetModel
 };

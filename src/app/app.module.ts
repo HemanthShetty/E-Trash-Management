@@ -19,6 +19,7 @@ import { AgmCoreModule } from '@agm/core';
 import { CollectionpointEditComponent } from './components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component';
 import { CollectionpointNewComponent } from './components/collectionpoint/collectionpoint-new/collectionpoint-new.component';
 import { CollectionpointListComponent } from './components/collectionpoint/collectionpoint-list/collectionpoint-list.component';
+import {CollectionPointService} from "./services/cpoint.service.client";
 
 @NgModule({
   // Declare components here
@@ -45,7 +46,7 @@ import { CollectionpointListComponent } from './components/collectionpoint/colle
     })
   ],
   // Client Side services here
-  providers: [ TestService, UserService, SharedService ],
+  providers: [ TestService, UserService, SharedService,CollectionPointService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

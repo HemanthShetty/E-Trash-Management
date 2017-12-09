@@ -91,6 +91,10 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_collectionpoint_collectionpoint_new_collectionpoint_new_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_collectionpoint_collectionpoint_list_collectionpoint_list_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_cpoint_service_client__ = __webpack_require__("../../../../../src/app/services/cpoint.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -98,6 +102,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -131,7 +139,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_11__components_user_profile_profile_component__["a" /* ProfileComponent */],
             __WEBPACK_IMPORTED_MODULE_8__components_catalog_catalog_component__["a" /* CatalogComponent */],
             __WEBPACK_IMPORTED_MODULE_12__components_shipment_shipment_component__["a" /* ShipmentComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_payment_payment_component__["a" /* PaymentComponent */]
+            __WEBPACK_IMPORTED_MODULE_13__components_payment_payment_component__["a" /* PaymentComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__["a" /* CollectionpointEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_collectionpoint_collectionpoint_new_collectionpoint_new_component__["a" /* CollectionpointNewComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_collectionpoint_collectionpoint_list_collectionpoint_list_component__["a" /* CollectionpointListComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -142,7 +153,7 @@ AppModule = __decorate([
             })
         ],
         // Client Side services here
-        providers: [__WEBPACK_IMPORTED_MODULE_7__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_14__services_user_service_client__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_15__services_shared_service_client__["a" /* SharedService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_7__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_14__services_user_service_client__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_15__services_shared_service_client__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_20__services_cpoint_service_client__["a" /* CollectionPointService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -160,10 +171,16 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_user_register_register_component__ = __webpack_require__("../../../../../src/app/components/user/register/register.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_user_login_login_component__ = __webpack_require__("../../../../../src/app/components/user/login/login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_user_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/user/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_collectionpoint_collectionpoint_list_collectionpoint_list_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_collectionpoint_collectionpoint_new_collectionpoint_new_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__ = __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Routing; });
 /**
  * Created by sesha on 7/26/17.
  */
+
+
+
 
 
 
@@ -174,7 +191,10 @@ var APP_ROUTES = [
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_2__components_user_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_3__components_user_login_login_component__["a" /* LoginComponent */] },
-    { path: 'user', component: __WEBPACK_IMPORTED_MODULE_4__components_user_profile_profile_component__["a" /* ProfileComponent */] }
+    { path: 'user', component: __WEBPACK_IMPORTED_MODULE_4__components_user_profile_profile_component__["a" /* ProfileComponent */] },
+    { path: 'user/:userId/cpoint', component: __WEBPACK_IMPORTED_MODULE_5__components_collectionpoint_collectionpoint_list_collectionpoint_list_component__["a" /* CollectionpointListComponent */] },
+    { path: 'user/:uid/cpoint/new', component: __WEBPACK_IMPORTED_MODULE_6__components_collectionpoint_collectionpoint_new_collectionpoint_new_component__["a" /* CollectionpointNewComponent */] },
+    { path: 'user/:uid/cpoint/:wid', component: __WEBPACK_IMPORTED_MODULE_7__components_collectionpoint_collectionpoint_edit_collectionpoint_edit_component__["a" /* CollectionpointEditComponent */] }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forRoot(APP_ROUTES);
@@ -240,6 +260,207 @@ CatalogComponent = __decorate([
 ], CatalogComponent);
 
 //# sourceMappingURL=catalog.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  collectionpoint-edit works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionpointEditComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CollectionpointEditComponent = (function () {
+    function CollectionpointEditComponent() {
+    }
+    CollectionpointEditComponent.prototype.ngOnInit = function () {
+    };
+    return CollectionpointEditComponent;
+}());
+CollectionpointEditComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-collectionpoint-edit',
+        template: __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CollectionpointEditComponent);
+
+//# sourceMappingURL=collectionpoint-edit.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n      <a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ]\"> <span class=\"pull-right glyphicon glyphicon-cog\"></span></a>\n    </li>\n  </ul>\n</div>\n\n\n\n\n\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_cpoint_service_client__ = __webpack_require__("../../../../../src/app/services/cpoint.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionpointListComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CollectionpointListComponent = (function () {
+    function CollectionpointListComponent(collectionPointService, activatedRoute) {
+        this.collectionPointService = collectionPointService;
+        this.activatedRoute = activatedRoute;
+        this.collectionPoints = [{}];
+    }
+    CollectionpointListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            _this.userId = params['userId'];
+        });
+        this.collectionPointService.findCollectionPoints()
+            .subscribe(function (data) {
+            _this.collectionPoints = data;
+        }, function (error) {
+        });
+    };
+    return CollectionpointListComponent;
+}());
+CollectionpointListComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-collectionpoint-list',
+        template: __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object])
+], CollectionpointListComponent);
+
+var _a, _b;
+//# sourceMappingURL=collectionpoint-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  collectionpoint-new works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionpointNewComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CollectionpointNewComponent = (function () {
+    function CollectionpointNewComponent() {
+    }
+    CollectionpointNewComponent.prototype.ngOnInit = function () {
+    };
+    return CollectionpointNewComponent;
+}());
+CollectionpointNewComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-collectionpoint-new',
+        template: __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CollectionpointNewComponent);
+
+//# sourceMappingURL=collectionpoint-new.component.js.map
 
 /***/ }),
 
@@ -539,7 +760,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n    <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-6 col-lg-4 col-xs-10\">\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user']\">\n        <b>Home</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n        <b>Sell</b>\n      </a>\n    </p>\n\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n        <b>Payments</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n        <b>Pickup</b>\n      </a>\n    </p>\n    <!--tick mark-->\n\n\n  </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n\n<div class=\"container-fluid\">\n  <div class=\"panel panel-primary\" style=\"margin:50px;\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Profile</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form #f=\"ngForm\">\n        <div class=\"form-group\">\n          <label for=\"username\">Username</label>\n          <input type=\"text\" name=\"username\" class=\"form-control\" id=\"username\" [(ngModel)]=\"user.username\"  ngModel=\"\" required #username=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!username.valid && username.touched\">\n      Please enter username!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email </label>\n          <input type=\"email\" name=\"email\" class=\"form-control\" id=\"email\" [(ngModel)]=\"user.email\" ngModel=\"\" email #email=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!email.valid && email.touched\">\n      Please enter a valid email!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"first-name\">First Name</label>\n          <input type=\"text\" name=\"firstname\" class=\"form-control\" id=\"first-name\" [(ngModel)]=\"user.firstName\" ngModel=\"\" required #firstname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!firstname.valid && firstname.touched\">\n      Please enter a valid first name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"last-name\">Last Name</label>\n          <input type=\"text\" name=\"lastname\" class=\"form-control\" id=\"last-name\" [(ngModel)]=\"user.lastName\" ngModel=\"\" required #lastname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!lastname.valid && lastname.touched\">\n      Please enter a valid second name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"address\">Address</label>\n          <textarea id=\"address\"  class=\"form-control\" name=\"address\" rows=\"5\"  #buyerAddress=\"ngModel\" [(ngModel)]=user.address required>\n        </textarea>\n        </div>\n\n        <div *ngIf=\"this.user.role=='Organization'\">\n          <div class=\"form-group\">\n            <label for=\"orgName\">Organization Name</label>\n            <input name=\"orgName\"\n                   id=\"orgName\"\n                   [(ngModel)]=\"user.organizationName\"\n                   required=\"\"\n                   placeholder=\"Organization Name\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Employee'\">\n          <div class=\"form-group\">\n            <label>EmployeeId</label>\n            <input name=\"empId\"\n                   id=\"empId\"\n                   [(ngModel)]=\"user.employeeId\"\n                   required=\"\"\n                   placeholder=\"Your Employee ID\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Buyer'\">\n          <div class=\"form-group\">\n            <label>Buyer Name</label>\n            <input name=\"buyerName\"\n                   id=\"buyerName\"\n                   [(ngModel)]=\"user.buyerName\"\n                   required=\"\"\n                   placeholder=\"Enter the name of the refinery or organization\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"isInvalid\"\n             class=\"alert alert-danger\">\n          {{notificationMessage}}\n        </div>\n\n        <a class=\"btn btn-primary btn-block\"\n           (click)=\"editProfile()\">Save Profile</a>\n        <a class=\"btn btn-danger btn-block \"\n           (click)=\"logout()\">Logout</a>\n\n      </form>\n    </div>\n\n\n</div>\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n    <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user']\">\n        <b>Home</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n        <b>Sell</b>\n      </a>\n    </p>\n\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n        <b>Payments</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n        <b>Pickup</b>\n      </a>\n    </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n    <!--tick mark-->\n\n\n  </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n  </div>\n  </div>\n</nav>\n\n\n\n\n\n<div class=\"container-fluid\">\n  <div class=\"panel panel-primary\" style=\"margin:50px;\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Profile</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form #f=\"ngForm\">\n        <div class=\"form-group\">\n          <label for=\"username\">Username</label>\n          <input type=\"text\" name=\"username\" class=\"form-control\" id=\"username\" [(ngModel)]=\"user.username\"  ngModel=\"\" required #username=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!username.valid && username.touched\">\n      Please enter username!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email </label>\n          <input type=\"email\" name=\"email\" class=\"form-control\" id=\"email\" [(ngModel)]=\"user.email\" ngModel=\"\" email #email=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!email.valid && email.touched\">\n      Please enter a valid email!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"first-name\">First Name</label>\n          <input type=\"text\" name=\"firstname\" class=\"form-control\" id=\"first-name\" [(ngModel)]=\"user.firstName\" ngModel=\"\" required #firstname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!firstname.valid && firstname.touched\">\n      Please enter a valid first name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"last-name\">Last Name</label>\n          <input type=\"text\" name=\"lastname\" class=\"form-control\" id=\"last-name\" [(ngModel)]=\"user.lastName\" ngModel=\"\" required #lastname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!lastname.valid && lastname.touched\">\n      Please enter a valid second name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"address\">Address</label>\n          <textarea id=\"address\"  class=\"form-control\" name=\"address\" rows=\"5\"  #buyerAddress=\"ngModel\" [(ngModel)]=user.address required>\n        </textarea>\n        </div>\n\n        <div *ngIf=\"this.user.role=='Organization'\">\n          <div class=\"form-group\">\n            <label for=\"orgName\">Organization Name</label>\n            <input name=\"orgName\"\n                   id=\"orgName\"\n                   [(ngModel)]=\"user.organizationName\"\n                   required=\"\"\n                   placeholder=\"Organization Name\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Employee'\">\n          <div class=\"form-group\">\n            <label>EmployeeId</label>\n            <input name=\"empId\"\n                   id=\"empId\"\n                   [(ngModel)]=\"user.employeeId\"\n                   required=\"\"\n                   placeholder=\"Your Employee ID\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Buyer'\">\n          <div class=\"form-group\">\n            <label>Buyer Name</label>\n            <input name=\"buyerName\"\n                   id=\"buyerName\"\n                   [(ngModel)]=\"user.buyerName\"\n                   required=\"\"\n                   placeholder=\"Enter the name of the refinery or organization\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"isInvalid\"\n             class=\"alert alert-danger\">\n          {{notificationMessage}}\n        </div>\n\n        <a class=\"btn btn-primary btn-block\"\n           (click)=\"editProfile()\">Save Profile</a>\n\n      </form>\n    </div>\n\n\n</div>\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -807,6 +1028,53 @@ var User = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/services/cpoint.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionPointService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+//import {CollectionPoint} from '../models/cpoint.model.client';
+var CollectionPointService = (function () {
+    function CollectionPointService(_http) {
+        this._http = _http;
+        this.baseUrl = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl;
+    }
+    CollectionPointService.prototype.findCollectionPoints = function () {
+        return this._http.get(this.baseUrl + '/api/collectionpoint')
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    return CollectionPointService;
+}());
+CollectionPointService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], CollectionPointService);
+
+var _a;
+//# sourceMappingURL=cpoint.service.client.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/shared.service.client.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -891,7 +1159,7 @@ var TestService = (function () {
 }());
 TestService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], TestService);
 
 var _a;
@@ -932,7 +1200,7 @@ var UserService = (function () {
         this._http = _http;
         this.sharedService = sharedService;
         this.router = router;
-        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* RequestOptions */]();
+        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]();
         this.baseUrl = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl;
     }
     UserService.prototype.register = function (user) {
@@ -1035,7 +1303,7 @@ var UserService = (function () {
 }());
 UserService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_service_client__["a" /* SharedService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_service_client__["a" /* SharedService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _c || Object])
 ], UserService);
 
 var _a, _b, _c;

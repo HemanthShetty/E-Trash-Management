@@ -2,6 +2,7 @@ module.exports = function(app,model) {
 
   app.get('/api/collectionpoint', findAllCollectionPoints);
   function findAllCollectionPoints(req, res) {
+    console.log("api hit");
     model.collectionPointModel.findAllCollectionPoints().then(function(data)
     {
       if(data)

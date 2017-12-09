@@ -3,7 +3,7 @@ import { Http, RequestOptions, Response } from '@angular/http';
 import 'rxjs/Rx';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
-import {CollectionPoint} from '../models/cpoint.model.client';
+//import {CollectionPoint} from '../models/cpoint.model.client';
 
 
 @Injectable()
