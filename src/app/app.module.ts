@@ -22,6 +22,7 @@ import {CollectionPointService} from "./services/cpoint.service.client";
 import { CatalogListComponent } from './components/catalog/catalog-list/catalog-list.component';
 import { CatalogNewComponent } from './components/catalog/catalog-new/catalog-new.component';
 import { CatalogEditComponent } from './components/catalog/catalog-edit/catalog-edit.component';
+import {CatalogService} from "./services/catalog.service.client";
 
 @NgModule({
   // Declare components here
@@ -51,7 +52,7 @@ import { CatalogEditComponent } from './components/catalog/catalog-edit/catalog-
     })
   ],
   // Client Side services here
-  providers: [ TestService, UserService, SharedService,CollectionPointService ],
+  providers: [ TestService, UserService, SharedService, CollectionPointService, CatalogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

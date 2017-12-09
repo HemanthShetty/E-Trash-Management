@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {CatalogService} from "../../../services/catalog.service.client";
 
 @Component({
   selector: 'app-catalog-list',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogListComponent implements OnInit {
 
-  constructor() { }
+  userId: String;
+  catalog = [{}];
 
+  constructor(private catalogService: CatalogService, private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
+
+    this.activatedRoute.params
+      .subscribe(
+        (params: any) => {
+          this.userId = params['userId'];
+        }
+      );
+
+    this.catalogService.getItems()
+      .subscribe(
+        (data: any) => {
+          this.catalog = data;
+        },
+        (error: any) => {
+        }
+      );
   }
+
 
 }
