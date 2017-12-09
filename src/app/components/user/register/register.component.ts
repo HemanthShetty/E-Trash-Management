@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   errorMsg: String;
   userRole: String;
   roles=['User','Organization','Employee','Buyer'];
-  refinerAddress='';
+  address='';
 
   constructor(private userService: UserService,
               private router: Router, private sharedService:SharedService) {
@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
       this.user.role= this.userRole.toString();
       this.user.employeeId=this.registrationForm.value.empId ;
       this.user.organizationName = this.registrationForm.value.orgName;
-      this.user.buyerAddress = this.refinerAddress;
+      this.user.address = this.address;
       this.user.buyerName = this.registrationForm.value.buyerName;
       this.userService.register(this.user)
         .subscribe(

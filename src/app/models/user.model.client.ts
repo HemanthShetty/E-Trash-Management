@@ -9,22 +9,22 @@ export class User {
   public employeeId: string;
   public organizationName: string;
   public buyerName: string;
-  public buyerAddress: string;
+  public address: string;
 
 
 
   constructor(_id:string,username:string,password:string,email:string,firstName:string,lastName:string,
-               role:string,employeeId:string,organizationName:string,buyerName:string,refineryAddress:string) {
-    this._id = "";
-    this.username =  "";
-    this.password =  "";
-    this.email =  "";
-    this.firstName =  "";
-    this.lastName =  "";
-    this.role="";
-    this.employeeId="";
-    this.organizationName="";
-    this.buyerName="";
-    this.buyerAddress="";
+               role:string,employeeId:string,organizationName:string,buyerName:string,address:string) {
+    this._id = _id;
+    this.username =  username;
+    this.password =  password;
+    this.email =  email;
+    this.firstName =  firstName;
+    this.lastName =  lastName;
+    this.role=role;
+    this.employeeId=employeeId;
+    this.organizationName=organizationName;
+    this.buyerName=buyerName;
+    this.address=address;
   }
 }

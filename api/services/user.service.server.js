@@ -48,34 +48,6 @@ module.exports = function(app,model) {
   }
 
 
-  function facebookStrategy(token, refreshToken, profile, done) {
-    model.userModel
-      .findUserByFacebookId(profile.id)
-      .then(function(user) {
-          if(user) {
-            return done(null, user);
-          } else {
-            var names = profile.displayName.split(" ");
-            var newFacebookUser = {
-              firstName:  names[0],
-              lastName:  names[1],
-              facebook: {
-                id:    profile.id,
-                token: token
-              },
-              email: profile.emails[0].value
-            };
-            userModel
-              .createUser(newFacebookUser)
-              .then(function (user) {
-                return done(null, user);
-              });
-          }
-        },
-        function(err) {
-          if (err) { return done(err); }
-        });
-  }
 
   function serializeUser(user, done) {
     done(null, user);

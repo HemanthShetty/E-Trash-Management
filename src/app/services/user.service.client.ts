@@ -27,7 +27,7 @@ export class UserService {
       role: user.role,
       employeeId: user.employeeId,
       organizationName:user.organizationName,
-      buyerAddress:user.buyerAddress,
+      address:user.address,
       buyerName:user.buyerName
     };
     return this._http.post(this.baseUrl + '/api/register', credentials, this.options)

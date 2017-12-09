@@ -15,6 +15,7 @@ import { ShipmentComponent } from './components/shipment/shipment.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import {UserService} from "./services/user.service.client";
 import {SharedService} from "./services/shared.service.client";
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   // Declare components here
@@ -32,7 +33,10 @@ import {SharedService} from "./services/shared.service.client";
     BrowserModule,
     HttpModule,
     FormsModule,
-    Routing
+    Routing,
+    AgmCoreModule.forRoot({apiKey:
+      'AIzaSyCMwJEcq8gK7hFL32MqJ91CwQNy1k6z6dw'
+    })
   ],
   // Client Side services here
   providers: [ TestService, UserService, SharedService ],

@@ -78,13 +78,61 @@
       </span>
         </div>
 
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address"  class="form-control" name="address" rows="5"  #buyerAddress="ngModel" [(ngModel)]=user.address required>
+        </textarea>
+        </div>
+
+        <div *ngIf="this.user.role=='Organization'">
+          <div class="form-group">
+            <label for="orgName">Organization Name</label>
+            <input name="orgName"
+                   id="orgName"
+                   [(ngModel)]="user.organizationName"
+                   required=""
+                   placeholder="Organization Name"
+                   type="text"
+                   class="form-control"
+                   #lastName="ngModel"/>
+          </div>
+        </div>
+
+        <div *ngIf="user.role=='Employee'">
+          <div class="form-group">
+            <label>EmployeeId</label>
+            <input name="empId"
+                   id="empId"
+                   [(ngModel)]="user.employeeId"
+                   required=""
+                   placeholder="Your Employee ID"
+                   type="text"
+                   class="form-control"
+                   #lastName="ngModel"/>
+          </div>
+        </div>
+
+        <div *ngIf="user.role=='Buyer'">
+          <div class="form-group">
+            <label>Buyer Name</label>
+            <input name="buyerName"
+                   id="buyerName"
+                   [(ngModel)]="user.buyerName"
+                   required=""
+                   placeholder="Enter the name of the refinery or organization"
+                   type="text"
+                   class="form-control"
+                   #lastName="ngModel"/>
+          </div>
+        </div>
+
         <div *ngIf="isInvalid"
              class="alert alert-danger">
           {{notificationMessage}}
         </div>
 
         <a class="btn btn-primary btn-block"
-           [routerLink]= " [ '/user' , userId, 'website']">Websites</a>
+           (click)="editProfile()">Save Profile</a>
         <a class="btn btn-danger btn-block "
            (click)="logout()">Logout</a>
 
