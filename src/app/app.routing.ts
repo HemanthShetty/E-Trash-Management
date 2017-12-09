@@ -8,13 +8,19 @@ import {ModuleWithProviders} from '@angular/core';
 import {RegisterComponent} from './components/user/register/register.component';
 import {LoginComponent} from "./components/user/login/login.component";
 import {ProfileComponent} from "./components/user/profile/profile.component";
+import {CollectionpointListComponent} from "./components/collectionpoint/collectionpoint-list/collectionpoint-list.component";
+import {CollectionpointNewComponent} from "./components/collectionpoint/collectionpoint-new/collectionpoint-new.component";
+import {CollectionpointEditComponent} from "./components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
   {path: 'home', component : HomeComponent},
   {path: 'register', component : RegisterComponent},
   {path : 'login' , component: LoginComponent},
-  {path:  'user', component: ProfileComponent}
+  {path:  'user', component: ProfileComponent},
+  {path : 'user/:userId/cpoint' , component: CollectionpointListComponent},
+  {path : 'user/:uid/cpoint/new' , component: CollectionpointNewComponent},
+  {path : 'user/:uid/cpoint/:wid' , component: CollectionpointEditComponent}
 ];
 
 // Export the routes as module providers

@@ -16,6 +16,9 @@ import { PaymentComponent } from './components/payment/payment.component';
 import {UserService} from "./services/user.service.client";
 import {SharedService} from "./services/shared.service.client";
 import { AgmCoreModule } from '@agm/core';
+import { CollectionpointEditComponent } from './components/collectionpoint/collectionpoint-edit/collectionpoint-edit.component';
+import { CollectionpointNewComponent } from './components/collectionpoint/collectionpoint-new/collectionpoint-new.component';
+import { CollectionpointListComponent } from './components/collectionpoint/collectionpoint-list/collectionpoint-list.component';
 
 @NgModule({
   // Declare components here
@@ -27,7 +30,10 @@ import { AgmCoreModule } from '@agm/core';
     ProfileComponent,
     CatalogComponent,
     ShipmentComponent,
-    PaymentComponent
+    PaymentComponent,
+    CollectionpointEditComponent,
+    CollectionpointNewComponent,
+    CollectionpointListComponent
   ],
   imports: [
     BrowserModule,
