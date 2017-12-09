@@ -1,3 +1,133 @@
-<p>
-  collectionpoint-new works!
-</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row">
+      <!--heading on the nav bar-->
+      <div class="col-sm-10 col-md-10 col-lg-10 col-xs-10">
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user']">
+            <b>Home</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'sell']">
+            <b>Sell</b>
+          </a>
+        </p>
+
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'payments']" >
+            <b>Payments</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'pickup']" >
+            <b>Pickup</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
+            <b>Collection Points</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
+            <b>Catalog</b>
+          </a>
+        </p>
+        <!--tick mark-->
+
+
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
+        <button type="button" class="btn btn-default btn-sm" (click)="logout()">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div class="etm-page-body">
+<div class="container-fluid">
+  <form #f="ngForm">
+    <div class="form-group">
+      <label for="cPointName">Name</label>
+      <input type="text" class="form-control" id="cPointName" name="cPointName" placeholder="Name" ngModel="" #cPointName="ngModel" required>
+      <span class="help-block"
+            *ngIf="!cPointName.valid && cPointName.touched">
+            Enter a valid collection point name!!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="cPointStreet">Street</label>
+      <input type="text" class="form-control" id="cPointStreet" name="cPointStreet" placeholder="Enter the street" ngModel="" #cPointStreet="ngModel" required>
+      <span class="help-block"
+            *ngIf="!cPointStreet.valid && cPointStreet.touched">
+            Enter a street address!!
+          </span>
+    </div>
+    <div class="form-group">
+    <label for="cPointCity">City</label>
+    <input type="text" class="form-control" id="cPointCity" name="cPointCity" placeholder="Enter the city" ngModel="" #cPointCity="ngModel" required>
+    <span class="help-block"
+          *ngIf="!cPointCity.valid && cPointCity.touched">
+            Enter a city name!!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="cPointState">State</label>
+      <input type="text" class="form-control" id="cPointState" name="cPointState" placeholder="Enter the State" ngModel="" #cPointState="ngModel" required>
+      <span class="help-block"
+            *ngIf="!cPointState.valid && cPointState.touched">
+            Enter a State name!!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="cPointPostCode">PostCode</label>
+      <input type="text" class="form-control" id="cPointPostCode" name="cPointPostCode" placeholder="Enter the PostCode" ngModel="" #cPointPostCode="ngModel" required>
+      <span class="help-block"
+            *ngIf="!cPointPostCode.valid && cPointPostCode.touched">
+            Enter a PostCode!!
+          </span>
+    </div>
+    <div class="form-group">
+      <label for="cPointCountry">Country</label>
+      <input type="text" class="form-control" id="cPointCountry" name="cPointCountry" placeholder="Enter the Country" ngModel="" #cPointCountry="ngModel" required>
+      <span class="help-block"
+            *ngIf="!cPointCountry.valid && cPointCountry.touched">
+            Enter a Country!!
+          </span>
+    </div>
+    <div *ngIf="errorFlag"
+         class="alert alert-danger">
+      {{errorMsg}}
+    </div>
+    <button type="button" class="btn btn-success btn-lg" (click)="createCollectionPoint()">OK <span class="glyphicon glyphicon-ok"></span></button>
+  </form>
+</div>
+</div>
+
+
+
+
+
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a href="profile.html">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>

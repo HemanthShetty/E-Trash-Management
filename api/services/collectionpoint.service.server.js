@@ -1,8 +1,8 @@
 module.exports = function(app,model) {
 
   app.get('/api/collectionpoint', findAllCollectionPoints);
+  app.post('/api/collectionpoint', createCollectionPoint);
   function findAllCollectionPoints(req, res) {
-    console.log("api hit");
     model.collectionPointModel.findAllCollectionPoints().then(function(data)
     {
       if(data)
@@ -17,8 +17,16 @@ module.exports = function(app,model) {
       res.json(err);
     });
   }
+  function createCollectionPoint(req, res) {
+    var cpoint = req.body;
+    model.collectionPointModel.createCollectionPoint(cpoint).then(function(data)
+    {
+      res.json(data);
+    },function(err){
+      res.json(null);
+    });
+  }
   /*
-  app.post('/api/user/:userId/website', createWebsite);
   app.get('/api/user/:userId/website', findAllWebsitesForUser);
   app.get('/api/website/:websiteId', findWebsiteById);
   app.put('/api/website/:websiteId', updateWebsite);

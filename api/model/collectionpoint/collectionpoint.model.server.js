@@ -7,7 +7,7 @@ var CollectionPointSchema = require('./collectionpoint.schema.server');
 var CollectionPointModel = mongoose.model('CollectionPointModel', CollectionPointSchema);
 
 CollectionPointModel.findAllCollectionPoints = findAllCollectionPoints;
-
+CollectionPointModel.createCollectionPoint=createCollectionPoint;
 
 module.exports = CollectionPointModel;
 
@@ -16,3 +16,6 @@ function findAllCollectionPoints() {
   return CollectionPointModel.find();
 }
 
+function createCollectionPoint(cpoint) {
+  return CollectionPointModel.create(cpoint);
+}

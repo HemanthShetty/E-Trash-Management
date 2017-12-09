@@ -345,7 +345,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n      <a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ]\"> <span class=\"pull-right glyphicon glyphicon-cog\"></span></a>\n    </li>\n  </ul>\n</div>\n\n\n\n\n\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n<!--\n<div class=\"container-fluid\">\n  <div class=\"container-fluid\">\n  <h3>Collection Points</h3>\n  <p class=\"pull-right\">\n    <a [routerLink]= \" [ '/user' , userId , 'cpoint' , 'new']\" class=\"navbar-link\">\n      <span class=\"glyphicon glyphicon-plus\"></span>\n    </a>\n  </p>\n  </div>\n  <div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n        <a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ]\"> <span class=\"pull-right glyphicon glyphicon-cog\"></span></a>\n      </li>\n    </ul>\n  </div>\n</div>\n\n-->\n\n<div class=\"etm-page-body\">\n<div class=\"container-fluid\">\n  <div class=\"row-fluid\">\n    <div class=\"span3\"><span class=\"h4 text-primary\">Collection Points</span> <p class=\"pull-right\">\n      <a [routerLink]= \" [ '/user' , userId , 'cpoint' , 'new']\" class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n    </div>\n  </div>\n  <div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n        <a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ]\"> <span class=\"pull-right glyphicon glyphicon-cog\"></span></a>\n      </li>\n    </ul>\n  </div>\n</div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -424,7 +424,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  collectionpoint-new works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n<div class=\"container-fluid\">\n  <form #f=\"ngForm\">\n    <div class=\"form-group\">\n      <label for=\"cPointName\">Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointName\" name=\"cPointName\" placeholder=\"Name\" ngModel=\"\" #cPointName=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointName.valid && cPointName.touched\">\n            Enter a valid collection point name!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointStreet\">Street</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointStreet\" name=\"cPointStreet\" placeholder=\"Enter the street\" ngModel=\"\" #cPointStreet=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointStreet.valid && cPointStreet.touched\">\n            Enter a street address!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n    <label for=\"cPointCity\">City</label>\n    <input type=\"text\" class=\"form-control\" id=\"cPointCity\" name=\"cPointCity\" placeholder=\"Enter the city\" ngModel=\"\" #cPointCity=\"ngModel\" required>\n    <span class=\"help-block\"\n          *ngIf=\"!cPointCity.valid && cPointCity.touched\">\n            Enter a city name!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointState\">State</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointState\" name=\"cPointState\" placeholder=\"Enter the State\" ngModel=\"\" #cPointState=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointState.valid && cPointState.touched\">\n            Enter a State name!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointPostCode\">PostCode</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointPostCode\" name=\"cPointPostCode\" placeholder=\"Enter the PostCode\" ngModel=\"\" #cPointPostCode=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointPostCode.valid && cPointPostCode.touched\">\n            Enter a PostCode!!\n          </span>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"cPointCountry\">Country</label>\n      <input type=\"text\" class=\"form-control\" id=\"cPointCountry\" name=\"cPointCountry\" placeholder=\"Enter the Country\" ngModel=\"\" #cPointCountry=\"ngModel\" required>\n      <span class=\"help-block\"\n            *ngIf=\"!cPointCountry.valid && cPointCountry.touched\">\n            Enter a Country!!\n          </span>\n    </div>\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      {{errorMsg}}\n    </div>\n    <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"createCollectionPoint()\">OK <span class=\"glyphicon glyphicon-ok\"></span></button>\n  </form>\n</div>\n</div>\n\n\n\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -433,6 +433,10 @@ module.exports = "<p>\n  collectionpoint-new works!\n</p>\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_cpoint_service_client__ = __webpack_require__("../../../../../src/app/services/cpoint.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_cpoint_model_client__ = __webpack_require__("../../../../../src/app/models/cpoint.model.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionpointNewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -444,22 +448,63 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
 var CollectionpointNewComponent = (function () {
-    function CollectionpointNewComponent() {
+    function CollectionpointNewComponent(collectionPointService, activatedRoute, router) {
+        this.collectionPointService = collectionPointService;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
     }
     CollectionpointNewComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            _this.userId = params['uid'];
+        });
+        this.cDetails = new __WEBPACK_IMPORTED_MODULE_4__models_cpoint_model_client__["a" /* CollectionPoint */]('', '', '', '', '', '', '');
+    };
+    CollectionpointNewComponent.prototype.createCollectionPoint = function () {
+        var _this = this;
+        if (this.websiteForm.valid) {
+            this.cDetails.name = this.websiteForm.value.cPointName;
+            this.cDetails.street = this.websiteForm.value.cPointStreet;
+            this.cDetails.city = this.websiteForm.value.cPointCity;
+            this.cDetails.state = this.websiteForm.value.cPointState;
+            this.cDetails.postCode = this.websiteForm.value.cPointPostCode;
+            this.cDetails.country = this.websiteForm.value.cPointCountry;
+            delete this.cDetails._id;
+            this.collectionPointService.createCollectionPoint(this.cDetails)
+                .subscribe(function (data) {
+                _this.router.navigate(['/user', _this.userId, 'cpoint']);
+            }, function (error) {
+                _this.errorMsg = 'Please Enter The Correct Values';
+                _this.errorFlag = true;
+            });
+        }
+        else {
+            this.errorMsg = 'Please Enter The Correct Values';
+            this.errorFlag = true;
+        }
     };
     return CollectionpointNewComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('f'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */]) === "function" && _a || Object)
+], CollectionpointNewComponent.prototype, "websiteForm", void 0);
 CollectionpointNewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'app-collectionpoint-new',
         template: __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _d || Object])
 ], CollectionpointNewComponent);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=collectionpoint-new.component.js.map
 
 /***/ }),
@@ -1002,6 +1047,28 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
+/***/ "../../../../../src/app/models/cpoint.model.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionPoint; });
+var CollectionPoint = (function () {
+    function CollectionPoint(_id, name, street, city, state, postCode, country) {
+        this._id = _id;
+        this.name = name;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.postCode = postCode;
+        this.country = country;
+    }
+    return CollectionPoint;
+}());
+
+//# sourceMappingURL=cpoint.model.client.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/models/user.model.client.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1051,7 +1118,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-//import {CollectionPoint} from '../models/cpoint.model.client';
 var CollectionPointService = (function () {
     function CollectionPointService(_http) {
         this._http = _http;
@@ -1059,6 +1125,12 @@ var CollectionPointService = (function () {
     }
     CollectionPointService.prototype.findCollectionPoints = function () {
         return this._http.get(this.baseUrl + '/api/collectionpoint')
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    CollectionPointService.prototype.createCollectionPoint = function (collectionPoint) {
+        return this._http.post(this.baseUrl + '/api/collectionpoint', collectionPoint)
             .map(function (res) {
             return res.json();
         });

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NgForm} from "@angular/forms";
+import {ActivatedRoute, Router} from "@angular/router";
+import {CollectionPointService} from "../../../services/cpoint.service.client";
+import {CollectionPoint} from "../../../models/cpoint.model.client";
 
 @Component({
   selector: 'app-collectionpoint-new',
@@ -7,9 +11,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollectionpointNewComponent implements OnInit {
 
-  constructor() { }
+  userId: String;
+  cDetails;
+  errorFlag: boolean;
+  errorMsg: String;
+  @ViewChild('f') websiteForm: NgForm;
+
+  constructor(private collectionPointService: CollectionPointService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.activatedRoute.params
+      .subscribe(
+        (params: any) => {
+          this.userId = params['uid'];
+        }
+      );
+    this.cDetails=new CollectionPoint('','','','','','','');
   }
+  createCollectionPoint() {
+    if (this.websiteForm.valid) {
+      this.cDetails.name = this.websiteForm.value.cPointName;
+      this.cDetails.street = this.websiteForm.value.cPointStreet;
+      this.cDetails.city = this.websiteForm.value.cPointCity;
+      this.cDetails.state = this.websiteForm.value.cPointState;
+      this.cDetails.postCode = this.websiteForm.value.cPointPostCode;
+      this.cDetails.country = this.websiteForm.value.cPointCountry;
 
+      delete this.cDetails._id;
+      this.collectionPointService.createCollectionPoint(this.cDetails)
+        .subscribe(
+          (data: any) => {
+            this.router.navigate(['/user', this.userId , 'cpoint' ]);
+          },
+          (error: any) => {
+            this.errorMsg = 'Please Enter The Correct Values';
+            this.errorFlag = true ;
+          }
+        );
+    } else {
+      this.errorMsg = 'Please Enter The Correct Values';
+      this.errorFlag = true ;
+    }
+  }
 }
