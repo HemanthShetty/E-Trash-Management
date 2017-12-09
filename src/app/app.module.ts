@@ -7,7 +7,6 @@ import {Routing} from './app.routing';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {TestService} from './services/test.service.client';
-import { CatalogComponent } from './components/catalog/catalog.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
@@ -20,6 +19,9 @@ import { CollectionpointEditComponent } from './components/collectionpoint/colle
 import { CollectionpointNewComponent } from './components/collectionpoint/collectionpoint-new/collectionpoint-new.component';
 import { CollectionpointListComponent } from './components/collectionpoint/collectionpoint-list/collectionpoint-list.component';
 import {CollectionPointService} from "./services/cpoint.service.client";
+import { CatalogListComponent } from './components/catalog/catalog-list/catalog-list.component';
+import { CatalogNewComponent } from './components/catalog/catalog-new/catalog-new.component';
+import { CatalogEditComponent } from './components/catalog/catalog-edit/catalog-edit.component';
 
 @NgModule({
   // Declare components here
@@ -29,12 +31,15 @@ import {CollectionPointService} from "./services/cpoint.service.client";
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    CatalogComponent,
+    CatalogListComponent,
     ShipmentComponent,
     PaymentComponent,
     CollectionpointEditComponent,
     CollectionpointNewComponent,
-    CollectionpointListComponent
+    CollectionpointListComponent,
+    CatalogListComponent,
+    CatalogNewComponent,
+    CatalogEditComponent
   ],
   imports: [
     BrowserModule,
