@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
 import {CollectionPointService} from '../../../services/cpoint.service.client';
 import {ActivatedRoute} from '@angular/router';
 
@@ -15,8 +15,8 @@ export class CollectionpointListComponent implements OnInit {
   collectionPoints = [{}];
 
   constructor(private collectionPointService: CollectionPointService, private activatedRoute: ActivatedRoute) { }
-
   ngOnInit() {
+
     this.activatedRoute.params
       .subscribe(
         (params: any) => {
@@ -33,4 +33,28 @@ export class CollectionpointListComponent implements OnInit {
         }
       );
   }
+  delete(cPointId)
+  {
+    this.collectionPointService.deleteCollectionPoint(cPointId)
+      .subscribe(
+        (data: any) => {
+          if (data.success) {
+            for(let i=0;i<this.collectionPoints.length;i++)
+            {
+                if(this.collectionPoints[i]['_id']==cPointId)
+                {
+                  this.collectionPoints.splice(i,1);
+                }
+            }
+          } else {
+            alert('Error deleting the collection point');
+          }
+        },
+        (error: any) => {
+        }
+      );
+  }
+
+
+
 }

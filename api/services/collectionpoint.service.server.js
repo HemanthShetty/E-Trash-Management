@@ -2,6 +2,7 @@ module.exports = function(app,model) {
 
   app.get('/api/collectionpoint', findAllCollectionPoints);
   app.post('/api/collectionpoint', createCollectionPoint);
+  app.delete('/api/collectionpoint/:cPointId', deleteCollectionPoint);
   function findAllCollectionPoints(req, res) {
     model.collectionPointModel.findAllCollectionPoints().then(function(data)
     {
@@ -24,6 +25,12 @@ module.exports = function(app,model) {
       res.json(data);
     },function(err){
       res.json(null);
+    });
+  }
+  function deleteCollectionPoint(req,res){
+    var cPointId=req.params['cPointId'];
+    model.collectionPointModel.deleteCollectionPoint(cPointId).then(function(data){
+      res.json({success:true});
     });
   }
   /*

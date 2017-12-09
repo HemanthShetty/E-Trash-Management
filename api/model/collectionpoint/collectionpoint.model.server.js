@@ -8,6 +8,7 @@ var CollectionPointModel = mongoose.model('CollectionPointModel', CollectionPoin
 
 CollectionPointModel.findAllCollectionPoints = findAllCollectionPoints;
 CollectionPointModel.createCollectionPoint=createCollectionPoint;
+CollectionPointModel.deleteCollectionPoint=deleteCollectionPoint;
 
 module.exports = CollectionPointModel;
 
@@ -18,4 +19,8 @@ function findAllCollectionPoints() {
 
 function createCollectionPoint(cpoint) {
   return CollectionPointModel.create(cpoint);
+}
+
+function deleteCollectionPoint(collectionPointId) {
+  return CollectionPointModel.deleteOne({_id:collectionPointId});
 }

@@ -23,6 +23,14 @@ export class CollectionPointService {
       );
   }
 
+  deleteCollectionPoint(cPointId) {
+    return this._http.delete(this.baseUrl + '/api/collectionpoint/' + cPointId)
+      .map((res: Response) => {
+          return res.json();
+        }
+      );
+  }
+
   createCollectionPoint(collectionPoint: CollectionPoint) {
     return this._http.post(this.baseUrl + '/api/collectionpoint', collectionPoint)
       .map((res: Response) => {
