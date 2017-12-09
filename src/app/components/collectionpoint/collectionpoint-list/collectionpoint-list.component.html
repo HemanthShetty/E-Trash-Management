@@ -1,3 +1,78 @@
-<p>
-  collectionpoint-list works!
-</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row">
+      <!--heading on the nav bar-->
+      <div class="col-sm-10 col-md-6 col-lg-4 col-xs-10">
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user']">
+            <b>Home</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'sell']">
+            <b>Sell</b>
+          </a>
+        </p>
+
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'payments']" >
+            <b>Payments</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'pickup']" >
+            <b>Pickup</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
+            <b>Collection Points</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
+            <b>Catalog</b>
+          </a>
+        </p>
+        <!--tick mark-->
+
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div class="container-fluid" *ngFor="let cpoint of collectionPoints">
+  <ul class="list-group">
+    <li class="list-group-item"><a [routerLink]= " [ '/user' , userId , 'cpoint' , cpoint._id ,'details']"><b>{{cpoint.name}}</b></a>
+      <a [routerLink]= " [ '/user' , userId , 'cpoint' , cpoint._id ]"> <span class="pull-right glyphicon glyphicon-cog"></span></a>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a href="profile.html">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
