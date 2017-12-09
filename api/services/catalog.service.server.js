@@ -1,6 +1,6 @@
 module.exports = function(app,model) {
 
-  app.get('/api/website/:websiteId/page', findAllItems);
+  app.get('/api/catalog', findAllItems);
 
   function findAllItems(req, res) {
     model.catalogModel.findAllItems().then(function(data)
