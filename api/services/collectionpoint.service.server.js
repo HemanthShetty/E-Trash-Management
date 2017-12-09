@@ -1,5 +1,22 @@
 module.exports = function(app,model) {
-/*
+
+  app.get('/api/collectionpoint', findAllCollectionPoints);
+  function findAllCollectionPoints(req, res) {
+    model.collectionPointModel.findAllCollectionPoints().then(function(data)
+    {
+      if(data)
+      {
+        res.json(data);
+      }
+      else
+      {
+        res.json([{}]);
+      }
+    },function(err){
+      res.json(err);
+    });
+  }
+  /*
   app.post('/api/user/:userId/website', createWebsite);
   app.get('/api/user/:userId/website', findAllWebsitesForUser);
   app.get('/api/website/:websiteId', findWebsiteById);

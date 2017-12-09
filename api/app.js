@@ -3,7 +3,7 @@ module.exports = function(app) {
   var db = require('./model/models.server');
   require('./test-mongodb/app')(app);
   require("./services/user.service.server.js")(app,model);
-  require("./services/website.service.server.js")(app,model);
+  require("./services/collectionpoint.service.server.js")(app,model);
   require("./services/page.service.server.js")(app,model);
   require("./services/widget.service.server.js")(app,model);
 };
