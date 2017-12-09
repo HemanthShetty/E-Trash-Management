@@ -3,23 +3,29 @@
  */
 
 var mongoose = require('mongoose');
-var PageSchema = require('./page.schema.server');
-var PageModel = mongoose.model('PageModel', PageSchema);
+var CatalogSchema = require('./catalog.schema.server');
+var CatalogModel = mongoose.model('CatalogModel', CatalogSchema);
 
+
+CatalogModel.findAllItems = findAllItems;
+/*
 PageModel.createPage = createPage;
-PageModel.findAllPagesForWebsite = findAllPagesForWebsite;
 PageModel.findPageById = findPageById;
 PageModel.updatePage = updatePage;
 PageModel.deletePage = deletePage;
+*/
 
-module.exports = PageModel;
+module.exports = CatalogModel;
 
-function createPage(page) {
-  return PageModel.create(page);
+
+function findAllItems() {
+  return CatalogModel.find();
 }
 
-function findAllPagesForWebsite(websiteId) {
-  return PageModel.find({websiteId:websiteId});
+
+/*
+function createPage(page) {
+  return PageModel.create(page);
 }
 
 function findPageById(pageId) {
@@ -33,3 +39,5 @@ function updatePage(page) {
 function deletePage(pageId) {
   return PageModel.deleteOne({_id:pageId});
 }
+
+*/

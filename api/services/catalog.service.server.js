@@ -1,5 +1,23 @@
 module.exports = function(app,model) {
-/*
+
+  app.get('/api/website/:websiteId/page', findAllItems);
+
+  function findAllItems(req, res) {
+    model.catalogModel.findAllItems().then(function(data)
+    {
+      if(data)
+      {
+        res.json(data);
+      }
+      else
+      {
+        res.json([{}]);
+      }
+    },function(err){
+      res.json(err);
+    });
+  }
+  /*
   app.post('/api/website/:websiteId/page', createPage);
   app.get('/api/website/:websiteId/page', findAllPagesForWebsite);
   app.get('/api/page/:pageId', findPageById);

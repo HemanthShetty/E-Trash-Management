@@ -5,15 +5,13 @@
 
 var userModel = require('./user/user.model.server');
 var collectionPointModel = require('./collectionpoint/collectionpoint.model.server');
-var pageModel = require('./page/page.model.server');
-var widgetModel = require('./widget/widget.model.server');
+var catalogModel = require('./catalog/catalog.model.server');
 
 
 var model = {
   userModel: userModel,
   collectionPointModel: collectionPointModel,
-  pageModel: pageModel,
-  widgetModel: widgetModel
+  catalogModel: catalogModel
 };
 
 
