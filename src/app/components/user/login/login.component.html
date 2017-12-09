@@ -18,40 +18,19 @@
       <h3 class="panel-title">Login</h3>
     </div>
     <div class="panel-body">
-  <form (ngSubmit)="login()" #f="ngForm">
-
-    <input
-      placeholder="username"
-      name="username"
-      type="text"
-      class="form-control"
-      ngModel
-      required
-      #username= "ngModel"/>
-    <span class="help-block" *ngIf="!username.valid && username.touched">
-      Please enter username!
-   </span>
-
-
-    <input
-      placeholder="password"
-      name="password"
-      type="password"
-      class="form-control"
-      ngModel
-      required
-      #password = "ngModel"/>
-    <span class="help-block" *ngIf="!password.valid && password.touched">
-      Please enter Password!
-   </span>
-
-    <button class="btn btn-primary btn-block"
-            type="submit"
-            [disabled]= "!f.valid">Login</button>
-
-    <button class="btn btn-success btn-block" routerLink="/register">Register</button>
-  </form>
+      <input placeholder="username"
+             [(ngModel)]="username"
+             type="text"
+             class="form-control"/>
+      <input placeholder="password"
+             [(ngModel)]="password"
+             type="password"
+             class="form-control"/>
+      <div *ngIf="isInvalid"
+           class="alert alert-danger">
+        {{notificationMessage}}
+      </div>
+      <a class="btn btn-primary btn-block" (click)="login(username,password)">Login</a>
+      <a class="btn btn-success btn-block" (click)="register()">Register</a>
     </div>
-
-
 </div>

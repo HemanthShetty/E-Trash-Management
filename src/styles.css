@@ -59,3 +59,14 @@ input{
 
 }
 
+
+.navbar-default .navbar-text a,.navbar-default .navbar-header a{
+  color: white;
+}
+
+
+
+
+.navbar-default{
+  background-color: #0083c3;
+}
