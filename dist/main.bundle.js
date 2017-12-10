@@ -100,6 +100,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_catalog_service_client__ = __webpack_require__("../../../../../src/app/services/catalog.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_sell_sell_component__ = __webpack_require__("../../../../../src/app/components/sell/sell.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_googlemaps_service_client__ = __webpack_require__("../../../../../src/app/services/googlemaps.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_dropoff_dropoff_new_dropoff_new_component__ = __webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -107,6 +108,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -156,7 +158,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_20__components_catalog_catalog_list_catalog_list_component__["a" /* CatalogListComponent */],
             __WEBPACK_IMPORTED_MODULE_21__components_catalog_catalog_new_catalog_new_component__["a" /* CatalogNewComponent */],
             __WEBPACK_IMPORTED_MODULE_22__components_catalog_catalog_edit_catalog_edit_component__["a" /* CatalogEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_sell_sell_component__["a" /* SellComponent */]
+            __WEBPACK_IMPORTED_MODULE_24__components_sell_sell_component__["a" /* SellComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__components_dropoff_dropoff_new_dropoff_new_component__["a" /* DropoffNewComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -194,10 +197,12 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_catalog_catalog_new_catalog_new_component__ = __webpack_require__("../../../../../src/app/components/catalog/catalog-new/catalog-new.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_catalog_catalog_edit_catalog_edit_component__ = __webpack_require__("../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_sell_sell_component__ = __webpack_require__("../../../../../src/app/components/sell/sell.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_dropoff_dropoff_new_dropoff_new_component__ = __webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Routing; });
 /**
  * Created by sesha on 7/26/17.
  */
+
 
 
 
@@ -223,6 +228,7 @@ var APP_ROUTES = [
     { path: 'user/:uid/catalog/new', component: __WEBPACK_IMPORTED_MODULE_9__components_catalog_catalog_new_catalog_new_component__["a" /* CatalogNewComponent */] },
     { path: 'user/:uid/catalog/:catalogId', component: __WEBPACK_IMPORTED_MODULE_10__components_catalog_catalog_edit_catalog_edit_component__["a" /* CatalogEditComponent */] },
     { path: 'user/:uid/sell', component: __WEBPACK_IMPORTED_MODULE_11__components_sell_sell_component__["a" /* SellComponent */] },
+    { path: 'user/:uid/sell/:cid/dropoff/new', component: __WEBPACK_IMPORTED_MODULE_12__components_dropoff_dropoff_new_dropoff_new_component__["a" /* DropoffNewComponent */] }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forRoot(APP_ROUTES);
@@ -816,6 +822,85 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><h4 class=\"text-primary\">Select The Items You Want To Drop Off</h4><br/>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let item of catalog\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\">\n          <div class=\"row\">\n            <div class=\"col-md-4 col-lg-4 col-xs-2\">\n              <img class=\"etm-catalog-image\" src={{item.imageUrl}} alt=\"\" />\n            </div>\n            <div class=\"col-md-8 col-lg-8 col-xs-10\">\n              <a><b>{{item.name}}</b></a>\n              <span>Description:{{item.description}}</span><br/>\n              <span>Estimated Price:{{item.price}}</span>\n              <input type=\"number\" name=\"quantity\" min=\"0\" (input)=\"item.quantity = $event.target.value\">\n            </div>\n          </div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__ = __webpack_require__("../../../../../src/app/services/catalog.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropoffNewComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DropoffNewComponent = (function () {
+    function DropoffNewComponent(catalogService, activatedRoute) {
+        this.catalogService = catalogService;
+        this.activatedRoute = activatedRoute;
+        this.catalog = [{}];
+    }
+    DropoffNewComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            _this.userId = params['userId'];
+        });
+        this.catalogService.getItems()
+            .subscribe(function (data) {
+            _this.catalog = data;
+        }, function (error) {
+        });
+    };
+    return DropoffNewComponent;
+}());
+DropoffNewComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-dropoff-new',
+        template: __webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object])
+], DropoffNewComponent);
+
+var _a, _b;
+//# sourceMappingURL=dropoff-new.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/home/home.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -973,6 +1058,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__ = __webpack_require__("../../../../../src/app/services/googlemaps.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__ = __webpack_require__("../../../../../src/app/services/cpoint.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SellComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -989,8 +1075,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SellComponent = (function () {
-    function SellComponent(mapsAPILoader, ngZone, mapsService, sharedService, collectionPointService) {
+    function SellComponent(activatedRoute, router, mapsAPILoader, ngZone, mapsService, sharedService, collectionPointService) {
+        this.activatedRoute = activatedRoute;
+        this.router = router;
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
         this.mapsService = mapsService;
@@ -1011,6 +1100,10 @@ var SellComponent = (function () {
         //set current position
         this.setCurrentPosition();
         this.populateCollectionPoints();
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            _this.userId = params['uid'];
+        });
         //load Places Autocomplete
         this.mapsAPILoader.load().then(function () {
             var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {
@@ -1069,8 +1162,8 @@ var SellComponent = (function () {
         this.selectCollectionPointName = collectionPointLatLong.name;
         this.selected = true;
     };
-    SellComponent.prototype.fired = function () {
-        console.log("fired");
+    SellComponent.prototype.createDropOff = function () {
+        this.router.navigate(['/user', this.userId, 'sell', this.selectCollectionPoint, 'dropoff', 'new']);
     };
     return SellComponent;
 }());
@@ -1084,10 +1177,10 @@ SellComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/sell/sell.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/sell/sell.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _h || Object])
 ], SellComponent);
 
-var _a, _b, _c, _d, _e, _f;
+var _a, _b, _c, _d, _e, _f, _g, _h;
 //# sourceMappingURL=sell.component.js.map
 
 /***/ }),

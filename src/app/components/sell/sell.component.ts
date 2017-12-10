@@ -7,6 +7,7 @@ import {SharedService} from "../../services/shared.service.client";
 import {CollectionPointService} from "../../services/cpoint.service.client";
 import {CollectionPoint} from "../../models/cpoint.model.client";
 import {Observable} from "rxjs/Observable";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-sell',
@@ -25,12 +26,13 @@ export class SellComponent implements OnInit {
   selectCollectionPoint;
   selected=false;
   selectCollectionPointName: String;
+  userId;
 
 
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
-  constructor(private mapsAPILoader: MapsAPILoader,
+  constructor(private activatedRoute:ActivatedRoute,private router:Router,private mapsAPILoader: MapsAPILoader,
               private ngZone: NgZone, private mapsService: GoogleMapsService, private sharedService:SharedService,private collectionPointService: CollectionPointService) { }
 
 
@@ -41,12 +43,19 @@ export class SellComponent implements OnInit {
     this.latitude = 39.8282;
     this.longitude = -98.5795;
 
+
     //create search FormControl
     this.searchControl = new FormControl();
 
     //set current position
     this.setCurrentPosition();
     this.populateCollectionPoints();
+    this.activatedRoute.params
+      .subscribe(
+        (params: any) => {
+          this.userId = params['uid'];
+        }
+      );
 
 
     //load Places Autocomplete
@@ -126,8 +135,9 @@ export class SellComponent implements OnInit {
     this.selected=true;
   }
 
-  fired()
+  createDropOff()
   {
-    console.log("fired");
+    this.router.navigate(['/user', this.userId , 'sell' ,this.selectCollectionPoint,'dropoff','new']);
   }
+
 }
