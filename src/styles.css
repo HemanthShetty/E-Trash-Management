@@ -78,7 +78,10 @@ agm-map {
 }
 
 
-
+a.disabled {
+  pointer-events: none;
+  cursor:default;
+}
 
 .navbar-default{
   background-color: #0083c3;

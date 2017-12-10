@@ -65,12 +65,16 @@
     <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
   </div>
   <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-    <agm-marker [latitude]="latitude" [longitude]="longitude" (markerClick)="updateDiv(latitude,longitude)"></agm-marker>
+    <agm-marker [latitude]="latitude" [longitude]="longitude" ></agm-marker>
     <span *ngFor="let cpointLatLong of latLongs">
     <agm-marker [latitude]="cpointLatLong.lat" [longitude]="cpointLatLong.lng" (markerClick)="updateDiv(cpointLatLong)" [iconUrl]="'assets/images/map-localization.png'"></agm-marker>
     </span>
   </agm-map>
 </div>
+  <div class="container-fluid">
+    <h3>YOUR SELECTION : {{this.selectCollectionPointName}}</h3>
+    <button [disabled]="!selected" class="pull-right btn btn-primary"  (click)="createDropOff()">Next &raquo;</button>
+  </div>
 </div>
 
 

@@ -23,7 +23,7 @@ export class SellComponent implements OnInit {
   collectionPoints :CollectionPoint[];
   latLongs = [{}];
   selectCollectionPoint;
-  select:boolean;
+  selected=false;
   selectCollectionPointName: String;
 
 
@@ -123,6 +123,11 @@ export class SellComponent implements OnInit {
   {
     this.selectCollectionPoint=collectionPointLatLong.id;
     this.selectCollectionPointName=collectionPointLatLong.name;
+    this.selected=true;
   }
 
+  fired()
+  {
+    console.log("fired");
+  }
 }
