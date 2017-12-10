@@ -22,6 +22,9 @@ export class SellComponent implements OnInit {
   userIdentity;
   collectionPoints :CollectionPoint[];
   latLongs = [{}];
+  selectCollectionPoint;
+  select:boolean;
+  selectCollectionPointName: String;
 
 
   @ViewChild("search")
@@ -93,7 +96,8 @@ export class SellComponent implements OnInit {
         (data: any) => {
           this.latLongs[i]['lat'] = data.results[0].geometry.location.lat;
           this.latLongs[i]['lng'] = data.results[0].geometry.location.lng;
-          this.latLongs[i]['id'] = this.collectionPoints[index]._id;
+          this.latLongs[i]['id'] = this.collectionPoints[i]._id;
+          this.latLongs[i]['name']= this.collectionPoints[i].name;
         },
         (error: any) => {
 
@@ -101,35 +105,6 @@ export class SellComponent implements OnInit {
       );
   }
 
-
-
-  /*
-  private getCollectionPoints()
-  {
-    this.collectionPointService.findCollectionPoints().subscribe(
-      (data: any) => {
-        this.collectionPoints=data;
-        for(let i=0;i<this.collectionPoints.length;i++)
-        {
-          this.mapsService.findLatLong(this.collectionPoints[i].street+','+this.collectionPoints[i].city+','+this.collectionPoints[i].state+' '+this.collectionPoints[i].postCode)
-            .subscribe(
-              (data: any) => {
-                this.latLongs[i]['lat'] = data.results[0].geometry.location.lat;
-                this.latLongs[i]['lng'] = data.results[0].geometry.location.lng;
-                this.latLongs[i]['id'] = this.collectionPoints[i]._id;
-              },
-              (error: any) => {
-
-              }
-            );
-        }
-      },
-      (error: any) => {
-
-      }
-    );
-  }
-  */
   private setCurrentPosition() {
     this.mapsService.findLatLong(this.userIdentity.address)
       .subscribe(
@@ -144,9 +119,10 @@ export class SellComponent implements OnInit {
       );
   }
 
-  updateDiv(lat,long)
+  updateDiv(collectionPointLatLong)
   {
-    console.log('update called'+lat+long);
+    this.selectCollectionPoint=collectionPointLatLong.id;
+    this.selectCollectionPointName=collectionPointLatLong.name;
   }
 
 }

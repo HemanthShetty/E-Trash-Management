@@ -60,13 +60,15 @@
 
 <div class="etm-page-body">
   <div class="container-fluid">
-  <h1>Google Maps Places Autocomplete</h1>
+  <h1>Click On The Collection Center Where You Want to Drop Off Your E-Waste</h1>
   <div class="form-group">
     <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
   </div>
   <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
     <agm-marker [latitude]="latitude" [longitude]="longitude" (markerClick)="updateDiv(latitude,longitude)"></agm-marker>
-    <agm-marker [latitude]="latitude+0.05" [longitude]="longitude" (markerClick)="updateDiv(latitude,longitude)" [iconUrl]="'assets/images/map-localization.png'"></agm-marker>
+    <span *ngFor="let cpointLatLong of latLongs">
+    <agm-marker [latitude]="cpointLatLong.lat" [longitude]="cpointLatLong.lng" (markerClick)="updateDiv(cpointLatLong)" [iconUrl]="'assets/images/map-localization.png'"></agm-marker>
+    </span>
   </agm-map>
 </div>
 </div>
