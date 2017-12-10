@@ -30,12 +30,12 @@ export class CatalogNewComponent implements OnInit {
   }
   createCatalogItem() {
     if (this.websiteForm.valid) {
-      this.cDetails.name = this.websiteForm.value.cPointName;
-      this.cDetails.street = this.websiteForm.value.cPointStreet;
-      this.cDetails.city = this.websiteForm.value.cPointCity;
-      this.cDetails.state = this.websiteForm.value.cPointState;
-      this.cDetails.postCode = this.websiteForm.value.cPointPostCode;
-      this.cDetails.country = this.websiteForm.value.cPointCountry;
+      this.cDetails.name = this.websiteForm.value.catalogName;
+      this.cDetails.description = this.websiteForm.value.catalogDescription;
+      this.cDetails.price = this.websiteForm.value.catalogPrice;
+      this.cDetails.quantity = this.websiteForm.value.catalogQuantity;
+      this.cDetails.imageUrl = this.websiteForm.value.catalogUrl;
+      console.log(JSON.stringify(this.cDetails));
 
       delete this.cDetails._id;
       this.catalogService.createCatalogItem(this.cDetails)
@@ -55,3 +55,5 @@ export class CatalogNewComponent implements OnInit {
   }
 
 }
+
+
