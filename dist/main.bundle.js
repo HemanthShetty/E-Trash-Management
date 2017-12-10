@@ -843,7 +843,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><h4 class=\"text-primary\">Select The Items You Want To Drop Off</h4><br/>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let item of catalog\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\">\n          <div class=\"row\">\n            <div class=\"col-md-4 col-lg-4 col-xs-2\">\n              <img class=\"etm-catalog-image\" src={{item.imageUrl}} alt=\"\" />\n            </div>\n            <div class=\"col-md-8 col-lg-8 col-xs-10\">\n              <a><b>{{item.name}}</b></a>\n              <span>Description:{{item.description}}</span><br/>\n              <span>Estimated Price:{{item.price}}</span>\n              <input type=\"number\" name=\"quantity\" min=\"0\" (input)=\"item.quantity = $event.target.value\">\n            </div>\n          </div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><h4 class=\"text-primary\">Select The Items You Want To Drop Off</h4><br/>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let item of catalog\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\">\n          <div class=\"row\">\n            <div class=\"col-md-4 col-lg-4 col-xs-2\">\n              <img class=\"etm-catalog-image\" src={{item.imageUrl}} alt=\"\" />\n            </div>\n            <div class=\"col-md-8 col-lg-8 col-xs-10\">\n              <a><b>{{item.name}}</b></a>\n              <span>Description:{{item.description}}</span><br/>\n              <span>Estimated Price:{{item.price}}</span>\n              <input type=\"number\" name=\"quantity\" min=\"0\" (input)=\"item.quantity = $event.target.value\">\n            </div>\n          </div>\n        </li>\n      </ul>\n    </div>\n    <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"createDropOff()\">OK <span class=\"glyphicon glyphicon-ok\"></span></button>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
 
 /***/ }),
 
@@ -854,6 +854,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__ = __webpack_require__("../../../../../src/app/services/catalog.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_dropOff_model_client__ = __webpack_require__("../../../../../src/app/models/dropOff.model.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropoffNewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -867,6 +868,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DropoffNewComponent = (function () {
     function DropoffNewComponent(catalogService, activatedRoute) {
         this.catalogService = catalogService;
@@ -877,13 +879,23 @@ var DropoffNewComponent = (function () {
         var _this = this;
         this.activatedRoute.params
             .subscribe(function (params) {
-            _this.userId = params['userId'];
+            _this.userId = params['uid'];
+        });
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            _this.collectionPointId = params['cid'];
         });
         this.catalogService.getItems()
             .subscribe(function (data) {
             _this.catalog = data;
         }, function (error) {
         });
+    };
+    DropoffNewComponent.prototype.createDropOff = function () {
+        for (var i = 0; i < this.catalog.length; i++) {
+            this.dropOffs[i] = new __WEBPACK_IMPORTED_MODULE_3__models_dropOff_model_client__["a" /* DropOff */]('', this.userId, this.collectionPointId, this.catalog[i]['_id'], this.catalog[i]['quantity'], '');
+            delete this.dropOffs[i]._id;
+        }
     };
     return DropoffNewComponent;
 }());
@@ -1641,6 +1653,30 @@ var CollectionPoint = (function () {
 }());
 
 //# sourceMappingURL=cpoint.model.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/models/dropOff.model.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropOff; });
+/**
+ * Created by hemanthshetty on 12/10/17.
+ */
+var DropOff = (function () {
+    function DropOff(_id, customerId, collectionPointId, itemId, quantity, status) {
+        this._id = _id;
+        this.customerId = customerId;
+        this.collectionPointId = collectionPointId;
+        this.itemId = itemId;
+        this.quantity = quantity;
+        this.status = status;
+    }
+    return DropOff;
+}());
+
+//# sourceMappingURL=dropOff.model.client.js.map
 
 /***/ }),
 
