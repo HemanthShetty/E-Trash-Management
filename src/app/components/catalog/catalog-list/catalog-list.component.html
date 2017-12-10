@@ -67,8 +67,19 @@
     </div>
     <div class="container-fluid" *ngFor="let item of catalog">
       <ul class="list-group">
-        <li class="list-group-item"><a><b>{{item.name}}</b></a>
-          <a [routerLink]= " [ '/user' , userId , 'catalog' , item._id ,'edit']"> <span class="pull-right glyphicon glyphicon-trash"></span></a>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-4 col-lg-4 col-xs-2">
+              <img class="etm-catalog-image" src={{item.imageUrl}} alt="" />
+            </div>
+            <div class="col-md-8 col-lg-8 col-xs-10">
+              <a><b>{{item.name}}</b></a>
+              <a [routerLink]= " [ '/user' , userId , 'catalog' , item._id ,'edit']"> <span class="pull-right glyphicon glyphicon-trash"></span></a><br/>
+              <span>Description:{{item.description}}</span><br/>
+              <span>Price:{{item.price}}</span>
+              <span>Quantity:{{item.price}}</span>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
