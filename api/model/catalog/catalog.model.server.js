@@ -9,12 +9,11 @@ var CatalogModel = mongoose.model('CatalogModel', CatalogSchema);
 
 CatalogModel.findAllItems = findAllItems;
 CatalogModel.createCatalogItem = createCatalogItem;
-/*
-PageModel.createPage = createPage;
-PageModel.findPageById = findPageById;
-PageModel.updatePage = updatePage;
-PageModel.deletePage = deletePage;
-*/
+CatalogModel.findCatalogItemById = findCatalogItemById;
+CatalogModel.updateCatalogItem = updateCatalogItem;
+CatalogModel.deleteCatalogItem=deleteCatalogItem;
+
+
 
 module.exports = CatalogModel;
 
@@ -27,22 +26,17 @@ function createCatalogItem(item) {
   return CatalogModel.create(item);
 }
 
-
-/*
-function createPage(page) {
-  return PageModel.create(page);
+function findCatalogItemById(itemId) {
+  return CatalogModel.findOne({_id:itemId});
 }
 
-function findPageById(pageId) {
-  return PageModel.findOne({_id:pageId});
+function updateCatalogItem(item) {
+  return CatalogModel.updateOne({_id:item._id}, item);
 }
 
-function updatePage(page) {
-  return PageModel.updateOne({_id:page._id}, page);
+function deleteCatalogItem(itemId) {
+  return CatalogModel.deleteOne({_id:itemId});
 }
 
-function deletePage(pageId) {
-  return PageModel.deleteOne({_id:pageId});
-}
 
-*/
+

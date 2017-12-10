@@ -35,8 +35,6 @@ export class CatalogNewComponent implements OnInit {
       this.cDetails.price = this.websiteForm.value.catalogPrice;
       this.cDetails.quantity = this.websiteForm.value.catalogQuantity;
       this.cDetails.imageUrl = this.websiteForm.value.catalogUrl;
-      console.log(JSON.stringify(this.cDetails));
-
       delete this.cDetails._id;
       this.catalogService.createCatalogItem(this.cDetails)
         .subscribe(

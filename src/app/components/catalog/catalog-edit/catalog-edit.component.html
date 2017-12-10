@@ -1,3 +1,132 @@
-<p>
-  catalog-edit works!
-</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row">
+      <!--heading on the nav bar-->
+      <div class="col-sm-10 col-md-10 col-lg-10 col-xs-10">
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user']">
+            <b>Home</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'sell']">
+            <b>Sell</b>
+          </a>
+        </p>
+
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'payments']" >
+            <b>Payments</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'pickup']" >
+            <b>Pickup</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
+            <b>Collection Points</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'catalog']" >
+            <b>Catalog</b>
+          </a>
+        </p>
+        <!--tick mark-->
+
+
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
+        <button type="button" class="btn btn-default btn-sm" (click)="logout()">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div class="etm-page-body">
+  <div class="container-fluid">
+    <form #f="ngForm">
+      <div class="form-group">
+        <label for="catalogName">Name</label>
+        <input type="text" class="form-control" id="catalogName" name="catalogName" placeholder="Name" [(ngModel)]=this.catalogItem.name #catalogName="ngModel" required>
+        <span class="help-block"
+              *ngIf="!catalogName.valid && catalogName.touched">
+            Enter a valid name for catalog Item!!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="catalogDescription">Description</label>
+        <textarea rows="5" type="text" class="form-control" id="catalogDescription" name="catalogDescription" placeholder="Enter the description" [(ngModel)]=this.catalogItem.description #catalogDescription="ngModel" required></textarea>
+        <span class="help-block"
+              *ngIf="!catalogDescription.valid && catalogDescription.touched">
+            Enter a description!!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="catalogPrice">Price</label>
+        <input type="text" class="form-control" id="catalogPrice" name="catalogPrice" placeholder="Enter the price" [(ngModel)]=this.catalogItem.price #catalogPrice="ngModel" required>
+        <span class="help-block"
+              *ngIf="!catalogPrice.valid && catalogPrice.touched">
+            Enter a price!!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="catalogQuantity">Quantity</label>
+        <input type="text" class="form-control" id="catalogQuantity" name="catalogQuantity" placeholder="Enter the Quantity" [(ngModel)]=this.catalogItem.quantity #catalogQuantity="ngModel" required>
+        <span class="help-block"
+              *ngIf="!catalogQuantity.valid && catalogQuantity.touched">
+            Enter a quantity!!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="catalogUrl">Image Url</label>
+        <input type="text" class="form-control" id="catalogUrl" name="catalogUrl" placeholder="Enter the Url" [(ngModel)]=this.catalogItem.imageUrl #catalogUrl="ngModel" required>
+        <span class="help-block"
+              *ngIf="!catalogUrl.valid && catalogUrl.touched">
+            Enter a url for Catalog Item Image!!
+          </span>
+      </div>
+      <div *ngIf="errorFlag"
+           class="alert alert-danger">
+        {{errorMsg}}
+      </div>
+      <div class="form-group">
+      <button type="button" class="btn btn-primary btn-block" (click)="updateCatalogItem()">Update</button>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-danger btn-block" (click)="deleteCatalogItem()">Delete</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a href="profile.html">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+

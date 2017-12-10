@@ -241,7 +241,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  catalog-edit works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <form #f=\"ngForm\">\n      <div class=\"form-group\">\n        <label for=\"catalogName\">Name</label>\n        <input type=\"text\" class=\"form-control\" id=\"catalogName\" name=\"catalogName\" placeholder=\"Name\" [(ngModel)]=this.catalogItem.name #catalogName=\"ngModel\" required>\n        <span class=\"help-block\"\n              *ngIf=\"!catalogName.valid && catalogName.touched\">\n            Enter a valid name for catalog Item!!\n          </span>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"catalogDescription\">Description</label>\n        <textarea rows=\"5\" type=\"text\" class=\"form-control\" id=\"catalogDescription\" name=\"catalogDescription\" placeholder=\"Enter the description\" [(ngModel)]=this.catalogItem.description #catalogDescription=\"ngModel\" required></textarea>\n        <span class=\"help-block\"\n              *ngIf=\"!catalogDescription.valid && catalogDescription.touched\">\n            Enter a description!!\n          </span>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"catalogPrice\">Price</label>\n        <input type=\"text\" class=\"form-control\" id=\"catalogPrice\" name=\"catalogPrice\" placeholder=\"Enter the price\" [(ngModel)]=this.catalogItem.price #catalogPrice=\"ngModel\" required>\n        <span class=\"help-block\"\n              *ngIf=\"!catalogPrice.valid && catalogPrice.touched\">\n            Enter a price!!\n          </span>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"catalogQuantity\">Quantity</label>\n        <input type=\"text\" class=\"form-control\" id=\"catalogQuantity\" name=\"catalogQuantity\" placeholder=\"Enter the Quantity\" [(ngModel)]=this.catalogItem.quantity #catalogQuantity=\"ngModel\" required>\n        <span class=\"help-block\"\n              *ngIf=\"!catalogQuantity.valid && catalogQuantity.touched\">\n            Enter a quantity!!\n          </span>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"catalogUrl\">Image Url</label>\n        <input type=\"text\" class=\"form-control\" id=\"catalogUrl\" name=\"catalogUrl\" placeholder=\"Enter the Url\" [(ngModel)]=this.catalogItem.imageUrl #catalogUrl=\"ngModel\" required>\n        <span class=\"help-block\"\n              *ngIf=\"!catalogUrl.valid && catalogUrl.touched\">\n            Enter a url for Catalog Item Image!!\n          </span>\n      </div>\n      <div *ngIf=\"errorFlag\"\n           class=\"alert alert-danger\">\n        {{errorMsg}}\n      </div>\n      <div class=\"form-group\">\n      <button type=\"button\" class=\"btn btn-primary btn-block\" (click)=\"updateCatalogItem()\">Update</button>\n      </div>\n      <div class=\"form-group\">\n        <button type=\"button\" class=\"btn btn-danger btn-block\" (click)=\"deleteCatalogItem()\">Delete</button>\n      </div>\n    </form>\n  </div>\n</div>\n\n\n\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n\n"
 
 /***/ }),
 
@@ -250,6 +250,10 @@ module.exports = "<p>\n  catalog-edit works!\n</p>\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__ = __webpack_require__("../../../../../src/app/services/catalog.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__ = __webpack_require__("../../../../../src/app/models/catalog.model.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -261,22 +265,96 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
 var CatalogEditComponent = (function () {
-    function CatalogEditComponent() {
+    function CatalogEditComponent(catalogService, activatedRoute, router) {
+        this.catalogService = catalogService;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
     }
     CatalogEditComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.catalogItem = new __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__["a" /* Catalog */]('', '', '', '', '', '');
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            _this.userId = params['uid'];
+            _this.itemId = params['catalogId'];
+        });
+        this.catalogService.findItemById(this.itemId)
+            .subscribe(function (data) {
+            if (data == null) {
+                _this.errorFlag = true;
+                _this.errorMsg = 'Error Fetching Website details';
+            }
+            else {
+                _this.catalogItem = data;
+            }
+        }, function (error) {
+            _this.errorFlag = true;
+            _this.errorMsg = 'Error Fetching Website details';
+        });
+        this.catalogItemDetails = new __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__["a" /* Catalog */]('', '', '', '', '', '');
+    };
+    CatalogEditComponent.prototype.updateCatalogItem = function () {
+        var _this = this;
+        if (this.websiteForm.valid) {
+            this.catalogItemDetails.name = this.websiteForm.value.catalogName;
+            this.catalogItemDetails.description = this.websiteForm.value.catalogDescription;
+            this.catalogItemDetails.price = this.websiteForm.value.catalogPrice;
+            this.catalogItemDetails.quantity = this.websiteForm.value.catalogQuantity;
+            this.catalogItemDetails.imageUrl = this.websiteForm.value.catalogUrl;
+            this.catalogService.updateCatalogItem(this.itemId, this.catalogItemDetails)
+                .subscribe(function (data) {
+                if (data == null) {
+                    _this.errorFlag = true;
+                    _this.errorMsg = 'Error Updating Website details';
+                }
+                else {
+                    _this.router.navigate(['/user', _this.userId, 'catalog']);
+                }
+            }, function (error) {
+                _this.errorFlag = true;
+                _this.errorMsg = 'Error Updating Website details';
+            });
+        }
+        else {
+            this.errorMsg = 'Please Enter The Correct Values';
+            this.errorFlag = true;
+        }
+    };
+    CatalogEditComponent.prototype.deleteCatalogItem = function () {
+        var _this = this;
+        this.catalogService.deleteCatalogItem(this.itemId)
+            .subscribe(function (data) {
+            if (data.success) {
+                _this.router.navigate(['/user', _this.userId, 'catalog']);
+            }
+            else {
+                _this.errorFlag = true;
+                _this.errorMsg = 'Error Deleting Catalog Item';
+            }
+        }, function (error) {
+        });
     };
     return CatalogEditComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('f'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* NgForm */]) === "function" && _a || Object)
+], CatalogEditComponent.prototype, "websiteForm", void 0);
 CatalogEditComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'app-catalog-edit',
         template: __webpack_require__("../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _d || Object])
 ], CatalogEditComponent);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=catalog-edit.component.js.map
 
 /***/ }),
@@ -302,7 +380,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/catalog/catalog-list/catalog-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><span class=\"h4 text-primary\">Catalog</span> <p class=\"pull-right\">\n        <a [routerLink]= \" [ '/user' , userId , 'catalog' , 'new']\" class=\"navbar-link\">\n          <span class=\"glyphicon glyphicon-plus\"></span>\n        </a>\n      </p>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let item of catalog\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\">\n          <div class=\"row\">\n            <div class=\"col-md-4 col-lg-4 col-xs-2\">\n              <img class=\"etm-catalog-image\" src={{item.imageUrl}} alt=\"\" />\n            </div>\n            <div class=\"col-md-8 col-lg-8 col-xs-10\">\n              <a><b>{{item.name}}</b></a>\n              <a [routerLink]= \" [ '/user' , userId , 'catalog' , item._id ,'edit']\"> <span class=\"pull-right glyphicon glyphicon-trash\"></span></a><br/>\n              <span>Description:{{item.description}}</span><br/>\n              <span>Price:{{item.price}}</span>\n              <span>Quantity:{{item.price}}</span>\n            </div>\n          </div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><span class=\"h4 text-primary\">Catalog</span> <p class=\"pull-right\">\n        <a [routerLink]= \" [ '/user' , userId , 'catalog' , 'new']\" class=\"navbar-link\">\n          <span class=\"glyphicon glyphicon-plus\"></span>\n        </a>\n      </p>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let item of catalog\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\">\n          <div class=\"row\">\n            <div class=\"col-md-4 col-lg-4 col-xs-2\">\n              <img class=\"etm-catalog-image\" src={{item.imageUrl}} alt=\"\" />\n            </div>\n            <div class=\"col-md-8 col-lg-8 col-xs-10\">\n              <a><b>{{item.name}}</b></a>\n              <a [routerLink]= \" [ '/user' , userId , 'catalog' , item._id]\"> <span class=\"pull-right glyphicon glyphicon-cog\"></span></a><br/>\n              <span>Description:{{item.description}}</span><br/>\n              <span>Price:{{item.price}}</span>\n              <span>Quantity:{{item.quantity}}</span>\n            </div>\n          </div>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -431,7 +509,6 @@ var CatalogNewComponent = (function () {
             this.cDetails.price = this.websiteForm.value.catalogPrice;
             this.cDetails.quantity = this.websiteForm.value.catalogQuantity;
             this.cDetails.imageUrl = this.websiteForm.value.catalogUrl;
-            console.log(JSON.stringify(this.cDetails));
             delete this.cDetails._id;
             this.catalogService.createCatalogItem(this.cDetails)
                 .subscribe(function (data) {
@@ -1276,7 +1353,7 @@ var Catalog = (function () {
     function Catalog(_id, name, description, price, quantity, imageUrl) {
         this._id = _id;
         this.name = name;
-        this.desciption = description;
+        this.description = description;
         this.price = price;
         this.quantity = quantity;
         this.imageUrl = imageUrl;
@@ -1375,6 +1452,24 @@ var CatalogService = (function () {
     };
     CatalogService.prototype.createCatalogItem = function (catalogItem) {
         return this._http.post(this.baseUrl + '/api/catalog', catalogItem)
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    CatalogService.prototype.findItemById = function (itemId) {
+        return this._http.get(this.baseUrl + '/api/catalog/' + itemId)
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    CatalogService.prototype.updateCatalogItem = function (itemId, catalogItemDetails) {
+        return this._http.put(this.baseUrl + '/api/catalog/' + itemId, catalogItemDetails)
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    CatalogService.prototype.deleteCatalogItem = function (itemId) {
+        return this._http.delete(this.baseUrl + '/api/catalog/' + itemId)
             .map(function (res) {
             return res.json();
         });

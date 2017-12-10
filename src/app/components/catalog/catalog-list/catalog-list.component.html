@@ -74,10 +74,10 @@
             </div>
             <div class="col-md-8 col-lg-8 col-xs-10">
               <a><b>{{item.name}}</b></a>
-              <a [routerLink]= " [ '/user' , userId , 'catalog' , item._id ,'edit']"> <span class="pull-right glyphicon glyphicon-trash"></span></a><br/>
+              <a [routerLink]= " [ '/user' , userId , 'catalog' , item._id]"> <span class="pull-right glyphicon glyphicon-cog"></span></a><br/>
               <span>Description:{{item.description}}</span><br/>
               <span>Price:{{item.price}}</span>
-              <span>Quantity:{{item.price}}</span>
+              <span>Quantity:{{item.quantity}}</span>
             </div>
           </div>
         </li>
