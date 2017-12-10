@@ -25,8 +25,8 @@ const APP_ROUTES: Routes = [
   {path : 'user/:uid/cpoint/new' , component: CollectionpointNewComponent},
   {path : 'user/:uid/cpoint/:wid' , component: CollectionpointEditComponent},
   {path : 'user/:uid/catalog' , component: CatalogListComponent},
+  {path : 'user/:uid/catalog/new' , component: CatalogNewComponent},
   {path : 'user/:uid/catalog/:catalogId' , component: CatalogEditComponent},
-  {path : 'user/:uid/catalog/new' , component: CatalogNewComponent}
 ];
 
 // Export the routes as module providers

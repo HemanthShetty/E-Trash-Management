@@ -8,6 +8,7 @@ var CatalogModel = mongoose.model('CatalogModel', CatalogSchema);
 
 
 CatalogModel.findAllItems = findAllItems;
+CatalogModel.createCatalogItem = createCatalogItem;
 /*
 PageModel.createPage = createPage;
 PageModel.findPageById = findPageById;
@@ -20,6 +21,10 @@ module.exports = CatalogModel;
 
 function findAllItems() {
   return CatalogModel.find();
+}
+
+function createCatalogItem(item) {
+  return CatalogModel.create(item);
 }
 
 

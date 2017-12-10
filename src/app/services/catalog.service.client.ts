@@ -27,6 +27,14 @@ export class CatalogService {
       );
   }
 
+  createCatalogItem(catalogItem) {
+    return this._http.post(this.baseUrl + '/api/catalog', catalogItem)
+      .map((res: Response) => {
+          return res.json();
+        }
+      );
+  }
+
 }
 
 

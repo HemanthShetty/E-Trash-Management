@@ -1,6 +1,7 @@
 module.exports = function(app,model) {
 
   app.get('/api/catalog', findAllItems);
+  app.post('/api/catalog', createCatalogItem);
 
   function findAllItems(req, res) {
     model.catalogModel.findAllItems().then(function(data)
@@ -15,6 +16,17 @@ module.exports = function(app,model) {
       }
     },function(err){
       res.json(err);
+    });
+  }
+
+
+  function createCatalogItem(req, res) {
+    var item = req.body;
+    model.catalogModel.createCatalogItem(item).then(function(data)
+    {
+      res.json(data);
+    },function(err){
+      res.json(null);
     });
   }
   /*
