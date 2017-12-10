@@ -24,6 +24,7 @@ import { CatalogNewComponent } from './components/catalog/catalog-new/catalog-ne
 import { CatalogEditComponent } from './components/catalog/catalog-edit/catalog-edit.component';
 import {CatalogService} from "./services/catalog.service.client";
 import { SellComponent } from './components/sell/sell.component';
+import {GoogleMapsService} from "./services/googlemaps.service.client";
 
 @NgModule({
   // Declare components here
@@ -56,7 +57,7 @@ import { SellComponent } from './components/sell/sell.component';
     })
   ],
   // Client Side services here
-  providers: [ TestService, UserService, SharedService, CollectionPointService, CatalogService],
+  providers: [ TestService, UserService, SharedService, CollectionPointService, CatalogService, GoogleMapsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

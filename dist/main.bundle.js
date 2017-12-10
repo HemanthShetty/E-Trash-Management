@@ -99,6 +99,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_catalog_catalog_edit_catalog_edit_component__ = __webpack_require__("../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_catalog_service_client__ = __webpack_require__("../../../../../src/app/services/catalog.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_sell_sell_component__ = __webpack_require__("../../../../../src/app/components/sell/sell.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_googlemaps_service_client__ = __webpack_require__("../../../../../src/app/services/googlemaps.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -106,6 +107,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -167,7 +169,7 @@ AppModule = __decorate([
             })
         ],
         // Client Side services here
-        providers: [__WEBPACK_IMPORTED_MODULE_7__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_13__services_user_service_client__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_14__services_shared_service_client__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_19__services_cpoint_service_client__["a" /* CollectionPointService */], __WEBPACK_IMPORTED_MODULE_23__services_catalog_service_client__["a" /* CatalogService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_7__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_13__services_user_service_client__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_14__services_shared_service_client__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_19__services_cpoint_service_client__["a" /* CollectionPointService */], __WEBPACK_IMPORTED_MODULE_23__services_catalog_service_client__["a" /* CatalogService */], __WEBPACK_IMPORTED_MODULE_25__services_googlemaps_service_client__["a" /* GoogleMapsService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -968,6 +970,8 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__ = __webpack_require__("../../../../../src/app/services/googlemaps.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SellComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -981,13 +985,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var SellComponent = (function () {
-    function SellComponent(mapsAPILoader, ngZone) {
+    function SellComponent(mapsAPILoader, ngZone, mapsService, sharedService) {
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
+        this.mapsService = mapsService;
+        this.sharedService = sharedService;
     }
     SellComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.userIdentity = this.sharedService.user;
         //set google maps defaults
         this.zoom = 4;
         this.latitude = 39.8282;
@@ -1019,13 +1028,13 @@ var SellComponent = (function () {
     };
     SellComponent.prototype.setCurrentPosition = function () {
         var _this = this;
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                _this.latitude = position.coords.latitude;
-                _this.longitude = position.coords.longitude;
-                _this.zoom = 12;
-            });
-        }
+        this.mapsService.findLatLong(this.userIdentity.address)
+            .subscribe(function (data) {
+            _this.latitude = data.results[0].geometry.location.lat;
+            _this.longitude = data.results[0].geometry.location.lng;
+            _this.zoom = 12;
+        }, function (error) {
+        });
     };
     return SellComponent;
 }());
@@ -1039,10 +1048,10 @@ SellComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/sell/sell.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/sell/sell.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _e || Object])
 ], SellComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=sell.component.js.map
 
 /***/ }),
@@ -1660,6 +1669,50 @@ CollectionPointService = __decorate([
 
 var _a;
 //# sourceMappingURL=cpoint.service.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/googlemaps.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GoogleMapsService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+// injecting service into module
+
+
+
+var GoogleMapsService = (function () {
+    function GoogleMapsService(_http) {
+        this._http = _http;
+    }
+    GoogleMapsService.prototype.findLatLong = function (address) {
+        return this._http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + 'AIzaSyCMwJEcq8gK7hFL32MqJ91CwQNy1k6z6dw')
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    return GoogleMapsService;
+}());
+GoogleMapsService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], GoogleMapsService);
+
+var _a;
+//# sourceMappingURL=googlemaps.service.client.js.map
 
 /***/ }),
 

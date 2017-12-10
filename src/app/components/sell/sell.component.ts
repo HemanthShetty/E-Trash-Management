@@ -2,6 +2,9 @@ import {Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
+import {GoogleMapsService} from "../../services/googlemaps.service.client";
+import {User} from "../../models/user.model.client";
+import {SharedService} from "../../services/shared.service.client";
 
 @Component({
   selector: 'app-sell',
@@ -10,19 +13,21 @@ import { MapsAPILoader } from '@agm/core';
 })
 export class SellComponent implements OnInit {
 
-  public latitude: number;
-  public longitude: number;
+  public latitude;
+  public longitude;
   public searchControl: FormControl;
   public zoom: number;
+  userIdentity;
 
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
   constructor(private mapsAPILoader: MapsAPILoader,
-              private ngZone: NgZone) { }
+              private ngZone: NgZone, private mapsService: GoogleMapsService, private sharedService:SharedService) { }
 
 
   ngOnInit() {
+    this.userIdentity = this.sharedService.user;
     //set google maps defaults
     this.zoom = 4;
     this.latitude = 39.8282;
@@ -59,13 +64,17 @@ export class SellComponent implements OnInit {
   }
 
   private setCurrentPosition() {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
-        this.zoom = 12;
-      });
-    }
+    this.mapsService.findLatLong(this.userIdentity.address)
+      .subscribe(
+        (data: any) => {
+          this.latitude = data.results[0].geometry.location.lat;
+          this.longitude = data.results[0].geometry.location.lng;
+          this.zoom = 12;
+        },
+        (error: any) => {
+
+        }
+      );
   }
 
 }
