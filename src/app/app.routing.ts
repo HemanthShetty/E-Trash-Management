@@ -14,6 +14,7 @@ import {CollectionpointEditComponent} from "./components/collectionpoint/collect
 import {CatalogListComponent} from "./components/catalog/catalog-list/catalog-list.component";
 import {CatalogNewComponent} from "./components/catalog/catalog-new/catalog-new.component";
 import {CatalogEditComponent} from "./components/catalog/catalog-edit/catalog-edit.component";
+import {SellComponent} from "./components/sell/sell.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -27,6 +28,7 @@ const APP_ROUTES: Routes = [
   {path : 'user/:uid/catalog' , component: CatalogListComponent},
   {path : 'user/:uid/catalog/new' , component: CatalogNewComponent},
   {path : 'user/:uid/catalog/:catalogId' , component: CatalogEditComponent},
+  {path : 'user/:uid/sell' , component: SellComponent},
 ];
 
 // Export the routes as module providers

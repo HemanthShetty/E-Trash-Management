@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import {Routing} from './app.routing';
 import {HttpModule} from '@angular/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {TestService} from './services/test.service.client';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
@@ -23,6 +23,7 @@ import { CatalogListComponent } from './components/catalog/catalog-list/catalog-
 import { CatalogNewComponent } from './components/catalog/catalog-new/catalog-new.component';
 import { CatalogEditComponent } from './components/catalog/catalog-edit/catalog-edit.component';
 import {CatalogService} from "./services/catalog.service.client";
+import { SellComponent } from './components/sell/sell.component';
 
 @NgModule({
   // Declare components here
@@ -40,15 +41,18 @@ import {CatalogService} from "./services/catalog.service.client";
     CollectionpointListComponent,
     CatalogListComponent,
     CatalogNewComponent,
-    CatalogEditComponent
+    CatalogEditComponent,
+    SellComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
     Routing,
+    ReactiveFormsModule,
     AgmCoreModule.forRoot({apiKey:
-      'AIzaSyCMwJEcq8gK7hFL32MqJ91CwQNy1k6z6dw'
+      'AIzaSyCMwJEcq8gK7hFL32MqJ91CwQNy1k6z6dw',
+      libraries: ["places"]
     })
   ],
   // Client Side services here
