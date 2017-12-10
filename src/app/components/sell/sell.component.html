@@ -65,7 +65,8 @@
     <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
   </div>
   <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+    <agm-marker [latitude]="latitude" [longitude]="longitude" (markerClick)="updateDiv(latitude,longitude)"></agm-marker>
+    <agm-marker [latitude]="latitude+0.05" [longitude]="longitude" (markerClick)="updateDiv(latitude,longitude)" [iconUrl]="'assets/images/map-localization.png'"></agm-marker>
   </agm-map>
 </div>
 </div>

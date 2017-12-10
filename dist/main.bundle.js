@@ -959,7 +959,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sell/sell.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n  <h1>Google Maps Places Autocomplete</h1>\n  <div class=\"form-group\">\n    <input placeholder=\"search for location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\">\n  </div>\n  <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\">\n    <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\n  </agm-map>\n</div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'payments']\" >\n            <b>Payments</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n  <h1>Google Maps Places Autocomplete</h1>\n  <div class=\"form-group\">\n    <input placeholder=\"search for location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\">\n  </div>\n  <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [scrollwheel]=\"false\" [zoom]=\"zoom\">\n    <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\" (markerClick)=\"updateDiv(latitude,longitude)\"></agm-marker>\n    <agm-marker [latitude]=\"latitude+0.05\" [longitude]=\"longitude\" (markerClick)=\"updateDiv(latitude,longitude)\" [iconUrl]=\"'assets/images/map-localization.png'\"></agm-marker>\n  </agm-map>\n</div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -972,6 +972,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__ = __webpack_require__("../../../../../src/app/services/googlemaps.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__ = __webpack_require__("../../../../../src/app/services/cpoint.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SellComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -987,12 +988,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SellComponent = (function () {
-    function SellComponent(mapsAPILoader, ngZone, mapsService, sharedService) {
+    function SellComponent(mapsAPILoader, ngZone, mapsService, sharedService, collectionPointService) {
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
         this.mapsService = mapsService;
         this.sharedService = sharedService;
+        this.collectionPointService = collectionPointService;
+        this.latLongs = [{}];
     }
     SellComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1005,6 +1009,7 @@ var SellComponent = (function () {
         this.searchControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]();
         //set current position
         this.setCurrentPosition();
+        this.populateCollectionPoints();
         //load Places Autocomplete
         this.mapsAPILoader.load().then(function () {
             var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {
@@ -1026,6 +1031,54 @@ var SellComponent = (function () {
             });
         });
     };
+    SellComponent.prototype.populateCollectionPoints = function () {
+        var _this = this;
+        this.collectionPointService.findCollectionPoints().subscribe(function (data) {
+            _this.collectionPoints = data;
+            for (var i = 0; i < _this.collectionPoints.length; ++i) {
+                _this.returnLatLong(i, _this.collectionPoints[i]);
+            }
+        }, function (error) {
+        });
+    };
+    SellComponent.prototype.returnLatLong = function (index, collectionPoint) {
+        var _this = this;
+        var i = index;
+        this.mapsService.findLatLong(collectionPoint.street + ',' + collectionPoint.city + ',' + collectionPoint.state + ' ' + collectionPoint.postCode)
+            .subscribe(function (data) {
+            _this.latLongs[i]['lat'] = data.results[0].geometry.location.lat;
+            _this.latLongs[i]['lng'] = data.results[0].geometry.location.lng;
+            _this.latLongs[i]['id'] = _this.collectionPoints[index]._id;
+        }, function (error) {
+        });
+    };
+    /*
+    private getCollectionPoints()
+    {
+      this.collectionPointService.findCollectionPoints().subscribe(
+        (data: any) => {
+          this.collectionPoints=data;
+          for(let i=0;i<this.collectionPoints.length;i++)
+          {
+            this.mapsService.findLatLong(this.collectionPoints[i].street+','+this.collectionPoints[i].city+','+this.collectionPoints[i].state+' '+this.collectionPoints[i].postCode)
+              .subscribe(
+                (data: any) => {
+                  this.latLongs[i]['lat'] = data.results[0].geometry.location.lat;
+                  this.latLongs[i]['lng'] = data.results[0].geometry.location.lng;
+                  this.latLongs[i]['id'] = this.collectionPoints[i]._id;
+                },
+                (error: any) => {
+  
+                }
+              );
+          }
+        },
+        (error: any) => {
+  
+        }
+      );
+    }
+    */
     SellComponent.prototype.setCurrentPosition = function () {
         var _this = this;
         this.mapsService.findLatLong(this.userIdentity.address)
@@ -1035,6 +1088,9 @@ var SellComponent = (function () {
             _this.zoom = 12;
         }, function (error) {
         });
+    };
+    SellComponent.prototype.updateDiv = function (lat, long) {
+        console.log('update called' + lat + long);
     };
     return SellComponent;
 }());
@@ -1048,10 +1104,10 @@ SellComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/sell/sell.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/sell/sell.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _f || Object])
 ], SellComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=sell.component.js.map
 
 /***/ }),

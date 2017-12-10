@@ -3,8 +3,10 @@ import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 import {GoogleMapsService} from "../../services/googlemaps.service.client";
-import {User} from "../../models/user.model.client";
 import {SharedService} from "../../services/shared.service.client";
+import {CollectionPointService} from "../../services/cpoint.service.client";
+import {CollectionPoint} from "../../models/cpoint.model.client";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-sell',
@@ -18,12 +20,15 @@ export class SellComponent implements OnInit {
   public searchControl: FormControl;
   public zoom: number;
   userIdentity;
+  collectionPoints :CollectionPoint[];
+  latLongs = [{}];
+
 
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
   constructor(private mapsAPILoader: MapsAPILoader,
-              private ngZone: NgZone, private mapsService: GoogleMapsService, private sharedService:SharedService) { }
+              private ngZone: NgZone, private mapsService: GoogleMapsService, private sharedService:SharedService,private collectionPointService: CollectionPointService) { }
 
 
   ngOnInit() {
@@ -38,6 +43,8 @@ export class SellComponent implements OnInit {
 
     //set current position
     this.setCurrentPosition();
+    this.populateCollectionPoints();
+
 
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
@@ -63,6 +70,66 @@ export class SellComponent implements OnInit {
     });
   }
 
+  private populateCollectionPoints()
+  {
+    this.collectionPointService.findCollectionPoints().subscribe(
+      (data: any) => {
+        this.collectionPoints=data;
+        for (var i = 0; i < this.collectionPoints.length; ++i) {
+          this.returnLatLong(i,this.collectionPoints[i]);
+        }
+      },
+      (error: any) => {
+
+      }
+    );
+  }
+
+  private returnLatLong(index,collectionPoint)
+  {
+    let i=index;
+    this.mapsService.findLatLong(collectionPoint.street+','+collectionPoint.city+','+collectionPoint.state+' '+collectionPoint.postCode)
+      .subscribe(
+        (data: any) => {
+          this.latLongs[i]['lat'] = data.results[0].geometry.location.lat;
+          this.latLongs[i]['lng'] = data.results[0].geometry.location.lng;
+          this.latLongs[i]['id'] = this.collectionPoints[index]._id;
+        },
+        (error: any) => {
+
+        }
+      );
+  }
+
+
+
+  /*
+  private getCollectionPoints()
+  {
+    this.collectionPointService.findCollectionPoints().subscribe(
+      (data: any) => {
+        this.collectionPoints=data;
+        for(let i=0;i<this.collectionPoints.length;i++)
+        {
+          this.mapsService.findLatLong(this.collectionPoints[i].street+','+this.collectionPoints[i].city+','+this.collectionPoints[i].state+' '+this.collectionPoints[i].postCode)
+            .subscribe(
+              (data: any) => {
+                this.latLongs[i]['lat'] = data.results[0].geometry.location.lat;
+                this.latLongs[i]['lng'] = data.results[0].geometry.location.lng;
+                this.latLongs[i]['id'] = this.collectionPoints[i]._id;
+              },
+              (error: any) => {
+
+              }
+            );
+        }
+      },
+      (error: any) => {
+
+      }
+    );
+  }
+  */
   private setCurrentPosition() {
     this.mapsService.findLatLong(this.userIdentity.address)
       .subscribe(
@@ -75,6 +142,11 @@ export class SellComponent implements OnInit {
 
         }
       );
+  }
+
+  updateDiv(lat,long)
+  {
+    console.log('update called'+lat+long);
   }
 
 }
