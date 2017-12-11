@@ -16,6 +16,7 @@ import {CatalogNewComponent} from "./components/catalog/catalog-new/catalog-new.
 import {CatalogEditComponent} from "./components/catalog/catalog-edit/catalog-edit.component";
 import {SellComponent} from "./components/sell/sell.component";
 import {DropoffNewComponent} from "./components/dropoff/dropoff-new/dropoff-new.component";
+import {CustomerDropoffsComponent} from "./components/dropoff/customer-dropoffs/customer-dropoffs.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -24,6 +25,7 @@ const APP_ROUTES: Routes = [
   {path : 'login' , component: LoginComponent},
   {path:  'user', component: ProfileComponent},
   {path : 'user/:userId/cpoint' , component: CollectionpointListComponent},
+  {path : 'user/:uid/dropoff', component: CustomerDropoffsComponent},
   {path : 'user/:uid/cpoint/new' , component: CollectionpointNewComponent},
   {path : 'user/:uid/cpoint/:wid' , component: CollectionpointEditComponent},
   {path : 'user/:uid/catalog' , component: CatalogListComponent},

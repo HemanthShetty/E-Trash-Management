@@ -26,6 +26,7 @@ import { SellComponent } from './components/sell/sell.component';
 import {GoogleMapsService} from "./services/googlemaps.service.client";
 import { DropoffNewComponent } from './components/dropoff/dropoff-new/dropoff-new.component';
 import {DropOffService} from "./services/dropoff.service.client";
+import { CustomerDropoffsComponent } from './components/dropoff/customer-dropoffs/customer-dropoffs.component';
 
 @NgModule({
   // Declare components here
@@ -44,7 +45,8 @@ import {DropOffService} from "./services/dropoff.service.client";
     CatalogNewComponent,
     CatalogEditComponent,
     SellComponent,
-    DropoffNewComponent
+    DropoffNewComponent,
+    CustomerDropoffsComponent
   ],
   imports: [
     BrowserModule,
