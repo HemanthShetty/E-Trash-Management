@@ -28,6 +28,7 @@ import { DropoffNewComponent } from './components/dropoff/dropoff-new/dropoff-ne
 import {DropOffService} from "./services/dropoff.service.client";
 import { CustomerDropoffsComponent } from './components/dropoff/customer-dropoffs/customer-dropoffs.component';
 import { DropoffCollectionpointComponent } from './components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component';
+import { PersonalComponent } from './components/personal/personal.component';
 
 @NgModule({
   // Declare components here
@@ -48,7 +49,8 @@ import { DropoffCollectionpointComponent } from './components/dropoff/dropoff-co
     SellComponent,
     DropoffNewComponent,
     CustomerDropoffsComponent,
-    DropoffCollectionpointComponent
+    DropoffCollectionpointComponent,
+    PersonalComponent
   ],
   imports: [
     BrowserModule,

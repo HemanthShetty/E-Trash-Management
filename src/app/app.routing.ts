@@ -18,9 +18,11 @@ import {SellComponent} from "./components/sell/sell.component";
 import {DropoffNewComponent} from "./components/dropoff/dropoff-new/dropoff-new.component";
 import {CustomerDropoffsComponent} from "./components/dropoff/customer-dropoffs/customer-dropoffs.component";
 import {DropoffCollectionpointComponent} from "./components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component";
+import {PersonalComponent} from "./components/personal/personal.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
+  {path: 'index', component : PersonalComponent},
   {path: 'home', component : HomeComponent},
   {path: 'register', component : RegisterComponent},
   {path : 'login' , component: LoginComponent},
