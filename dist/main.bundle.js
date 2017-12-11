@@ -904,6 +904,7 @@ var DropoffNewComponent = (function () {
             this.inventory[i] = new __WEBPACK_IMPORTED_MODULE_4__models_inventory_model_client__["a" /* Inventory */](this.catalog[i]['_id'], this.catalog[i]['quantity']);
         }
         this.dropOffs = new __WEBPACK_IMPORTED_MODULE_3__models_dropOff_model_client__["a" /* DropOff */]('', this.userId, this.collectionPointId, this.inventory, 'Uncollected');
+        delete this.dropOffs._id;
         this.dropOffService.createDropOff(this.dropOffs, this.userId).subscribe(function (data) {
         }, function (error) {
         });
