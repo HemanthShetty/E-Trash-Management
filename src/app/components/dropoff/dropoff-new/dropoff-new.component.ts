@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {CatalogService} from "../../../services/catalog.service.client";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {DropOff} from "../../../models/dropOff.model.client";
 import {Inventory} from "../../../models/inventory.model.client";
 import {DropOffService} from "../../../services/dropoff.service.client";
+import {UserService} from "../../../services/user.service.client";
 
 @Component({
   selector: 'app-dropoff-new',
@@ -16,7 +17,7 @@ export class DropoffNewComponent implements OnInit {
   collectionPointId: String;
   dropOffs:DropOff;
   inventory:Inventory[];
-  constructor(private catalogService: CatalogService, private activatedRoute: ActivatedRoute,private dropOffService:DropOffService) { }
+  constructor(private router:Router,private userService:UserService,private catalogService: CatalogService, private activatedRoute: ActivatedRoute,private dropOffService:DropOffService) { }
 
   ngOnInit() {
 
@@ -43,7 +44,12 @@ export class DropoffNewComponent implements OnInit {
         }
       );
   }
-
+  logout() {
+    this.userService.logout()
+      .subscribe(
+        (data: any) => this.router.navigate(['/login'])
+      );
+  }
   createDropOff()
   {
     this.inventory= new Array();

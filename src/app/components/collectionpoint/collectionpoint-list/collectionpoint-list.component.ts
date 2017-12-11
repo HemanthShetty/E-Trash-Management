@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
 import {CollectionPointService} from '../../../services/cpoint.service.client';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {UserService} from "../../../services/user.service.client";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class CollectionpointListComponent implements OnInit {
   userId: String;
   collectionPoints = [{}];
 
-  constructor(private collectionPointService: CollectionPointService, private activatedRoute: ActivatedRoute) { }
+  constructor(private router:Router,private userService:UserService,private collectionPointService: CollectionPointService, private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
 
     this.activatedRoute.params
@@ -33,6 +34,14 @@ export class CollectionpointListComponent implements OnInit {
         }
       );
   }
+
+  logout() {
+    this.userService.logout()
+      .subscribe(
+        (data: any) => this.router.navigate(['/login'])
+      );
+  }
+
   delete(cPointId)
   {
     this.collectionPointService.deleteCollectionPoint(cPointId)

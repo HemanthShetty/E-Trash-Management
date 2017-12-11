@@ -3,6 +3,7 @@ import {NgForm} from "@angular/forms";
 import {CatalogService} from "../../../services/catalog.service.client";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Catalog} from "../../../models/catalog.model.client";
+import {UserService} from "../../../services/user.service.client";
 
 @Component({
   selector: 'app-catalog-new',
@@ -17,7 +18,7 @@ export class CatalogNewComponent implements OnInit {
   errorMsg: String;
   @ViewChild('f') websiteForm: NgForm;
 
-  constructor(private catalogService: CatalogService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private userService:UserService,private catalogService: CatalogService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.activatedRoute.params
@@ -50,6 +51,13 @@ export class CatalogNewComponent implements OnInit {
       this.errorMsg = 'Please Enter The Correct Values';
       this.errorFlag = true ;
     }
+  }
+
+  logout() {
+    this.userService.logout()
+      .subscribe(
+        (data: any) => this.router.navigate(['/login'])
+      );
   }
 
 }

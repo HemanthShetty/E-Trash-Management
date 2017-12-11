@@ -8,6 +8,7 @@ import {CollectionPointService} from "../../services/cpoint.service.client";
 import {CollectionPoint} from "../../models/cpoint.model.client";
 import {Observable} from "rxjs/Observable";
 import {ActivatedRoute, Router} from "@angular/router";
+import {UserService} from "../../services/user.service.client";
 
 @Component({
   selector: 'app-sell',
@@ -32,7 +33,7 @@ export class SellComponent implements OnInit {
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
-  constructor(private activatedRoute:ActivatedRoute,private router:Router,private mapsAPILoader: MapsAPILoader,
+  constructor(private userService:UserService,private activatedRoute:ActivatedRoute,private router:Router,private mapsAPILoader: MapsAPILoader,
               private ngZone: NgZone, private mapsService: GoogleMapsService, private sharedService:SharedService,private collectionPointService: CollectionPointService) { }
 
 
@@ -133,6 +134,13 @@ export class SellComponent implements OnInit {
     this.selectCollectionPoint=collectionPointLatLong.id;
     this.selectCollectionPointName=collectionPointLatLong.name;
     this.selected=true;
+  }
+
+  logout() {
+    this.userService.logout()
+      .subscribe(
+        (data: any) => this.router.navigate(['/login'])
+      );
   }
 
   createDropOff()

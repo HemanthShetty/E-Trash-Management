@@ -3,6 +3,7 @@ import {CatalogService} from "../../../services/catalog.service.client";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 import {Catalog} from "../../../models/catalog.model.client";
+import {UserService} from "../../../services/user.service.client";
 
 @Component({
   selector: 'app-catalog-edit',
@@ -19,7 +20,7 @@ export class CatalogEditComponent implements OnInit {
   catalogItemDetails: Catalog;
   @ViewChild('f') websiteForm: NgForm;
 
-  constructor(private catalogService: CatalogService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private userService: UserService,private catalogService: CatalogService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.catalogItem = new Catalog('', '' , '' , '','','');
@@ -47,6 +48,13 @@ export class CatalogEditComponent implements OnInit {
         }
       );
     this.catalogItemDetails = new Catalog('', '' , '' , '','','');
+  }
+
+  logout() {
+    this.userService.logout()
+      .subscribe(
+        (data: any) => this.router.navigate(['/login'])
+      );
   }
 
   updateCatalogItem() {

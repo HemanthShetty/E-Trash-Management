@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CatalogService} from "../../../services/catalog.service.client";
+import {UserService} from "../../../services/user.service.client";
 
 @Component({
   selector: 'app-catalog-list',
@@ -12,7 +13,7 @@ export class CatalogListComponent implements OnInit {
   userId: String;
   catalog = [{}];
 
-  constructor(private catalogService: CatalogService, private activatedRoute: ActivatedRoute) { }
+  constructor(private router:Router,private userService:UserService,private catalogService: CatalogService, private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
 
     this.activatedRoute.params
@@ -29,6 +30,12 @@ export class CatalogListComponent implements OnInit {
         },
         (error: any) => {
         }
+      );
+  }
+  logout() {
+    this.userService.logout()
+      .subscribe(
+        (data: any) => this.router.navigate(['/login'])
       );
   }
 

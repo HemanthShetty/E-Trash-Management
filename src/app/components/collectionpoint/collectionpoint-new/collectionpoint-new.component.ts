@@ -3,6 +3,7 @@ import {NgForm} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CollectionPointService} from "../../../services/cpoint.service.client";
 import {CollectionPoint} from "../../../models/cpoint.model.client";
+import {UserService} from "../../../services/user.service.client";
 
 @Component({
   selector: 'app-collectionpoint-new',
@@ -17,7 +18,7 @@ export class CollectionpointNewComponent implements OnInit {
   errorMsg: String;
   @ViewChild('f') websiteForm: NgForm;
 
-  constructor(private collectionPointService: CollectionPointService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private userService:UserService,private collectionPointService: CollectionPointService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.activatedRoute.params
@@ -28,6 +29,14 @@ export class CollectionpointNewComponent implements OnInit {
       );
     this.cDetails=new CollectionPoint('','','','','','','');
   }
+
+  logout() {
+    this.userService.logout()
+      .subscribe(
+        (data: any) => this.router.navigate(['/login'])
+      );
+  }
+
   createCollectionPoint() {
     if (this.websiteForm.valid) {
       this.cDetails.name = this.websiteForm.value.cPointName;
