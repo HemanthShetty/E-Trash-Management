@@ -10,7 +10,6 @@ import {TestService} from './services/test.service.client';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
-import { ShipmentComponent } from './components/shipment/shipment.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import {UserService} from "./services/user.service.client";
 import {SharedService} from "./services/shared.service.client";
@@ -37,7 +36,6 @@ import {DropOffService} from "./services/dropoff.service.client";
     RegisterComponent,
     ProfileComponent,
     CatalogListComponent,
-    ShipmentComponent,
     PaymentComponent,
     CollectionpointEditComponent,
     CollectionpointNewComponent,
