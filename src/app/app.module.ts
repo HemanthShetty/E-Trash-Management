@@ -26,6 +26,7 @@ import {CatalogService} from "./services/catalog.service.client";
 import { SellComponent } from './components/sell/sell.component';
 import {GoogleMapsService} from "./services/googlemaps.service.client";
 import { DropoffNewComponent } from './components/dropoff/dropoff-new/dropoff-new.component';
+import {DropOffService} from "./services/dropoff.service.client";
 
 @NgModule({
   // Declare components here
@@ -59,7 +60,7 @@ import { DropoffNewComponent } from './components/dropoff/dropoff-new/dropoff-ne
     })
   ],
   // Client Side services here
-  providers: [ TestService, UserService, SharedService, CollectionPointService, CatalogService, GoogleMapsService],
+  providers: [ TestService, UserService, SharedService, CollectionPointService, CatalogService, GoogleMapsService, DropOffService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

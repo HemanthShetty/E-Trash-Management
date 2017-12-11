@@ -101,6 +101,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_sell_sell_component__ = __webpack_require__("../../../../../src/app/components/sell/sell.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_googlemaps_service_client__ = __webpack_require__("../../../../../src/app/services/googlemaps.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_dropoff_dropoff_new_dropoff_new_component__ = __webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_dropoff_service_client__ = __webpack_require__("../../../../../src/app/services/dropoff.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -108,6 +109,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -172,7 +174,7 @@ AppModule = __decorate([
             })
         ],
         // Client Side services here
-        providers: [__WEBPACK_IMPORTED_MODULE_7__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_13__services_user_service_client__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_14__services_shared_service_client__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_19__services_cpoint_service_client__["a" /* CollectionPointService */], __WEBPACK_IMPORTED_MODULE_23__services_catalog_service_client__["a" /* CatalogService */], __WEBPACK_IMPORTED_MODULE_25__services_googlemaps_service_client__["a" /* GoogleMapsService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_7__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_13__services_user_service_client__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_14__services_shared_service_client__["a" /* SharedService */], __WEBPACK_IMPORTED_MODULE_19__services_cpoint_service_client__["a" /* CollectionPointService */], __WEBPACK_IMPORTED_MODULE_23__services_catalog_service_client__["a" /* CatalogService */], __WEBPACK_IMPORTED_MODULE_25__services_googlemaps_service_client__["a" /* GoogleMapsService */], __WEBPACK_IMPORTED_MODULE_27__services_dropoff_service_client__["a" /* DropOffService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -855,6 +857,8 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__ = __webpack_require__("../../../../../src/app/services/catalog.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_dropOff_model_client__ = __webpack_require__("../../../../../src/app/models/dropOff.model.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_inventory_model_client__ = __webpack_require__("../../../../../src/app/models/inventory.model.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__ = __webpack_require__("../../../../../src/app/services/dropoff.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropoffNewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -869,10 +873,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var DropoffNewComponent = (function () {
-    function DropoffNewComponent(catalogService, activatedRoute) {
+    function DropoffNewComponent(catalogService, activatedRoute, dropOffService) {
         this.catalogService = catalogService;
         this.activatedRoute = activatedRoute;
+        this.dropOffService = dropOffService;
         this.catalog = [{}];
     }
     DropoffNewComponent.prototype.ngOnInit = function () {
@@ -892,10 +899,14 @@ var DropoffNewComponent = (function () {
         });
     };
     DropoffNewComponent.prototype.createDropOff = function () {
+        this.inventory = new Array();
         for (var i = 0; i < this.catalog.length; i++) {
-            this.dropOffs[i] = new __WEBPACK_IMPORTED_MODULE_3__models_dropOff_model_client__["a" /* DropOff */]('', this.userId, this.collectionPointId, this.catalog[i]['_id'], this.catalog[i]['quantity'], '');
-            delete this.dropOffs[i]._id;
+            this.inventory[i] = new __WEBPACK_IMPORTED_MODULE_4__models_inventory_model_client__["a" /* Inventory */](this.catalog[i]['_id'], this.catalog[i]['quantity']);
         }
+        this.dropOffs = new __WEBPACK_IMPORTED_MODULE_3__models_dropOff_model_client__["a" /* DropOff */]('', this.userId, this.collectionPointId, this.inventory, 'Uncollected');
+        this.dropOffService.createDropOff(this.dropOffs, this.userId).subscribe(function (data) {
+        }, function (error) {
+        });
     };
     return DropoffNewComponent;
 }());
@@ -905,10 +916,10 @@ DropoffNewComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _c || Object])
 ], DropoffNewComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=dropoff-new.component.js.map
 
 /***/ }),
@@ -1181,7 +1192,7 @@ var SellComponent = (function () {
 }());
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])("search"),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* ElementRef */]) === "function" && _a || Object)
 ], SellComponent.prototype, "searchElementRef", void 0);
 SellComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
@@ -1189,7 +1200,7 @@ SellComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/sell/sell.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/sell/sell.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* NgZone */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _h || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* MapsAPILoader */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* NgZone */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_googlemaps_service_client__["a" /* GoogleMapsService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _h || Object])
 ], SellComponent);
 
 var _a, _b, _c, _d, _e, _f, _g, _h;
@@ -1665,18 +1676,34 @@ var CollectionPoint = (function () {
  * Created by hemanthshetty on 12/10/17.
  */
 var DropOff = (function () {
-    function DropOff(_id, customerId, collectionPointId, itemId, quantity, status) {
+    function DropOff(_id, customerId, collectionPointId, inventory, status) {
         this._id = _id;
         this.customerId = customerId;
         this.collectionPointId = collectionPointId;
-        this.itemId = itemId;
-        this.quantity = quantity;
+        this.inventory = inventory;
         this.status = status;
     }
     return DropOff;
 }());
 
 //# sourceMappingURL=dropOff.model.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/models/inventory.model.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Inventory; });
+var Inventory = (function () {
+    function Inventory(id, quantity) {
+        this.itemId = id;
+        this.quantity = quantity;
+    }
+    return Inventory;
+}());
+
+//# sourceMappingURL=inventory.model.client.js.map
 
 /***/ }),
 
@@ -1771,7 +1798,7 @@ var CatalogService = (function () {
 }());
 CatalogService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
 ], CatalogService);
 
 var _a;
@@ -1829,11 +1856,65 @@ var CollectionPointService = (function () {
 }());
 CollectionPointService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
 ], CollectionPointService);
 
 var _a;
 //# sourceMappingURL=cpoint.service.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/dropoff.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropOffService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+// injecting service into module
+var DropOffService = (function () {
+    function DropOffService(_http, sharedService, router) {
+        this._http = _http;
+        this.sharedService = sharedService;
+        this.router = router;
+        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* RequestOptions */]();
+        this.baseUrl = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl;
+    }
+    DropOffService.prototype.createDropOff = function (dropOff, userId) {
+        return this._http.post(this.baseUrl + '/api/user/' + userId + '/dropoff', dropOff)
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    return DropOffService;
+}());
+DropOffService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_service_client__["a" /* SharedService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _c || Object])
+], DropOffService);
+
+var _a, _b, _c;
+//# sourceMappingURL=dropoff.service.client.js.map
 
 /***/ }),
 
@@ -1873,7 +1954,7 @@ var GoogleMapsService = (function () {
 }());
 GoogleMapsService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
 ], GoogleMapsService);
 
 var _a;
@@ -1965,7 +2046,7 @@ var TestService = (function () {
 }());
 TestService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
 ], TestService);
 
 var _a;
@@ -2006,7 +2087,7 @@ var UserService = (function () {
         this._http = _http;
         this.sharedService = sharedService;
         this.router = router;
-        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]();
+        this.options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* RequestOptions */]();
         this.baseUrl = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl;
     }
     UserService.prototype.register = function (user) {
@@ -2109,7 +2190,7 @@ var UserService = (function () {
 }());
 UserService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_service_client__["a" /* SharedService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_service_client__["a" /* SharedService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _c || Object])
 ], UserService);
 
 var _a, _b, _c;

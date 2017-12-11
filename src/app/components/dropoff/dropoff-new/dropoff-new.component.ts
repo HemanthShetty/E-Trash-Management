@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {CatalogService} from "../../../services/catalog.service.client";
 import {ActivatedRoute} from "@angular/router";
 import {DropOff} from "../../../models/dropOff.model.client";
+import {Inventory} from "../../../models/inventory.model.client";
+import {DropOffService} from "../../../services/dropoff.service.client";
 
 @Component({
   selector: 'app-dropoff-new',
@@ -12,8 +14,9 @@ export class DropoffNewComponent implements OnInit {
   userId: String;
   catalog = [{}];
   collectionPointId: String;
-  dropOffs:DropOff[];
-  constructor(private catalogService: CatalogService, private activatedRoute: ActivatedRoute) { }
+  dropOffs:DropOff;
+  inventory:Inventory[];
+  constructor(private catalogService: CatalogService, private activatedRoute: ActivatedRoute,private dropOffService:DropOffService) { }
 
   ngOnInit() {
 
@@ -43,11 +46,19 @@ export class DropoffNewComponent implements OnInit {
 
   createDropOff()
   {
-   for(var i=0;i<this.catalog.length;i++)
-   {
-     this.dropOffs[i]=new DropOff('',this.userId, this.collectionPointId,this.catalog[i]['_id'],this.catalog[i]['quantity'],'');
-     delete this.dropOffs[i]._id;
-   }
+    this.inventory= new Array();
+    for(var i=0;i<this.catalog.length;i++)
+    {
+     this.inventory[i]=new Inventory(this.catalog[i]['_id'],this.catalog[i]['quantity']) ;
+    }
+    this.dropOffs=new DropOff('',this.userId, this.collectionPointId,this.inventory,'Uncollected');
+    this.dropOffService.createDropOff(this.dropOffs,this.userId).subscribe(
+      (data: any) => {
+
+      },
+      (error: any) => {
+      }
+    );
   }
 
 

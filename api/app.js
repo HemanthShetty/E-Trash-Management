@@ -5,4 +5,5 @@ module.exports = function(app) {
   require("./services/user.service.server.js")(app,model);
   require("./services/collectionpoint.service.server.js")(app,model);
   require("./services/catalog.service.server.js")(app,model);
+  require("./services/dropoff.service.server.js")(app,model);
 };
