@@ -17,6 +17,8 @@ export class DropoffNewComponent implements OnInit {
   collectionPointId: String;
   dropOffs:DropOff;
   inventory:Inventory[];
+  sFlag=false;
+  sMsg="";
   constructor(private router:Router,private userService:UserService,private catalogService: CatalogService, private activatedRoute: ActivatedRoute,private dropOffService:DropOffService) { }
 
   ngOnInit() {
@@ -61,7 +63,8 @@ export class DropoffNewComponent implements OnInit {
     delete this.dropOffs._id;
     this.dropOffService.createDropOff(this.dropOffs,this.userId).subscribe(
       (data: any) => {
-
+        this.sFlag=true;
+        this.sMsg="Your Drop Off Has Been SuccessFully Created";
       },
       (error: any) => {
       }

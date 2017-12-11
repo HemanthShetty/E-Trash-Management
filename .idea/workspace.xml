@@ -2,13 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c227eac4-904b-4bf9-99d3-65b5be2a611e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/catalog/catalog-edit/catalog-edit.component.ts" afterPath="$PROJECT_DIR$/src/app/components/catalog/catalog-edit/catalog-edit.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/catalog/catalog-list/catalog-list.component.ts" afterPath="$PROJECT_DIR$/src/app/components/catalog/catalog-list/catalog-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/catalog/catalog-new/catalog-new.component.ts" afterPath="$PROJECT_DIR$/src/app/components/catalog/catalog-new/catalog-new.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.ts" afterPath="$PROJECT_DIR$/src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.ts" afterPath="$PROJECT_DIR$/src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/css/styles.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/experiments/javascript/hello/hello.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/experiments/todo/javascript/todo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/experiments/todo/javascript/todo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/experiments/todo/jquery/todo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/experiments/todo/jquery/todo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/images/map-localization.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/modules/4-browser-programming/01-js/hello.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/modules/4-browser-programming/01-js/hello.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/modules/4-browser-programming/02-jquery/hello.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/modules/4-browser-programming/02-jquery/hello.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/modules/4-browser-programming/03-jqueryui/hello.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/modules/4-browser-programming/03-jqueryui/hello.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/css/bootstrap-theme.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/css/bootstrap.min.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/bootstrap/dist/js/npm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/jquery/jquery-3.1.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/jquery/jquery-ui.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/vendors/jquery/jquery-ui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views-experiment/user/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views-experiment/user/profile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views-experiment/user/register.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views-experiment/user_old/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views-experiment/user_old/profile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views-experiment/user_old/register.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views-experiment/user_old/register2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views-experiment/website/website-edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views-experiment/website/website-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views/website/website-edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views/website/website-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/views/widget/widget-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/inline.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/inline.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/main.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/main.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/polyfills.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/polyfills.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/vendor.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/vendor.bundle.js.map" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.html" afterPath="$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.ts" afterPath="$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/sell/sell.component.ts" afterPath="$PROJECT_DIR$/src/app/components/sell/sell.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -24,43 +75,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="collectionpoint-list.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sell.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/components/sell/sell.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#79#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="collectionpoint-new.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dropoff-new.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dropoff-new.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-378">
-              <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="849">
+              <caret line="66" column="53" lean-forward="false" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -68,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer-dropoffs.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/dropoff/customer-dropoffs/customer-dropoffs.component.ts">
+      <file leaf-file-name="dropoff-new.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="261">
+              <caret line="82" column="35" lean-forward="false" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -161,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/app/components/catalog/catalog-new/catalog-new.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.html" />
-        <option value="$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/sell/sell.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/user/profile/profile.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/catalog/catalog-edit/catalog-edit.component.ts" />
@@ -169,8 +187,9 @@
         <option value="$PROJECT_DIR$/src/app/components/catalog/catalog-new/catalog-new.component.ts" />
         <option value="$PROJECT_DIR$/src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.ts" />
         <option value="$PROJECT_DIR$/src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.ts" />
         <option value="$PROJECT_DIR$/src/app/components/sell/sell.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.html" />
+        <option value="$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.ts" />
       </list>
     </option>
   </component>
@@ -587,36 +606,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dropoff" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="customer-dropoffs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e-trash-management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e-trash-management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="collectionpoint" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -996,12 +985,12 @@
       <workItem from="1512762379208" duration="20492000" />
       <workItem from="1512833114880" duration="6614000" />
       <workItem from="1512862039452" duration="24290000" />
-      <workItem from="1512946122586" duration="9049000" />
+      <workItem from="1512946122586" duration="9557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78865000" />
+    <option name="totallyTimeSpent" value="79373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="6" />
@@ -1312,14 +1301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/home/home.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-29">
@@ -1436,16 +1417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/dropoff/customer-dropoffs/customer-dropoffs.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1460,6 +1431,24 @@
           <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
           <folding>
             <element signature="e#0#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="82" column="35" lean-forward="false" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/dropoff/dropoff-new/dropoff-new.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="849">
+          <caret line="66" column="53" lean-forward="false" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>

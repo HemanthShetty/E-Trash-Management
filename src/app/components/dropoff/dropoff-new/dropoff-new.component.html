@@ -79,6 +79,10 @@
       </ul>
     </div>
     <button type="button" class="btn btn-success btn-lg" (click)="createDropOff()">OK <span class="glyphicon glyphicon-ok"></span></button>
+    <div *ngIf="sFlag"
+         class="alert alert-success">
+      {{sMsg}}
+    </div>
   </div>
 </div>
 
