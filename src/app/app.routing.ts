@@ -22,7 +22,7 @@ import {PersonalComponent} from "./components/personal/personal.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
-  {path: 'index', component : PersonalComponent},
+  {path: 'personal', component : PersonalComponent},
   {path: 'home', component : HomeComponent},
   {path: 'register', component : RegisterComponent},
   {path : 'login' , component: LoginComponent},

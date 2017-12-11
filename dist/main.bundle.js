@@ -231,7 +231,7 @@ AppModule = __decorate([
 
 var APP_ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'index', component: __WEBPACK_IMPORTED_MODULE_15__components_personal_personal_component__["a" /* PersonalComponent */] },
+    { path: 'personal', component: __WEBPACK_IMPORTED_MODULE_15__components_personal_personal_component__["a" /* PersonalComponent */] },
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_2__components_user_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_3__components_user_login_login_component__["a" /* LoginComponent */] },
