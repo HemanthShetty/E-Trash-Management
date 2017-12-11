@@ -53,45 +53,21 @@
 </nav>
 
 
-<!--
-<div class="container-fluid">
-  <div class="container-fluid">
-  <h3>Collection Points</h3>
-  <p class="pull-right">
-    <a [routerLink]= " [ '/user' , userId , 'cpoint' , 'new']" class="navbar-link">
-      <span class="glyphicon glyphicon-plus"></span>
-    </a>
-  </p>
-  </div>
-  <div class="container-fluid" *ngFor="let cpoint of collectionPoints">
-    <ul class="list-group">
-      <li class="list-group-item"><a [routerLink]= " [ '/user' , userId , 'cpoint' , cpoint._id ,'details']"><b>{{cpoint.name}}</b></a>
-        <a [routerLink]= " [ '/user' , userId , 'cpoint' , cpoint._id ]"> <span class="pull-right glyphicon glyphicon-cog"></span></a>
-      </li>
-    </ul>
-  </div>
-</div>
-
--->
 
 <div class="etm-page-body">
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span3"><span class="h4 text-primary">Collection Points</span> <p class="pull-right">
-      <a [routerLink]= " [ '/user' , userId , 'cpoint' , 'new']" class="navbar-link">
-        <span class="glyphicon glyphicon-plus"></span>
-      </a>
-    </p>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><span class="h4 text-primary">Customer Drop Offs At This Location</span> <p class="pull-right">
+      </p>
+      </div>
+    </div>
+    <div class="container-fluid" *ngFor="let dropOff of dropOffs">
+      <ul class="list-group">
+        <li class="list-group-item"><a><b> ID : {{dropOff._id}}</b></a>
+        </li>
+      </ul>
     </div>
   </div>
-  <div class="container-fluid" *ngFor="let cpoint of collectionPoints">
-    <ul class="list-group">
-      <li class="list-group-item"><a [routerLink]= " [ '/user' , userId , 'cpoint' , cpoint._id ,'dropoff']"><b>{{cpoint.name}}</b></a>
-        <a (click)="delete(cpoint._id)"> <span class="pull-right glyphicon glyphicon-trash"></span></a>
-      </li>
-    </ul>
-  </div>
-</div>
 </div>
 
 

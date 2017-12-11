@@ -23,6 +23,14 @@ export class DropOffService {
         }
       );
   }
+  findDropOffs(collectionPointId)
+  {
+    return this._http.get(this.baseUrl + '/api/collection/'+collectionPointId+'/dropoff')
+      .map((res: Response) => {
+          return res.json();
+        }
+      );
+  }
 
 
 }

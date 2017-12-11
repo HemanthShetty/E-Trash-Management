@@ -102,6 +102,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_dropoff_dropoff_new_dropoff_new_component__ = __webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_dropoff_service_client__ = __webpack_require__("../../../../../src/app/services/dropoff.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_dropoff_customer_dropoffs_customer_dropoffs_component__ = __webpack_require__("../../../../../src/app/components/dropoff/customer-dropoffs/customer-dropoffs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_dropoff_dropoff_collectionpoint_dropoff_collectionpoint_component__ = __webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -109,6 +110,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -161,7 +163,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_21__components_catalog_catalog_edit_catalog_edit_component__["a" /* CatalogEditComponent */],
             __WEBPACK_IMPORTED_MODULE_23__components_sell_sell_component__["a" /* SellComponent */],
             __WEBPACK_IMPORTED_MODULE_25__components_dropoff_dropoff_new_dropoff_new_component__["a" /* DropoffNewComponent */],
-            __WEBPACK_IMPORTED_MODULE_27__components_dropoff_customer_dropoffs_customer_dropoffs_component__["a" /* CustomerDropoffsComponent */]
+            __WEBPACK_IMPORTED_MODULE_27__components_dropoff_customer_dropoffs_customer_dropoffs_component__["a" /* CustomerDropoffsComponent */],
+            __WEBPACK_IMPORTED_MODULE_28__components_dropoff_dropoff_collectionpoint_dropoff_collectionpoint_component__["a" /* DropoffCollectionpointComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -201,10 +204,12 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_sell_sell_component__ = __webpack_require__("../../../../../src/app/components/sell/sell.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_dropoff_dropoff_new_dropoff_new_component__ = __webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_dropoff_customer_dropoffs_customer_dropoffs_component__ = __webpack_require__("../../../../../src/app/components/dropoff/customer-dropoffs/customer-dropoffs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_dropoff_dropoff_collectionpoint_dropoff_collectionpoint_component__ = __webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Routing; });
 /**
  * Created by sesha on 7/26/17.
  */
+
 
 
 
@@ -233,7 +238,8 @@ var APP_ROUTES = [
     { path: 'user/:uid/catalog/new', component: __WEBPACK_IMPORTED_MODULE_9__components_catalog_catalog_new_catalog_new_component__["a" /* CatalogNewComponent */] },
     { path: 'user/:uid/catalog/:catalogId', component: __WEBPACK_IMPORTED_MODULE_10__components_catalog_catalog_edit_catalog_edit_component__["a" /* CatalogEditComponent */] },
     { path: 'user/:uid/sell', component: __WEBPACK_IMPORTED_MODULE_11__components_sell_sell_component__["a" /* SellComponent */] },
-    { path: 'user/:uid/sell/:cid/dropoff/new', component: __WEBPACK_IMPORTED_MODULE_12__components_dropoff_dropoff_new_dropoff_new_component__["a" /* DropoffNewComponent */] }
+    { path: 'user/:uid/sell/:cid/dropoff/new', component: __WEBPACK_IMPORTED_MODULE_12__components_dropoff_dropoff_new_dropoff_new_component__["a" /* DropoffNewComponent */] },
+    { path: 'user/:uid/cpoint/:cid/dropoff', component: __WEBPACK_IMPORTED_MODULE_14__components_dropoff_dropoff_collectionpoint_dropoff_collectionpoint_component__["a" /* DropoffCollectionpointComponent */] }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forRoot(APP_ROUTES);
@@ -671,7 +677,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n<!--\n<div class=\"container-fluid\">\n  <div class=\"container-fluid\">\n  <h3>Collection Points</h3>\n  <p class=\"pull-right\">\n    <a [routerLink]= \" [ '/user' , userId , 'cpoint' , 'new']\" class=\"navbar-link\">\n      <span class=\"glyphicon glyphicon-plus\"></span>\n    </a>\n  </p>\n  </div>\n  <div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n        <a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ]\"> <span class=\"pull-right glyphicon glyphicon-cog\"></span></a>\n      </li>\n    </ul>\n  </div>\n</div>\n\n-->\n\n<div class=\"etm-page-body\">\n<div class=\"container-fluid\">\n  <div class=\"row-fluid\">\n    <div class=\"span3\"><span class=\"h4 text-primary\">Collection Points</span> <p class=\"pull-right\">\n      <a [routerLink]= \" [ '/user' , userId , 'cpoint' , 'new']\" class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n    </div>\n  </div>\n  <div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n        <a (click)=\"delete(cpoint._id)\"> <span class=\"pull-right glyphicon glyphicon-trash\"></span></a>\n      </li>\n    </ul>\n  </div>\n</div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n<!--\n<div class=\"container-fluid\">\n  <div class=\"container-fluid\">\n  <h3>Collection Points</h3>\n  <p class=\"pull-right\">\n    <a [routerLink]= \" [ '/user' , userId , 'cpoint' , 'new']\" class=\"navbar-link\">\n      <span class=\"glyphicon glyphicon-plus\"></span>\n    </a>\n  </p>\n  </div>\n  <div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'details']\"><b>{{cpoint.name}}</b></a>\n        <a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ]\"> <span class=\"pull-right glyphicon glyphicon-cog\"></span></a>\n      </li>\n    </ul>\n  </div>\n</div>\n\n-->\n\n<div class=\"etm-page-body\">\n<div class=\"container-fluid\">\n  <div class=\"row-fluid\">\n    <div class=\"span3\"><span class=\"h4 text-primary\">Collection Points</span> <p class=\"pull-right\">\n      <a [routerLink]= \" [ '/user' , userId , 'cpoint' , 'new']\" class=\"navbar-link\">\n        <span class=\"glyphicon glyphicon-plus\"></span>\n      </a>\n    </p>\n    </div>\n  </div>\n  <div class=\"container-fluid\" *ngFor=\"let cpoint of collectionPoints\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"><a [routerLink]= \" [ '/user' , userId , 'cpoint' , cpoint._id ,'dropoff']\"><b>{{cpoint.name}}</b></a>\n        <a (click)=\"delete(cpoint._id)\"> <span class=\"pull-right glyphicon glyphicon-trash\"></span></a>\n      </li>\n    </ul>\n  </div>\n</div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -927,6 +933,98 @@ CustomerDropoffsComponent = __decorate([
 ], CustomerDropoffsComponent);
 
 //# sourceMappingURL=customer-dropoffs.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><span class=\"h4 text-primary\">Customer Drop Offs At This Location</span> <p class=\"pull-right\">\n      </p>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let dropOff of dropOffs\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\"><a><b> ID : {{dropOff._id}}</b></a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_dropoff_service_client__ = __webpack_require__("../../../../../src/app/services/dropoff.service.client.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropoffCollectionpointComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var DropoffCollectionpointComponent = (function () {
+    function DropoffCollectionpointComponent(router, userService, dropOffPointService, activatedRoute) {
+        this.router = router;
+        this.userService = userService;
+        this.dropOffPointService = dropOffPointService;
+        this.activatedRoute = activatedRoute;
+        this.dropOffs = [{}];
+    }
+    DropoffCollectionpointComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            _this.userId = params['uid'];
+        });
+        this.activatedRoute.params
+            .subscribe(function (params) {
+            _this.collectionPointId = params['cid'];
+        });
+        this.dropOffPointService.findDropOffs(this.collectionPointId)
+            .subscribe(function (data) {
+            _this.dropOffs = data;
+        }, function (error) {
+        });
+    };
+    DropoffCollectionpointComponent.prototype.logout = function () {
+        var _this = this;
+        this.userService.logout()
+            .subscribe(function (data) { return _this.router.navigate(['/login']); });
+    };
+    return DropoffCollectionpointComponent;
+}());
+DropoffCollectionpointComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-dropoff-collectionpoint',
+        template: __webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
+], DropoffCollectionpointComponent);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=dropoff-collectionpoint.component.js.map
 
 /***/ }),
 
@@ -1970,6 +2068,12 @@ var DropOffService = (function () {
     }
     DropOffService.prototype.createDropOff = function (dropOff, userId) {
         return this._http.post(this.baseUrl + '/api/user/' + userId + '/dropoff', dropOff)
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    DropOffService.prototype.findDropOffs = function (collectionPointId) {
+        return this._http.get(this.baseUrl + '/api/collection/' + collectionPointId + '/dropoff')
             .map(function (res) {
             return res.json();
         });

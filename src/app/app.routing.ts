@@ -17,6 +17,7 @@ import {CatalogEditComponent} from "./components/catalog/catalog-edit/catalog-ed
 import {SellComponent} from "./components/sell/sell.component";
 import {DropoffNewComponent} from "./components/dropoff/dropoff-new/dropoff-new.component";
 import {CustomerDropoffsComponent} from "./components/dropoff/customer-dropoffs/customer-dropoffs.component";
+import {DropoffCollectionpointComponent} from "./components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -32,7 +33,8 @@ const APP_ROUTES: Routes = [
   {path : 'user/:uid/catalog/new' , component: CatalogNewComponent},
   {path : 'user/:uid/catalog/:catalogId' , component: CatalogEditComponent},
   {path : 'user/:uid/sell' , component: SellComponent},
-  {path : 'user/:uid/sell/:cid/dropoff/new', component: DropoffNewComponent}
+  {path : 'user/:uid/sell/:cid/dropoff/new', component: DropoffNewComponent},
+  {path : 'user/:uid/cpoint/:cid/dropoff', component: DropoffCollectionpointComponent}
 ];
 
 // Export the routes as module providers
