@@ -1208,7 +1208,7 @@ var DropoffNewComponent = (function () {
         var _this = this;
         this.inventory = new Array();
         for (var i = 0; i < this.catalog.length; i++) {
-            this.inventory[i] = new __WEBPACK_IMPORTED_MODULE_4__models_inventory_model_client__["a" /* Inventory */](this.catalog[i]['_id'], this.catalog[i]['quantity']);
+            this.inventory[i] = new __WEBPACK_IMPORTED_MODULE_4__models_inventory_model_client__["a" /* Inventory */](this.catalog[i]['_id'], this.catalog[i]['quantity'], this.catalog[i]['name']);
         }
         this.dropOffs = new __WEBPACK_IMPORTED_MODULE_3__models_dropOff_model_client__["a" /* DropOff */]('', this.userId, this.collectionPointId, this.inventory, 'Uncollected');
         delete this.dropOffs._id;
@@ -2370,9 +2370,10 @@ var DropOff = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Inventory; });
 var Inventory = (function () {
-    function Inventory(id, quantity) {
+    function Inventory(id, quantity, itemName) {
         this.itemId = id;
         this.quantity = quantity;
+        this.itemName = itemName;
     }
     return Inventory;
 }());

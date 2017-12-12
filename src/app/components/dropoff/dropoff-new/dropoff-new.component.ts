@@ -57,7 +57,7 @@ export class DropoffNewComponent implements OnInit {
     this.inventory= new Array();
     for(var i=0;i<this.catalog.length;i++)
     {
-     this.inventory[i]=new Inventory(this.catalog[i]['_id'],this.catalog[i]['quantity']) ;
+     this.inventory[i]=new Inventory(this.catalog[i]['_id'],this.catalog[i]['quantity'],this.catalog[i]['name']) ;
     }
     this.dropOffs=new DropOff('',this.userId, this.collectionPointId,this.inventory,'Uncollected');
     delete this.dropOffs._id;
