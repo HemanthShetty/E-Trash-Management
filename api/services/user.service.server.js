@@ -15,7 +15,7 @@ module.exports = function(app,model) {
   app.post('/api/login', passport.authenticate('local'), login);
   app.post('/api/logout', logout);
   app.post('/api/loggedIn', loggedin);
-  app.post('/api/:userId/manage/user', getAllUsers);
+  app.get('/api/:userId/manage/user', getAllUsers);
 
   function loggedin(req, res) {
     res.send(req.isAuthenticated() ? req.user : '0');

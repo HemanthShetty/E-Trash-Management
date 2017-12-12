@@ -65,9 +65,9 @@
     </div>
     <div class="container-fluid" *ngFor="let user of users">
       <ul class="list-group">
-        <li class="list-group-item"><b>{{user._id}}</b>
+        <li class="list-group-item"><b> ID : {{user._id}} </b>
           <a [routerLink]= " ['/user' , userId , 'manage' , 'user',user._id]"> <span class="pull-right glyphicon glyphicon-cog"></span></a>
-          <p> NAME : {{user.name}} </p>
+          <p> NAME : {{user.firstName}} {{user.lastName}} </p>
         </li>
       </ul>
     </div>
