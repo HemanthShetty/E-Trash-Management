@@ -1,3 +1,236 @@
-<p>
-  create works!
-</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row">
+      <!--heading on the nav bar-->
+      <div class="col-sm-10 col-md-10 col-lg-10 col-xs-10">
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user']">
+            <b>Home</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'sell']">
+            <b>Sell</b>
+          </a>
+        </p>
+
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'dropoff']" >
+            <b>DropOffs</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'pickup']" >
+            <b>Pickup</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
+            <b>Collection Points</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'catalog']" >
+            <b>Catalog</b>
+          </a>
+        </p>
+        <!--tick mark-->
+
+
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
+        <button type="button" class="btn btn-default btn-sm" (click)="logout()">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="panel panel-primary" style="margin:20px;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Create User</h3>
+  </div>
+  <div class="panel-body">
+    <form (ngSubmit)="createUser()" #f="ngForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input name="userName"
+               id="userName"
+               ngModel=""
+               required=""
+               placeholder="username"
+               type="text"
+               class="form-control"
+               #userName="ngModel"/>
+        <span class="help-block"
+              *ngIf="!userName.valid && userName.touched">
+            Please enter username!
+      </span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input name="email"
+               id="email"
+               ngModel=""
+               required=""
+               placeholder="email"
+               type="email"
+               class="form-control"
+               #email="ngModel"
+               email/>
+        <span class="help-block"
+              *ngIf="!email.valid && email.touched">
+            Please enter email!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input name="firstName"
+               id="firstName"
+               ngModel=""
+               required=""
+               placeholder="First Name"
+               type="text"
+               class="form-control"
+               #firstName="ngModel"/>
+        <span class="help-block"
+              *ngIf="!firstName.valid && firstName.touched">
+            Please enter firstName!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input name="lastName"
+               id="lastName"
+               ngModel=""
+               required=""
+               placeholder="Last Name"
+               type="text"
+               class="form-control"
+               #lastName="ngModel"/>
+        <span class="help-block"
+              *ngIf="!lastName.valid && lastName.touched">
+            Please enter lastName!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input name="password"
+               id="password"
+               ngModel=""
+               required=""
+               placeholder="password"
+               type="password"
+               class="form-control"
+               #password="ngModel"/>
+        <span class="help-block"
+              *ngIf="!password.valid && password.touched">
+            Please enter a password!
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="verifyPassword">Verify Password</label>
+        <input name="verifyPassword"
+               id="verifyPassword"
+               ngModel=""
+               required
+               placeholder="verify password"
+               type="password"
+               class="form-control"
+               #verifyPassword="ngModel"/>
+        <span class="help-block"
+              *ngIf="!verifyPassword.valid && verifyPassword.touched && isPasswordVerified()">
+            Your passwords do not match!!
+          </span>
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <textarea id="address"  class="form-control" name="address" rows="5"  #buyerAddress="ngModel" [(ngModel)]=this.address required>
+        </textarea>
+      </div>
+      <div class="form-group">
+        <label>User Type</label>
+        <select name="roleType" [(ngModel)]="userRole">
+          <option *ngFor="let role of roles" [ngValue]="role" >{{role}}</option>
+        </select>
+      </div>
+      <div *ngIf="this.userRole=='Organization'">
+        <div class="form-group">
+          <label>Organization Name</label>
+          <input name="orgName"
+                 id="orgName"
+                 ngModel=""
+                 required=""
+                 placeholder="Organization Name"
+                 type="text"
+                 class="form-control"
+                 #lastName="ngModel"/>
+        </div>
+      </div>
+      <div *ngIf="userRole=='Employee'">
+        <div class="form-group">
+          <label>EmployeeId</label>
+          <input name="empId"
+                 id="empId"
+                 ngModel=""
+                 required=""
+                 placeholder="Your Employee ID"
+                 type="text"
+                 class="form-control"
+                 #lastName="ngModel"/>
+        </div>
+      </div>
+      <div *ngIf="userRole=='Buyer'">
+        <div class="form-group">
+          <label>Buyer Name</label>
+          <input name="buyerName"
+                 id="buyerName"
+                 ngModel=""
+                 required=""
+                 placeholder="Enter the name of the refinery or organization"
+                 type="text"
+                 class="form-control"
+                 #lastName="ngModel"/>
+        </div>
+      </div>
+      <div *ngIf="errorFlag"
+           class="alert alert-danger">
+        {{errorMsg}}
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"
+                [disabled]="!f.valid">
+          Create User
+        </button>
+      </div>
+      <div class="form-group">
+        <a class="btn btn-danger btn-block"
+           routerLink="/login">
+          Cancel
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a href="profile.html">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+
+

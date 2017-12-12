@@ -6,7 +6,7 @@ module.exports = function(app,model) {
   passport.deserializeUser(deserializeUser);
   var LocalStrategy = require('passport-local').Strategy;
   passport.use(new LocalStrategy(localStrategy));
-  app.post('/api/user', createUser);
+  app.post('/api/manage/user', createUser);
   app.post('/api/register', register);
   app.get('/api/user', findUser);
   app.get('/api/user/:userId', findUserById);
@@ -87,9 +87,16 @@ module.exports = function(app,model) {
   function createUser(req,res)
   {
     var user = req.body;
+    user.password = bcrypt.hashSync(user.password);
     model.userModel.createUser(user).then(function(data)
     {
-      res.json(data);
+      req.login(data, function(err){
+        if(err) {
+          res.status(400).send(err);
+        } else {
+          res.json(data);
+        }
+      });
     },function(err){
       res.json(null);
     });

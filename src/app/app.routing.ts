@@ -20,6 +20,7 @@ import {CustomerDropoffsComponent} from "./components/dropoff/customer-dropoffs/
 import {DropoffCollectionpointComponent} from "./components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component";
 import {PersonalComponent} from "./components/personal/personal.component";
 import {ListComponent} from "./components/user/list/list.component";
+import {CreateComponent} from "./components/user/create/create.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -29,6 +30,7 @@ const APP_ROUTES: Routes = [
   {path : 'login' , component: LoginComponent},
   {path:  'user', component: ProfileComponent},
   {path : 'user/:uid/manage/user', component: ListComponent},
+  {path : 'user/:uid/manage/user/new', component: CreateComponent},
   {path : 'user/:userId/cpoint' , component: CollectionpointListComponent},
   {path : 'user/:uid/dropoff', component: CustomerDropoffsComponent},
   {path : 'user/:uid/cpoint/new' , component: CollectionpointNewComponent},

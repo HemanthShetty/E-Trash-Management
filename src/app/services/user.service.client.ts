@@ -72,9 +72,14 @@ export class UserService {
       password: user.password,
       firstName: user.firstName,
       lastName: user.lastName,
-      email: user.email
+      email: user.email,
+      role: user.role,
+      employeeId: user.employeeId,
+      organizationName:user.organizationName,
+      address:user.address,
+      buyerName:user.buyerName
     };
-    return this._http.post(this.baseUrl + '/api/user', userDetails)
+    return this._http.post(this.baseUrl + '/api/manage/user', userDetails)
       .map((res: Response) => {
           return res.json();
         }
