@@ -22,6 +22,7 @@ import {PersonalComponent} from "./components/personal/personal.component";
 import {ListComponent} from "./components/user/list/list.component";
 import {CreateComponent} from "./components/user/create/create.component";
 import {EditComponent} from "./components/user/edit/edit.component";
+import {DropoffEditComponent} from "./components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -43,7 +44,9 @@ const APP_ROUTES: Routes = [
   {path : 'user/:uid/sell' , component: SellComponent},
   {path : 'user/:uid/sell/:cid/dropoff/new', component: DropoffNewComponent},
   {path : 'user/:uid/cpoint/:cid/dropoff', component: DropoffCollectionpointComponent},
+  {path : 'user/:uid/cpoint/:cid/dropoff/:dropOffId', component: DropoffEditComponent},
 ];
 
 // Export the routes as module providers
 export const Routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
+

@@ -63,7 +63,8 @@
     </div>
     <div class="container-fluid" *ngFor="let dropOff of dropOffs">
       <ul class="list-group">
-        <li class="list-group-item"><a><b> ID : {{dropOff._id}}</b></a>
+        <li class="list-group-item"><b> ID : {{dropOff._id}}</b>
+          <a [routerLink]= " ['/user' , userId , 'cpoint' , collectionPointId,'dropoff',dropOff._id]"> <span class="pull-right glyphicon glyphicon-edit"></span></a>
         </li>
       </ul>
     </div>

@@ -107,6 +107,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_user_create_create_component__ = __webpack_require__("../../../../../src/app/components/user/create/create.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_user_edit_edit_component__ = __webpack_require__("../../../../../src/app/components/user/edit/edit.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_user_list_list_component__ = __webpack_require__("../../../../../src/app/components/user/list/list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_dropoff_dropoff_collectionpoint_dropoff_edit_dropoff_edit_component__ = __webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -114,6 +115,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -176,7 +178,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_29__components_personal_personal_component__["a" /* PersonalComponent */],
             __WEBPACK_IMPORTED_MODULE_30__components_user_create_create_component__["a" /* CreateComponent */],
             __WEBPACK_IMPORTED_MODULE_31__components_user_edit_edit_component__["a" /* EditComponent */],
-            __WEBPACK_IMPORTED_MODULE_32__components_user_list_list_component__["a" /* ListComponent */]
+            __WEBPACK_IMPORTED_MODULE_32__components_user_list_list_component__["a" /* ListComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_dropoff_dropoff_collectionpoint_dropoff_edit_dropoff_edit_component__["a" /* DropoffEditComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -221,10 +224,12 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_user_list_list_component__ = __webpack_require__("../../../../../src/app/components/user/list/list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_user_create_create_component__ = __webpack_require__("../../../../../src/app/components/user/create/create.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_user_edit_edit_component__ = __webpack_require__("../../../../../src/app/components/user/edit/edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_dropoff_dropoff_collectionpoint_dropoff_edit_dropoff_edit_component__ = __webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Routing; });
 /**
  * Created by sesha on 7/26/17.
  */
+
 
 
 
@@ -264,6 +269,7 @@ var APP_ROUTES = [
     { path: 'user/:uid/sell', component: __WEBPACK_IMPORTED_MODULE_11__components_sell_sell_component__["a" /* SellComponent */] },
     { path: 'user/:uid/sell/:cid/dropoff/new', component: __WEBPACK_IMPORTED_MODULE_12__components_dropoff_dropoff_new_dropoff_new_component__["a" /* DropoffNewComponent */] },
     { path: 'user/:uid/cpoint/:cid/dropoff', component: __WEBPACK_IMPORTED_MODULE_14__components_dropoff_dropoff_collectionpoint_dropoff_collectionpoint_component__["a" /* DropoffCollectionpointComponent */] },
+    { path: 'user/:uid/cpoint/:cid/dropoff/:dropOffId', component: __WEBPACK_IMPORTED_MODULE_19__components_dropoff_dropoff_collectionpoint_dropoff_edit_dropoff_edit_component__["a" /* DropoffEditComponent */] },
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forRoot(APP_ROUTES);
@@ -981,7 +987,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><span class=\"h4 text-primary\">Customer Drop Offs At This Location</span> <p class=\"pull-right\">\n      </p>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let dropOff of dropOffs\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\"><a><b> ID : {{dropOff._id}}</b></a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><span class=\"h4 text-primary\">Customer Drop Offs At This Location</span> <p class=\"pull-right\">\n      </p>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let dropOff of dropOffs\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\"><b> ID : {{dropOff._id}}</b>\n          <a [routerLink]= \" ['/user' , userId , 'cpoint' , collectionPointId,'dropoff',dropOff._id]\"> <span class=\"pull-right glyphicon glyphicon-edit\"></span></a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1049,6 +1055,67 @@ DropoffCollectionpointComponent = __decorate([
 
 var _a, _b, _c, _d;
 //# sourceMappingURL=dropoff-collectionpoint.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  dropoff-edit works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropoffEditComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DropoffEditComponent = (function () {
+    function DropoffEditComponent() {
+    }
+    DropoffEditComponent.prototype.ngOnInit = function () {
+    };
+    return DropoffEditComponent;
+}());
+DropoffEditComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-dropoff-edit',
+        template: __webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], DropoffEditComponent);
+
+//# sourceMappingURL=dropoff-edit.component.js.map
 
 /***/ }),
 

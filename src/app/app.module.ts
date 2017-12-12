@@ -32,6 +32,7 @@ import { PersonalComponent } from './components/personal/personal.component';
 import { CreateComponent } from './components/user/create/create.component';
 import { EditComponent } from './components/user/edit/edit.component';
 import { ListComponent } from './components/user/list/list.component';
+import { DropoffEditComponent } from './components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component';
 
 @NgModule({
   // Declare components here
@@ -56,7 +57,8 @@ import { ListComponent } from './components/user/list/list.component';
     PersonalComponent,
     CreateComponent,
     EditComponent,
-    ListComponent
+    ListComponent,
+    DropoffEditComponent
   ],
   imports: [
     BrowserModule,
