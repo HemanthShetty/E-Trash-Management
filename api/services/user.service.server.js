@@ -97,7 +97,6 @@ module.exports = function(app,model) {
 
   function getAllUsers(req,res)
   {
-    console.log('here');
     model.userModel.getAllUsers().then(function(data)
     {
       res.json(data);
