@@ -1,3 +1,192 @@
-<p>
-  edit works!
-</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row">
+      <!--heading on the nav bar-->
+      <div class="col-sm-10 col-md-10 col-lg-10 col-xs-10">
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user']">
+            <b>Home</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'sell']">
+            <b>Sell</b>
+          </a>
+        </p>
+
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'dropoff']" >
+            <b>DropOffs</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'pickup']" >
+            <b>Pickup</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
+            <b>Collection Points</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'catalog']" >
+            <b>Catalog</b>
+          </a>
+        </p>
+        <!--tick mark-->
+
+
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
+        <button type="button" class="btn btn-default btn-sm" (click)="logout()">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="container-fluid">
+  <div class="panel panel-primary" style="margin:50px;">
+    <div class="panel-heading">
+      <h3 class="panel-title">Edit User</h3>
+    </div>
+    <div class="panel-body">
+      <form #f="ngForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.username"  ngModel="" required #username="ngModel">
+          <span class="help-block" *ngIf="!username.valid && username.touched">
+      Please enter username!
+      </span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email </label>
+          <input type="email" name="email" class="form-control" id="email" [(ngModel)]="user.email" ngModel="" email #email="ngModel">
+          <span class="help-block" *ngIf="!email.valid && email.touched">
+      Please enter a valid email!
+      </span>
+        </div>
+
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" name="firstname" class="form-control" id="first-name" [(ngModel)]="user.firstName" ngModel="" required #firstname="ngModel">
+          <span class="help-block" *ngIf="!firstname.valid && firstname.touched">
+      Please enter a valid first name!
+      </span>
+        </div>
+
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" name="lastname" class="form-control" id="last-name" [(ngModel)]="user.lastName" ngModel="" required #lastname="ngModel">
+          <span class="help-block" *ngIf="!lastname.valid && lastname.touched">
+      Please enter a valid second name!
+      </span>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address"  class="form-control" name="address" rows="5"  #buyerAddress="ngModel" [(ngModel)]=user.address required>
+        </textarea>
+        </div>
+
+        <div class="form-group">
+          <label>User Type</label>
+          <select name="roleType" [(ngModel)]=user.role>
+            <option *ngFor="let role of roles" [ngValue]="role" >{{role}}</option>
+          </select>
+        </div>
+
+        <div *ngIf="this.user.role=='Organization'">
+          <div class="form-group">
+            <label for="orgName">Organization Name</label>
+            <input name="orgName"
+                   id="orgName"
+                   [(ngModel)]="user.organizationName"
+                   required=""
+                   placeholder="Organization Name"
+                   type="text"
+                   class="form-control"
+                   #lastName="ngModel"/>
+          </div>
+        </div>
+
+        <div *ngIf="user.role=='Employee'">
+          <div class="form-group">
+            <label>EmployeeId</label>
+            <input name="empId"
+                   id="empId"
+                   [(ngModel)]="user.employeeId"
+                   required=""
+                   placeholder="Your Employee ID"
+                   type="text"
+                   class="form-control"
+                   #lastName="ngModel"/>
+          </div>
+        </div>
+
+        <div *ngIf="user.role=='Buyer'">
+          <div class="form-group">
+            <label>Buyer Name</label>
+            <input name="buyerName"
+                   id="buyerName"
+                   [(ngModel)]="user.buyerName"
+                   required=""
+                   placeholder="Enter the name of the refinery or organization"
+                   type="text"
+                   class="form-control"
+                   #lastName="ngModel"/>
+          </div>
+        </div>
+
+        <div *ngIf="isInvalid"
+             class="alert alert-danger">
+          {{notificationMessage}}
+        </div>
+
+        <div class="form-group">
+        <a class="btn btn-primary btn-block"
+           (click)="editProfile()">Save Profile</a>
+        </div>
+        <div class="form-group">
+          <a class="btn btn-danger btn-block"
+             (click)="deleteUser()" >Delete</a>
+        </div>
+
+      </form>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a href="profile.html">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>

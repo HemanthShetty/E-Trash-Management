@@ -178,7 +178,7 @@ module.exports = function(app,model) {
   }
 
   function deleteUser(req,res) {
-    var userId = req.params.uid;
+    var userId = req.params.userId;
     model.userModel.deleteUser(userId).then(function(data) {
         res.json({success: true});
       },function(err){
