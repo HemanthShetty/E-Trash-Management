@@ -130,5 +130,13 @@ export class UserService {
       );
   }
 
+  findAllUsers(userId){
+    return this._http.get(this.baseUrl + '/api/'+userId+'/manage/user')
+      .map((res: Response) => {
+          return res.json();
+        }
+      );
+  }
+
 }
 

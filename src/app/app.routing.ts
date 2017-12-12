@@ -19,6 +19,7 @@ import {DropoffNewComponent} from "./components/dropoff/dropoff-new/dropoff-new.
 import {CustomerDropoffsComponent} from "./components/dropoff/customer-dropoffs/customer-dropoffs.component";
 import {DropoffCollectionpointComponent} from "./components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component";
 import {PersonalComponent} from "./components/personal/personal.component";
+import {ListComponent} from "./components/user/list/list.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -27,6 +28,7 @@ const APP_ROUTES: Routes = [
   {path: 'register', component : RegisterComponent},
   {path : 'login' , component: LoginComponent},
   {path:  'user', component: ProfileComponent},
+  {path : 'user/:uid/manage/user', component: ListComponent},
   {path : 'user/:userId/cpoint' , component: CollectionpointListComponent},
   {path : 'user/:uid/dropoff', component: CustomerDropoffsComponent},
   {path : 'user/:uid/cpoint/new' , component: CollectionpointNewComponent},
@@ -36,7 +38,7 @@ const APP_ROUTES: Routes = [
   {path : 'user/:uid/catalog/:catalogId' , component: CatalogEditComponent},
   {path : 'user/:uid/sell' , component: SellComponent},
   {path : 'user/:uid/sell/:cid/dropoff/new', component: DropoffNewComponent},
-  {path : 'user/:uid/cpoint/:cid/dropoff', component: DropoffCollectionpointComponent}
+  {path : 'user/:uid/cpoint/:cid/dropoff', component: DropoffCollectionpointComponent},
 ];
 
 // Export the routes as module providers

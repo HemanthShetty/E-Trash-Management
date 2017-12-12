@@ -15,6 +15,7 @@ module.exports = function(app,model) {
   app.post('/api/login', passport.authenticate('local'), login);
   app.post('/api/logout', logout);
   app.post('/api/loggedIn', loggedin);
+  app.post('/api/:userId/manage/user', getAllUsers);
 
   function loggedin(req, res) {
     res.send(req.isAuthenticated() ? req.user : '0');
@@ -46,7 +47,6 @@ module.exports = function(app,model) {
         }
       );
   }
-
 
 
   function serializeUser(user, done) {
@@ -88,6 +88,17 @@ module.exports = function(app,model) {
   {
     var user = req.body;
     model.userModel.createUser(user).then(function(data)
+    {
+      res.json(data);
+    },function(err){
+      res.json(null);
+    });
+  }
+
+  function getAllUsers(req,res)
+  {
+    console.log('here');
+    model.userModel.getAllUsers().then(function(data)
     {
       res.json(data);
     },function(err){
