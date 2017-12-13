@@ -27,7 +27,7 @@ export class CatalogEditComponent implements OnInit {
 
   ngOnInit() {
     this.userIdentity = this.sharedService.user;
-    this.catalogItem = new Catalog('', '' , '' , '','','');
+    this.catalogItem = new Catalog('', '' , '' , '',0,'');
     this.activatedRoute.params
       .subscribe(
         (params: any) => {
@@ -51,7 +51,7 @@ export class CatalogEditComponent implements OnInit {
           this.errorMsg = 'Error Fetching Website details' ;
         }
       );
-    this.catalogItemDetails = new Catalog('', '' , '' , '','','');
+    this.catalogItemDetails = new Catalog('', '' , '' , '',0,'');
   }
 
   logout() {

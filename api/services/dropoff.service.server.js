@@ -34,7 +34,7 @@ module.exports = function(app,model) {
   function updateInventory(itemId,quantity){
     model.catalogModel.findCatalogItemById(itemId).then(
     function(data){
-      data.quantity=data.quantity+quantity;
+      data.quantity=data.quantity+parseInt(quantity);
       model.catalogModel.updateCatalogItem(data).then(function(data)
       {
         return;

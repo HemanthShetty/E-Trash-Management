@@ -312,6 +312,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__ = __webpack_require__("../../../../../src/app/models/catalog.model.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -328,16 +329,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CatalogEditComponent = (function () {
-    function CatalogEditComponent(userService, catalogService, activatedRoute, router) {
+    function CatalogEditComponent(userService, catalogService, activatedRoute, router, sharedService) {
         this.userService = userService;
         this.catalogService = catalogService;
         this.activatedRoute = activatedRoute;
         this.router = router;
+        this.sharedService = sharedService;
     }
     CatalogEditComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.catalogItem = new __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__["a" /* Catalog */]('', '', '', '', '', '');
+        this.userIdentity = this.sharedService.user;
+        this.catalogItem = new __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__["a" /* Catalog */]('', '', '', '', 0, '');
         this.activatedRoute.params
             .subscribe(function (params) {
             _this.userId = params['uid'];
@@ -356,7 +360,7 @@ var CatalogEditComponent = (function () {
             _this.errorFlag = true;
             _this.errorMsg = 'Error Fetching Website details';
         });
-        this.catalogItemDetails = new __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__["a" /* Catalog */]('', '', '', '', '', '');
+        this.catalogItemDetails = new __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__["a" /* Catalog */]('', '', '', '', 0, '');
     };
     CatalogEditComponent.prototype.logout = function () {
         var _this = this;
@@ -416,10 +420,10 @@ CatalogEditComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/catalog/catalog-edit/catalog-edit.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__["a" /* SharedService */]) === "function" && _f || Object])
 ], CatalogEditComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=catalog-edit.component.js.map
 
 /***/ }),
@@ -457,6 +461,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__ = __webpack_require__("../../../../../src/app/services/catalog.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -471,16 +476,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CatalogListComponent = (function () {
-    function CatalogListComponent(router, userService, catalogService, activatedRoute) {
+    function CatalogListComponent(router, userService, catalogService, activatedRoute, sharedService) {
         this.router = router;
         this.userService = userService;
         this.catalogService = catalogService;
         this.activatedRoute = activatedRoute;
+        this.sharedService = sharedService;
         this.catalog = [{}];
     }
     CatalogListComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.userIdentity = this.sharedService.user;
         this.activatedRoute.params
             .subscribe(function (params) {
             _this.userId = params['userId'];
@@ -504,10 +512,10 @@ CatalogListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/catalog/catalog-list/catalog-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/catalog/catalog-list/catalog-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _e || Object])
 ], CatalogListComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=catalog-list.component.js.map
 
 /***/ }),
@@ -547,6 +555,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__ = __webpack_require__("../../../../../src/app/models/catalog.model.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CatalogNewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -563,20 +572,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CatalogNewComponent = (function () {
-    function CatalogNewComponent(userService, catalogService, activatedRoute, router) {
+    function CatalogNewComponent(userService, catalogService, activatedRoute, router, sharedService) {
         this.userService = userService;
         this.catalogService = catalogService;
         this.activatedRoute = activatedRoute;
         this.router = router;
+        this.sharedService = sharedService;
     }
     CatalogNewComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.userIdentity = this.sharedService.user;
         this.activatedRoute.params
             .subscribe(function (params) {
             _this.userId = params['uid'];
         });
-        this.cDetails = new __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__["a" /* Catalog */]('', '', '', '', '', '');
+        this.cDetails = new __WEBPACK_IMPORTED_MODULE_4__models_catalog_model_client__["a" /* Catalog */]('', '', '', '', 0, '');
     };
     CatalogNewComponent.prototype.createCatalogItem = function () {
         var _this = this;
@@ -617,10 +629,10 @@ CatalogNewComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/catalog/catalog-new/catalog-new.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/catalog/catalog-new/catalog-new.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__["a" /* SharedService */]) === "function" && _f || Object])
 ], CatalogNewComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=catalog-new.component.js.map
 
 /***/ }),
@@ -719,6 +731,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_cpoint_service_client__ = __webpack_require__("../../../../../src/app/services/cpoint.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionpointListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -733,16 +746,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CollectionpointListComponent = (function () {
-    function CollectionpointListComponent(router, userService, collectionPointService, activatedRoute) {
+    function CollectionpointListComponent(router, userService, collectionPointService, activatedRoute, sharedService) {
         this.router = router;
         this.userService = userService;
         this.collectionPointService = collectionPointService;
         this.activatedRoute = activatedRoute;
+        this.sharedService = sharedService;
         this.collectionPoints = [{}];
     }
     CollectionpointListComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.userIdentity = this.sharedService.user;
         this.activatedRoute.params
             .subscribe(function (params) {
             _this.userId = params['userId'];
@@ -783,10 +799,10 @@ CollectionpointListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-list/collectionpoint-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _e || Object])
 ], CollectionpointListComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=collectionpoint-list.component.js.map
 
 /***/ }),
@@ -826,6 +842,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_cpoint_service_client__ = __webpack_require__("../../../../../src/app/services/cpoint.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_cpoint_model_client__ = __webpack_require__("../../../../../src/app/models/cpoint.model.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CollectionpointNewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -842,15 +859,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CollectionpointNewComponent = (function () {
-    function CollectionpointNewComponent(userService, collectionPointService, activatedRoute, router) {
+    function CollectionpointNewComponent(userService, collectionPointService, activatedRoute, router, sharedService) {
         this.userService = userService;
         this.collectionPointService = collectionPointService;
         this.activatedRoute = activatedRoute;
         this.router = router;
+        this.sharedService = sharedService;
     }
     CollectionpointNewComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.userIdentity = this.sharedService.user;
         this.activatedRoute.params
             .subscribe(function (params) {
             _this.userId = params['uid'];
@@ -897,10 +917,10 @@ CollectionpointNewComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/collectionpoint/collectionpoint-new/collectionpoint-new.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_cpoint_service_client__["a" /* CollectionPointService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_cpoint_service_client__["a" /* CollectionPointService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__["a" /* SharedService */]) === "function" && _f || Object])
 ], CollectionpointNewComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=collectionpoint-new.component.js.map
 
 /***/ }),
@@ -937,6 +957,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_dropoff_service_client__ = __webpack_require__("../../../../../src/app/services/dropoff.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomerDropoffsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -950,14 +971,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CustomerDropoffsComponent = (function () {
-    function CustomerDropoffsComponent(route, router, dropOffService) {
+    function CustomerDropoffsComponent(route, router, dropOffService, sharedService) {
         this.route = route;
         this.router = router;
         this.dropOffService = dropOffService;
+        this.sharedService = sharedService;
     }
     CustomerDropoffsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.userIdentity = this.sharedService.user;
         this.route.params
             .subscribe(function (params) {
             _this.userId = params['uid'];
@@ -977,10 +1001,10 @@ CustomerDropoffsComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/dropoff/customer-dropoffs/customer-dropoffs.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dropoff/customer-dropoffs/customer-dropoffs.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shared_service_client__["a" /* SharedService */]) === "function" && _d || Object])
 ], CustomerDropoffsComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=customer-dropoffs.component.js.map
 
 /***/ }),
@@ -1018,6 +1042,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_dropoff_service_client__ = __webpack_require__("../../../../../src/app/services/dropoff.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropoffCollectionpointComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1032,16 +1057,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DropoffCollectionpointComponent = (function () {
-    function DropoffCollectionpointComponent(router, userService, dropOffPointService, activatedRoute) {
+    function DropoffCollectionpointComponent(router, userService, dropOffPointService, activatedRoute, sharedService) {
         this.router = router;
         this.userService = userService;
         this.dropOffPointService = dropOffPointService;
         this.activatedRoute = activatedRoute;
+        this.sharedService = sharedService;
         this.dropOffs = [{}];
     }
     DropoffCollectionpointComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.userIdentity = this.sharedService.user;
         this.activatedRoute.params
             .subscribe(function (params) {
             _this.userId = params['uid'];
@@ -1069,10 +1097,10 @@ DropoffCollectionpointComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-collectionpoint.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _e || Object])
 ], DropoffCollectionpointComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=dropoff-collectionpoint.component.js.map
 
 /***/ }),
@@ -1112,6 +1140,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__ = __webpack_require__("../../../../../src/app/services/dropoff.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropoffEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1128,17 +1157,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DropoffEditComponent = (function () {
-    function DropoffEditComponent(route, userService, router, dropOffService) {
+    function DropoffEditComponent(route, userService, router, dropOffService, sharedService) {
         this.route = route;
         this.userService = userService;
         this.router = router;
         this.dropOffService = dropOffService;
+        this.sharedService = sharedService;
         this.dropOff = new __WEBPACK_IMPORTED_MODULE_0__models_dropOff_model_client__["a" /* DropOff */]('', '', '', [], '');
         this.statuses = ['Uncollected', 'Collected'];
     }
     DropoffEditComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.userIdentity = this.sharedService.user;
         this.route.params
             .subscribe(function (params) {
             _this.userId = params['uid'];
@@ -1195,10 +1227,10 @@ DropoffEditComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_shared_service_client__["a" /* SharedService */]) === "function" && _f || Object])
 ], DropoffEditComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=dropoff-edit.component.js.map
 
 /***/ }),
@@ -1239,6 +1271,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_inventory_model_client__ = __webpack_require__("../../../../../src/app/models/inventory.model.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__ = __webpack_require__("../../../../../src/app/services/dropoff.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropoffNewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1256,19 +1289,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DropoffNewComponent = (function () {
-    function DropoffNewComponent(router, userService, catalogService, activatedRoute, dropOffService) {
+    function DropoffNewComponent(router, userService, catalogService, activatedRoute, dropOffService, sharedService) {
         this.router = router;
         this.userService = userService;
         this.catalogService = catalogService;
         this.activatedRoute = activatedRoute;
         this.dropOffService = dropOffService;
+        this.sharedService = sharedService;
         this.catalog = [{}];
         this.sFlag = false;
         this.sMsg = "";
     }
     DropoffNewComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.userIdentity = this.sharedService.user;
         this.activatedRoute.params
             .subscribe(function (params) {
             _this.userId = params['uid'];
@@ -1310,10 +1346,10 @@ DropoffNewComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_catalog_service_client__["a" /* CatalogService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_7__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__services_shared_service_client__["a" /* SharedService */]) === "function" && _f || Object])
 ], DropoffNewComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=dropoff-new.component.js.map
 
 /***/ }),
@@ -1739,6 +1775,9 @@ var CreateComponent = (function () {
             .subscribe(function (params) {
             _this.creatorUserId = params['uid'];
         });
+        this.activatedRoute.params.subscribe(function (params) {
+            _this.userIdentity = _this.sharedService.user;
+        });
     };
     CreateComponent.prototype.createUser = function () {
         var _this = this;
@@ -1847,8 +1886,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var EditComponent = (function () {
-    function EditComponent(route, userService, router, sharedService, activatedRoute) {
-        this.route = route;
+    function EditComponent(userService, router, sharedService, activatedRoute) {
         this.userService = userService;
         this.router = router;
         this.sharedService = sharedService;
@@ -1865,6 +1903,9 @@ var EditComponent = (function () {
         this.activatedRoute.params
             .subscribe(function (params) {
             _this.creatorUserId = params['uid'];
+        });
+        this.activatedRoute.params.subscribe(function (params) {
+            _this.userIdentity = _this.sharedService.user;
         });
         this.userService.findUserById(this.userId)
             .subscribe(function (data) {
@@ -1934,10 +1975,10 @@ EditComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/user/edit/edit.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user/edit/edit.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_shared_service_client__["a" /* SharedService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_shared_service_client__["a" /* SharedService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _e || Object])
 ], EditComponent);
 
-var _a, _b, _c, _d, _e, _f;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=edit.component.js.map
 
 /***/ }),
@@ -1974,6 +2015,7 @@ module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1987,11 +2029,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ListComponent = (function () {
-    function ListComponent(router, userService, activatedRoute) {
+    function ListComponent(router, userService, activatedRoute, sharedService) {
         this.router = router;
         this.userService = userService;
         this.activatedRoute = activatedRoute;
+        this.sharedService = sharedService;
         this.users = [{}];
     }
     ListComponent.prototype.ngOnInit = function () {
@@ -1999,6 +2043,9 @@ var ListComponent = (function () {
         this.activatedRoute.params
             .subscribe(function (params) {
             _this.userId = params['uid'];
+        });
+        this.activatedRoute.params.subscribe(function (params) {
+            _this.userIdentity = _this.sharedService.user;
         });
         this.userService.findAllUsers(this.userId)
             .subscribe(function (data) {
@@ -2019,10 +2066,10 @@ ListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/user/list/list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user/list/list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shared_service_client__["a" /* SharedService */]) === "function" && _d || Object])
 ], ListComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=list.component.js.map
 
 /***/ }),

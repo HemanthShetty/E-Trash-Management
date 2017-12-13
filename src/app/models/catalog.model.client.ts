@@ -3,13 +3,13 @@ export class Catalog {
   public name: string;
   public description: string;
   public price: string;
-  public quantity: string;
+  public quantity: Number;
   public imageUrl: string;
 
 
 
 
-  constructor(_id:string,name:string,description:string,price:string,quantity:string,imageUrl:string) {
+  constructor(_id:string,name:string,description:string,price:string,quantity:Number,imageUrl:string) {
     this._id = _id;
     this.name = name;
     this.description =  description;

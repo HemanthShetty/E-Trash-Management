@@ -31,7 +31,7 @@ export class CatalogNewComponent implements OnInit {
           this.userId = params['uid'];
         }
       );
-    this.cDetails=new Catalog('','','','','','');
+    this.cDetails=new Catalog('','','','',0,'');
   }
   createCatalogItem() {
     if (this.websiteForm.valid) {

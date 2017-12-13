@@ -9,7 +9,7 @@ var CatalogSchema = mongoose.Schema({
   name: String,
   description: String,
   price: String,
-  quantity: String,
+  quantity: Number,
   imageUrl: String,
   dateCreated: {type: Date, default: Date.now}
 }, {collection: 'catalog'});
