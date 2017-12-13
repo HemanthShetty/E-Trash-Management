@@ -4,6 +4,7 @@ import {CatalogService} from "../../../services/catalog.service.client";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Catalog} from "../../../models/catalog.model.client";
 import {UserService} from "../../../services/user.service.client";
+import {SharedService} from "../../../services/shared.service.client";
 
 @Component({
   selector: 'app-catalog-new',
@@ -17,10 +18,13 @@ export class CatalogNewComponent implements OnInit {
   errorFlag: boolean;
   errorMsg: String;
   @ViewChild('f') websiteForm: NgForm;
+  userIdentity;
 
-  constructor(private userService:UserService,private catalogService: CatalogService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private userService:UserService,private catalogService: CatalogService,
+              private activatedRoute: ActivatedRoute, private router: Router,private sharedService:SharedService) { }
 
   ngOnInit() {
+    this.userIdentity = this.sharedService.user;
     this.activatedRoute.params
       .subscribe(
         (params: any) => {

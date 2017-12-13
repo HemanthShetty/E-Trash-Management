@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CollectionPointService} from "../../../services/cpoint.service.client";
 import {CollectionPoint} from "../../../models/cpoint.model.client";
 import {UserService} from "../../../services/user.service.client";
+import {SharedService} from "../../../services/shared.service.client";
 
 @Component({
   selector: 'app-collectionpoint-new',
@@ -16,11 +17,14 @@ export class CollectionpointNewComponent implements OnInit {
   cDetails;
   errorFlag: boolean;
   errorMsg: String;
+  userIdentity;
   @ViewChild('f') websiteForm: NgForm;
 
-  constructor(private userService:UserService,private collectionPointService: CollectionPointService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private userService:UserService,private collectionPointService: CollectionPointService,
+              private activatedRoute: ActivatedRoute, private router: Router,private sharedService:SharedService) { }
 
   ngOnInit() {
+    this.userIdentity = this.sharedService.user;
     this.activatedRoute.params
       .subscribe(
         (params: any) => {

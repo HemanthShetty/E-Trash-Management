@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 import {Catalog} from "../../../models/catalog.model.client";
 import {UserService} from "../../../services/user.service.client";
+import {SharedService} from "../../../services/shared.service.client";
 
 @Component({
   selector: 'app-catalog-edit',
@@ -18,11 +19,14 @@ export class CatalogEditComponent implements OnInit {
   errorMsg: String;
   catalogItem: Catalog;
   catalogItemDetails: Catalog;
+  userIdentity;
   @ViewChild('f') websiteForm: NgForm;
 
-  constructor(private userService: UserService,private catalogService: CatalogService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private userService: UserService,private catalogService: CatalogService,
+              private activatedRoute: ActivatedRoute, private router: Router,private sharedService:SharedService) { }
 
   ngOnInit() {
+    this.userIdentity = this.sharedService.user;
     this.catalogItem = new Catalog('', '' , '' , '','','');
     this.activatedRoute.params
       .subscribe(

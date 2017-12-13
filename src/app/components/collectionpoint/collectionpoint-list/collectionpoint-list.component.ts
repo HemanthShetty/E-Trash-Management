@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit} from '@angular/core';
 import {CollectionPointService} from '../../../services/cpoint.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from "../../../services/user.service.client";
+import {SharedService} from "../../../services/shared.service.client";
 
 
 @Component({
@@ -14,10 +15,12 @@ export class CollectionpointListComponent implements OnInit {
 
   userId: String;
   collectionPoints = [{}];
+  userIdentity;
 
-  constructor(private router:Router,private userService:UserService,private collectionPointService: CollectionPointService, private activatedRoute: ActivatedRoute) { }
+  constructor(private router:Router,private userService:UserService,private collectionPointService: CollectionPointService,
+              private activatedRoute: ActivatedRoute,private sharedService:SharedService) { }
   ngOnInit() {
-
+    this.userIdentity = this.sharedService.user;
     this.activatedRoute.params
       .subscribe(
         (params: any) => {

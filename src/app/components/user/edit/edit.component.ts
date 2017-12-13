@@ -21,7 +21,7 @@ export class EditComponent implements OnInit {
   creatorUserId;
   @ViewChild('f') profileForm: NgForm;
   roles=['User','Organization','Employee','Buyer'];
-  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router,
+  constructor(private userService: UserService, private router: Router,
               private sharedService: SharedService,private activatedRoute:ActivatedRoute) {}
 
   ngOnInit() {
@@ -37,6 +37,11 @@ export class EditComponent implements OnInit {
           this.creatorUserId = params['uid'];
         }
       );
+
+    this.activatedRoute.params.subscribe(params => {
+      this.userIdentity = this.sharedService.user;
+    });
+
     this.userService.findUserById(this.userId)
       .subscribe(
         (data: any) => {

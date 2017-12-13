@@ -22,6 +22,7 @@ export class CreateComponent implements OnInit {
   roles=['User','Organization','Employee','Buyer'];
   address='';
   creatorUserId;
+  userIdentity;
 
   constructor(private userService: UserService,
               private router: Router, private sharedService:SharedService,private activatedRoute:ActivatedRoute) {
@@ -36,6 +37,10 @@ export class CreateComponent implements OnInit {
           this.creatorUserId = params['uid'];
         }
       );
+
+    this.activatedRoute.params.subscribe(params => {
+      this.userIdentity = this.sharedService.user;
+    });
   }
 
 

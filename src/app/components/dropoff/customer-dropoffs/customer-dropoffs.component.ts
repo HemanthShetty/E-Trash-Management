@@ -4,6 +4,7 @@ import {NgForm} from '@angular/forms';
 import { Validators } from '@angular/forms';
 import {DropOff} from "../../../models/dropOff.model.client";
 import {DropOffService} from "../../../services/dropoff.service.client";
+import {SharedService} from "../../../services/shared.service.client";
 
 
 @Component({
@@ -15,12 +16,14 @@ export class CustomerDropoffsComponent implements OnInit {
 
   dropOffs: DropOff[];
   userId;
+  userIdentity;
   constructor(private route: ActivatedRoute, private router: Router,
-              private dropOffService:DropOffService) {
+              private dropOffService:DropOffService,private sharedService:SharedService) {
 
   }
 
   ngOnInit() {
+    this.userIdentity = this.sharedService.user;
     this.route.params
       .subscribe(
         (params: any) => {

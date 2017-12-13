@@ -5,6 +5,7 @@ import {DropOff} from "../../../models/dropOff.model.client";
 import {Inventory} from "../../../models/inventory.model.client";
 import {DropOffService} from "../../../services/dropoff.service.client";
 import {UserService} from "../../../services/user.service.client";
+import {SharedService} from "../../../services/shared.service.client";
 
 @Component({
   selector: 'app-dropoff-new',
@@ -19,10 +20,12 @@ export class DropoffNewComponent implements OnInit {
   inventory:Inventory[];
   sFlag=false;
   sMsg="";
-  constructor(private router:Router,private userService:UserService,private catalogService: CatalogService, private activatedRoute: ActivatedRoute,private dropOffService:DropOffService) { }
+  userIdentity;
+  constructor(private router:Router,private userService:UserService,private catalogService: CatalogService,
+              private activatedRoute: ActivatedRoute,private dropOffService:DropOffService,private sharedService:SharedService) { }
 
   ngOnInit() {
-
+    this.userIdentity = this.sharedService.user;
     this.activatedRoute.params
       .subscribe(
         (params: any) => {

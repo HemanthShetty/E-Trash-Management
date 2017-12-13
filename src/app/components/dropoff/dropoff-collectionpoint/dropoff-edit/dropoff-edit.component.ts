@@ -5,6 +5,7 @@ import {NgForm} from '@angular/forms';
 import { Validators } from '@angular/forms';
 import {UserService} from "../../../../services/user.service.client";
 import {DropOffService} from "../../../../services/dropoff.service.client";
+import {SharedService} from "../../../../services/shared.service.client";
 
 
 
@@ -23,12 +24,13 @@ export class DropoffEditComponent implements OnInit {
   statuses=['Uncollected','Collected'];
   customer;
   userId;
+  userIdentity;
   @ViewChild('f') profileForm: NgForm;
   constructor(private route: ActivatedRoute, private userService: UserService, private router: Router,
-               private dropOffService:DropOffService) {}
+               private dropOffService:DropOffService,private sharedService:SharedService) {}
 
   ngOnInit() {
-
+    this.userIdentity = this.sharedService.user;
     this.route.params
       .subscribe(
         (params: any) => {
