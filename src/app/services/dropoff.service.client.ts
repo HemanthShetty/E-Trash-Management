@@ -32,6 +32,15 @@ export class DropOffService {
       );
   }
 
+  findDropOffsForUser(userId)
+  {
+    return this._http.get(this.baseUrl + '/api/user/'+userId+'/dropoff')
+      .map((res: Response) => {
+          return res.json();
+        }
+      );
+  }
+
   getDropOff(dropId)
   {
     return this._http.get(this.baseUrl + '/api/dropoff/'+dropId)

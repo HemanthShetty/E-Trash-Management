@@ -5,6 +5,7 @@
 module.exports = function(app,model) {
 
   app.post('/api/user/:userId/dropoff', createDropOff);
+  app.get('/api/user/:userId/dropoff', getCustomerDropOff);
   app.get('/api/collection/:cId/dropoff', getDropOffForCollectionPoint);
   app.get('/api/dropoff/:dropId',getDropOff);
   app.put('/api/collection/:collectionPointId/dropoff/:dropOffId', updateDropOff);
@@ -51,6 +52,17 @@ module.exports = function(app,model) {
   {
     var dropId = req.params['dropId'];
     model.dropOffPointModel.findDropOffById(dropId)
+      .then(function (data) {
+        res.json(data);
+      }, function (err) {
+        res.json(null);
+      });
+  }
+
+  function getCustomerDropOff(req,res)
+  {
+    var userId = req.params['userId'];
+    model.dropOffPointModel.findCustomerDropOff(userId)
       .then(function (data) {
         res.json(data);
       }, function (err) {

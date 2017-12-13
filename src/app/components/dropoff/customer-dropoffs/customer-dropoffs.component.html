@@ -1,3 +1,94 @@
-<p>
-  customer-dropoffs works!
-</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row">
+      <!--heading on the nav bar-->
+      <div class="col-sm-10 col-md-10 col-lg-10 col-xs-10">
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user']">
+            <b>Home</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'sell']">
+            <b>Sell</b>
+          </a>
+        </p>
+
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'dropoff']" >
+            <b>DropOffs</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'pickup']" >
+            <b>Pickup</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
+            <b>Collection Points</b>
+          </a>
+        </p>
+
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'catalog']" >
+            <b>Catalog</b>
+          </a>
+        </p>
+        <!--tick mark-->
+
+
+      </div>
+      <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
+        <button type="button" class="btn btn-default btn-sm" (click)="logout()">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="etm-page-body">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><span class="h4 text-primary">My DropOffs</span> <p class="pull-right">
+      </p>
+      </div>
+    </div>
+    <div class="container-fluid" *ngFor="let dropOff of dropOffs">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <b> ID : {{dropOff._id}}</b>
+          <div class="container-fluid" *ngFor="let inventoryItem of dropOff.inventory">
+            <div *ngIf="inventoryItem.quantity>0">
+            <p><label> <u>{{inventoryItem.itemName}}</u> </label></p>
+            <p><label> Quantity:{{inventoryItem.quantity}} </label></p>
+            </div>
+          </div>
+          <b> Status : {{dropOff.status}}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a href="profile.html">
+        <span class="glyphicon glyphicon-user"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+

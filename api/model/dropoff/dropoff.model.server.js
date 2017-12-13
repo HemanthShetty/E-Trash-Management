@@ -10,11 +10,17 @@ DropOffModel.createDropOff = createDropOff;
 DropOffModel.getDropOffForCollectionPoint=getDropOffForCollectionPoint;
 DropOffModel.findDropOffById=findDropOffById;
 DropOffModel.updateDropOff=updateDropOff;
+DropOffModel.findCustomerDropOff=findCustomerDropOff;
 
 
 
 module.exports = DropOffModel;
 
+
+function findCustomerDropOff(custId)
+{
+  return DropOffModel.find({customerId:custId});
+}
 
 function createDropOff(item) {
   return DropOffModel.create(item);

@@ -926,7 +926,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dropoff/customer-dropoffs/customer-dropoffs.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  customer-dropoffs works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><span class=\"h4 text-primary\">My DropOffs</span> <p class=\"pull-right\">\n      </p>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let dropOff of dropOffs\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\">\n          <b> ID : {{dropOff._id}}</b>\n          <div class=\"container-fluid\" *ngFor=\"let inventoryItem of dropOff.inventory\">\n            <div *ngIf=\"inventoryItem.quantity>0\">\n            <p><label> <u>{{inventoryItem.itemName}}</u> </label></p>\n            <p><label> Quantity:{{inventoryItem.quantity}} </label></p>\n            </div>\n          </div>\n          <b> Status : {{dropOff.status}}</b>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
 
 /***/ }),
 
@@ -935,6 +935,8 @@ module.exports = "<p>\n  customer-dropoffs works!\n</p>\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_dropoff_service_client__ = __webpack_require__("../../../../../src/app/services/dropoff.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomerDropoffsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -946,10 +948,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var CustomerDropoffsComponent = (function () {
-    function CustomerDropoffsComponent() {
+    function CustomerDropoffsComponent(route, router, dropOffService) {
+        this.route = route;
+        this.router = router;
+        this.dropOffService = dropOffService;
     }
     CustomerDropoffsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params
+            .subscribe(function (params) {
+            _this.userId = params['uid'];
+            _this.dropOffService.findDropOffsForUser(_this.userId).subscribe(function (data) {
+                if (data) {
+                    _this.dropOffs = data;
+                }
+            }, function (error) {
+            });
+        });
     };
     return CustomerDropoffsComponent;
 }());
@@ -959,9 +977,10 @@ CustomerDropoffsComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/dropoff/customer-dropoffs/customer-dropoffs.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dropoff/customer-dropoffs/customer-dropoffs.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _c || Object])
 ], CustomerDropoffsComponent);
 
+var _a, _b, _c;
 //# sourceMappingURL=customer-dropoffs.component.js.map
 
 /***/ }),
@@ -2648,6 +2667,12 @@ var DropOffService = (function () {
     };
     DropOffService.prototype.findDropOffs = function (collectionPointId) {
         return this._http.get(this.baseUrl + '/api/collection/' + collectionPointId + '/dropoff')
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    DropOffService.prototype.findDropOffsForUser = function (userId) {
+        return this._http.get(this.baseUrl + '/api/user/' + userId + '/dropoff')
             .map(function (res) {
             return res.json();
         });
