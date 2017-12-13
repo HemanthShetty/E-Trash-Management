@@ -3,17 +3,19 @@
     <div class="row">
       <!--heading on the nav bar-->
       <div class="col-sm-10 col-md-10 col-lg-10 col-xs-10">
-        <p class="navbar-text">
-          <a [routerLink]= " [ '/user']">
-            <b>Home</b>
-          </a>
-        </p>
 
+<span *ngIf="userIdentity.role=='Admin'||userIdentity.role=='User'||userIdentity.role=='Employee'||userIdentity.role=='Organization'">
         <p class="navbar-text">
-          <a [routerLink]= " [ '/user' , userId, 'sell']">
-            <b>Sell</b>
-          </a>
-        </p>
+      <a [routerLink]= " [ '/user']">
+        <b>Home</b>
+      </a>
+    </p>
+  <span *ngIf="userIdentity.role=='Admin'||userIdentity.role=='User'">
+    <p class="navbar-text">
+      <a [routerLink]= " [ '/user' , userId, 'sell']">
+        <b>Sell</b>
+      </a>
+    </p>
 
 
         <p class="navbar-text">
@@ -21,13 +23,9 @@
             <b>DropOffs</b>
           </a>
         </p>
+  </span>
 
-        <p class="navbar-text">
-          <a [routerLink]= " [ '/user' , userId, 'pickup']" >
-            <b>Pickup</b>
-          </a>
-        </p>
-
+<span *ngIf="userIdentity.role=='Admin'||userIdentity.role=='Employee'">
         <p class="navbar-text">
           <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
             <b>Collection Points</b>
@@ -35,11 +33,20 @@
         </p>
 
         <p class="navbar-text">
-          <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
+          <a [routerLink]= " [ '/user' , userId, 'catalog']" >
             <b>Catalog</b>
           </a>
         </p>
-        <!--tick mark-->
+</span>
+  <span *ngIf="userIdentity.role=='Admin'">
+        <p class="navbar-text">
+          <a [routerLink]= " [ '/user' , userId, 'manage','user']" >
+            <b>Manage Users</b>
+          </a>
+        </p>
+</span>
+  <!--tick mark-->
+</span>
 
 
       </div>

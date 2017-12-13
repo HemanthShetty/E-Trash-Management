@@ -19,7 +19,7 @@ export class CreateComponent implements OnInit {
   errorFlag: Boolean;
   errorMsg: String;
   userRole: String;
-  roles=['User','Organization','Employee','Buyer'];
+  roles=['User','Organization','Employee','Buyer','Admin'];
   address='';
   creatorUserId;
   userIdentity;

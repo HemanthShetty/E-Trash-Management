@@ -20,7 +20,7 @@ export class EditComponent implements OnInit {
   userIdentity;
   creatorUserId;
   @ViewChild('f') profileForm: NgForm;
-  roles=['User','Organization','Employee','Buyer'];
+  roles=['User','Organization','Employee','Buyer','Admin'];
   constructor(private userService: UserService, private router: Router,
               private sharedService: SharedService,private activatedRoute:ActivatedRoute) {}
 
