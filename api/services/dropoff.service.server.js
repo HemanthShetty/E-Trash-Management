@@ -16,6 +16,12 @@ module.exports = function(app,model) {
     dropOff._id=dropId;
     model.dropOffPointModel.updateDropOff(dropOff).then(function(data)
     {
+      for(i=0;i<dropOff.inventory.length;i++)
+      {
+         if(dropOff.status=="Collected") {
+           updateInventory(dropOff.inventory[i].itemId, dropOff.inventory[i].quantity);
+         }
+      }
       res.json({success:true});
     },function(err)
     {
@@ -24,6 +30,22 @@ module.exports = function(app,model) {
     });
   }
 
+  function updateInventory(itemId,quantity){
+    model.catalogModel.findCatalogItemById(itemId).then(
+    function(data){
+      data.quantity=data.quantity+quantity;
+      model.catalogModel.updateCatalogItem(data).then(function(data)
+      {
+        return;
+      },function(err)
+      {
+
+      });
+    },function(err){
+
+    }
+  );
+  }
 
   function getDropOff(req,res)
   {
