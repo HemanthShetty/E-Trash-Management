@@ -5,6 +5,7 @@ import { Validators } from '@angular/forms';
 import {DropOff} from "../../../models/dropOff.model.client";
 import {DropOffService} from "../../../services/dropoff.service.client";
 import {SharedService} from "../../../services/shared.service.client";
+import {UserService} from "../../../services/user.service.client";
 
 
 @Component({
@@ -18,7 +19,7 @@ export class CustomerDropoffsComponent implements OnInit {
   userId;
   userIdentity;
   constructor(private route: ActivatedRoute, private router: Router,
-              private dropOffService:DropOffService,private sharedService:SharedService) {
+              private dropOffService:DropOffService,private sharedService:SharedService,private userService:UserService) {
 
   }
 
@@ -39,6 +40,13 @@ export class CustomerDropoffsComponent implements OnInit {
             }
           );
         }
+      );
+  }
+
+  logout() {
+    this.userService.logout()
+      .subscribe(
+        (data: any) => this.router.navigate(['/login'])
       );
   }
 

@@ -9,6 +9,7 @@ import {CollectionPoint} from "../../models/cpoint.model.client";
 import {Observable} from "rxjs/Observable";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../services/user.service.client";
+import {LatLong} from "../../models/latlong.model.client";
 
 @Component({
   selector: 'app-sell',
@@ -23,7 +24,7 @@ export class SellComponent implements OnInit {
   public zoom: number;
   userIdentity;
   collectionPoints :CollectionPoint[];
-  latLongs = [{}];
+  latLongs =new Array<LatLong>();
   selectCollectionPoint;
   selected=false;
   selectCollectionPointName: String;
@@ -104,10 +105,7 @@ export class SellComponent implements OnInit {
     this.mapsService.findLatLong(collectionPoint.street+','+collectionPoint.city+','+collectionPoint.state+' '+collectionPoint.postCode)
       .subscribe(
         (data: any) => {
-          this.latLongs[i]['lat'] = data.results[0].geometry.location.lat;
-          this.latLongs[i]['lng'] = data.results[0].geometry.location.lng;
-          this.latLongs[i]['id'] = this.collectionPoints[i]._id;
-          this.latLongs[i]['name']= this.collectionPoints[i].name;
+          this.latLongs.push(new LatLong(data.results[0].geometry.location.lat,data.results[0].geometry.location.lng,this.collectionPoints[i]._id,this.collectionPoints[i].name));
         },
         (error: any) => {
 
