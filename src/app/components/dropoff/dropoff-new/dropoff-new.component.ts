@@ -44,6 +44,10 @@ export class DropoffNewComponent implements OnInit {
       .subscribe(
         (data: any) => {
           this.catalog = data;
+          for(var i=0;i<this.catalog.length;i++)
+          {
+            this.catalog[i]['quantity']=0;
+          }
         },
         (error: any) => {
         }

@@ -74,7 +74,6 @@ module.exports = function(app,model) {
     var dropOff = req.body;
     model.dropOffPointModel.createDropOff(dropOff).then(function(data)
     {
-      console.log(JSON.stringify(data));
       res.json(data);
     },function(err){
       res.json(null);

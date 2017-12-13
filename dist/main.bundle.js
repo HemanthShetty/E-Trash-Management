@@ -1316,6 +1316,9 @@ var DropoffNewComponent = (function () {
         this.catalogService.getItems()
             .subscribe(function (data) {
             _this.catalog = data;
+            for (var i = 0; i < _this.catalog.length; i++) {
+                _this.catalog[i]['quantity'] = 0;
+            }
         }, function (error) {
         });
     };
