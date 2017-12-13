@@ -1079,7 +1079,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  dropoff-edit works!\n</p>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"container-fluid\">\n  <div class=\"panel panel-primary\" style=\"margin:50px;\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Edit Customer DropOff Status</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form #f=\"ngForm\">\n        <div class=\"form-group\">\n          <h3>{{customerName}}</h3>\n        </div>\n\n        <div class=\"container-fluid\" *ngFor=\"let inventoryItem of dropOff.inventory\">\n          <label>{{inventoryItem.itemName}}</label>\n          <div class=\"form-group\">\n            <label for={{inventoryItem.itemId}}>Quantity</label>\n            <input type=\"number\" name={{inventoryItem.itemId}} class=\"form-control\" id={{inventoryItem.itemId}} [(ngModel)]=\"inventoryItem.quantity\" #{{inventoryItem.itemId}}=\"ngModel\">\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label>Status</label>\n          <select id=\"status\" name=\"status\" [(ngModel)]=dropOff.status>\n            <option *ngFor=\"let status of statuses\" [ngValue]=\"status\" >{{status}}</option>\n          </select>\n        </div>\n\n\n        <div *ngIf=\"isInvalid\"\n             class=\"alert alert-danger\">\n          {{notificationMessage}}\n        </div>\n\n        <div class=\"form-group\">\n          <a class=\"btn btn-primary btn-block\"\n             (click)=\"editDropOff()\">Edit DropOff</a>\n        </div>\n        <div class=\"form-group\">\n          <a class=\"btn btn-danger btn-block\"\n             (click)=\"deleteDropOff()\" >Delete</a>\n        </div>\n\n      </form>\n    </div>\n\n\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1087,7 +1087,12 @@ module.exports = "<p>\n  dropoff-edit works!\n</p>\n"
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_dropOff_model_client__ = __webpack_require__("../../../../../src/app/models/dropOff.model.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__ = __webpack_require__("../../../../../src/app/services/dropoff.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropoffEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1099,22 +1104,82 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
 var DropoffEditComponent = (function () {
-    function DropoffEditComponent() {
+    function DropoffEditComponent(route, userService, router, dropOffService) {
+        this.route = route;
+        this.userService = userService;
+        this.router = router;
+        this.dropOffService = dropOffService;
+        this.dropOff = new __WEBPACK_IMPORTED_MODULE_0__models_dropOff_model_client__["a" /* DropOff */]('', '', '', [], '');
+        this.statuses = ['Uncollected', 'Collected'];
     }
     DropoffEditComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params
+            .subscribe(function (params) {
+            _this.userId = params['uid'];
+        });
+        this.route.params
+            .subscribe(function (params) {
+            _this.dropId = params['dropOffId'];
+            _this.dropOffService.getDropOff(_this.dropId).subscribe(function (data) {
+                if (data) {
+                    _this.dropOff = data;
+                    _this.userService.findUserById(_this.dropOff.customerId).subscribe(function (data) {
+                        if (data) {
+                            _this.customer = data;
+                        }
+                    }, function (error) {
+                    });
+                }
+            }, function (error) {
+            });
+        });
+        this.route.params
+            .subscribe(function (params) {
+            _this.cId = params['cid'];
+        });
+    };
+    DropoffEditComponent.prototype.logout = function () {
+        var _this = this;
+        this.userService.logout()
+            .subscribe(function (data) { return _this.router.navigate(['/login']); });
+    };
+    DropoffEditComponent.prototype.editDropOff = function () {
+        var _this = this;
+        if (this.profileForm.valid) {
+            this.dropOff.status = this.profileForm.value.status;
+            this.dropOffService.updateDropOff(this.cId, this.dropOff, this.dropId).subscribe(function (data) {
+                if (data) {
+                    _this.router.navigate(['/user', _this.userId, 'cpoint', _this.cId, 'dropoff']);
+                }
+            }, function (error) {
+            });
+        }
+        else {
+        }
     };
     return DropoffEditComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_16" /* ViewChild */])('f'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* NgForm */]) === "function" && _a || Object)
+], DropoffEditComponent.prototype, "profileForm", void 0);
 DropoffEditComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* Component */])({
         selector: 'app-dropoff-edit',
         template: __webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service_client__["a" /* UserService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_dropoff_service_client__["a" /* DropOffService */]) === "function" && _e || Object])
 ], DropoffEditComponent);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=dropoff-edit.component.js.map
 
 /***/ }),
@@ -1140,7 +1205,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dropoff/dropoff-new/dropoff-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"etm-page-body\">\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><h4 class=\"text-primary\">Select The Items You Want To Drop Off</h4><br/>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let item of catalog\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\">\n          <div class=\"row\">\n            <div class=\"col-md-4 col-lg-4 col-xs-2\">\n              <img class=\"etm-catalog-image\" src={{item.imageUrl}} alt=\"\" />\n            </div>\n            <div class=\"col-md-8 col-lg-8 col-xs-10\">\n              <a><b>{{item.name}}</b></a>\n              <span>Description:{{item.description}}</span><br/>\n              <span>Estimated Price:{{item.price}}</span>\n              <input type=\"number\" name=\"quantity\" min=\"0\" (input)=\"item.quantity = $event.target.value\">\n            </div>\n          </div>\n        </li>\n      </ul>\n    </div>\n    <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"createDropOff()\">OK <span class=\"glyphicon glyphicon-ok\"></span></button>\n    <div *ngIf=\"sFlag\"\n         class=\"alert alert-success\">\n      {{sMsg}}\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user']\">\n            <b>Home</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n            <b>Sell</b>\n          </a>\n        </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n            <b>Pickup</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n        <!--tick mark-->\n\n\n      </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n    </div>\n  </div>\n</nav>\n\n\n\n\n<div class=\"container-fluid\">\n<div class=\"etm-page-body\">\n    <div class=\"row-fluid\">\n      <div class=\"span3\"><h4 class=\"text-primary\">Select The Items You Want To Drop Off</h4><br/>\n      </div>\n    </div>\n    <div class=\"container-fluid\" *ngFor=\"let item of catalog\">\n      <ul class=\"list-group\">\n        <li class=\"list-group-item\">\n          <div class=\"row\">\n            <div class=\"col-md-4 col-lg-4 col-xs-2\">\n              <img class=\"etm-catalog-image\" src={{item.imageUrl}} alt=\"\" />\n            </div>\n            <div class=\"col-md-8 col-lg-8 col-xs-10\">\n              <a><b>{{item.name}}</b></a>\n              <span>Description:{{item.description}}</span><br/>\n              <span>Estimated Price:{{item.price}}</span>\n              <input type=\"number\" name=\"quantity\" min=\"0\" (input)=\"item.quantity = $event.target.value\">\n            </div>\n          </div>\n        </li>\n      </ul>\n    </div>\n    <div class=\"container-fluid\">\n    <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"createDropOff()\">OK <span class=\"glyphicon glyphicon-ok\"></span></button>\n    <div *ngIf=\"sFlag\"\n         class=\"alert alert-success\">\n      {{sMsg}}\n    </div>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n\n"
 
 /***/ }),
 
@@ -2056,7 +2121,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n    <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user']\">\n        <b>Home</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n        <b>Sell</b>\n      </a>\n    </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n        <b>Pickup</b>\n      </a>\n    </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'manage','user']\" >\n            <b>Manage Users</b>\n          </a>\n        </p>\n    <!--tick mark-->\n\n\n  </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n  </div>\n  </div>\n</nav>\n\n\n\n\n\n<div class=\"container-fluid\">\n  <div class=\"panel panel-primary\" style=\"margin:50px;\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Profile</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form #f=\"ngForm\">\n        <div class=\"form-group\">\n          <label for=\"username\">Username</label>\n          <input type=\"text\" name=\"username\" class=\"form-control\" id=\"username\" [(ngModel)]=\"user.username\"  ngModel=\"\" required #username=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!username.valid && username.touched\">\n      Please enter username!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email </label>\n          <input type=\"email\" name=\"email\" class=\"form-control\" id=\"email\" [(ngModel)]=\"user.email\" ngModel=\"\" email #email=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!email.valid && email.touched\">\n      Please enter a valid email!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"first-name\">First Name</label>\n          <input type=\"text\" name=\"firstname\" class=\"form-control\" id=\"first-name\" [(ngModel)]=\"user.firstName\" ngModel=\"\" required #firstname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!firstname.valid && firstname.touched\">\n      Please enter a valid first name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"last-name\">Last Name</label>\n          <input type=\"text\" name=\"lastname\" class=\"form-control\" id=\"last-name\" [(ngModel)]=\"user.lastName\" ngModel=\"\" required #lastname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!lastname.valid && lastname.touched\">\n      Please enter a valid second name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"address\">Address</label>\n          <textarea id=\"address\"  class=\"form-control\" name=\"address\" rows=\"5\"  #buyerAddress=\"ngModel\" [(ngModel)]=user.address required>\n        </textarea>\n        </div>\n\n        <div *ngIf=\"this.user.role=='Organization'\">\n          <div class=\"form-group\">\n            <label for=\"orgName\">Organization Name</label>\n            <input name=\"orgName\"\n                   id=\"orgName\"\n                   [(ngModel)]=\"user.organizationName\"\n                   required=\"\"\n                   placeholder=\"Organization Name\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Employee'\">\n          <div class=\"form-group\">\n            <label>EmployeeId</label>\n            <input name=\"empId\"\n                   id=\"empId\"\n                   [(ngModel)]=\"user.employeeId\"\n                   required=\"\"\n                   placeholder=\"Your Employee ID\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Buyer'\">\n          <div class=\"form-group\">\n            <label>Buyer Name</label>\n            <input name=\"buyerName\"\n                   id=\"buyerName\"\n                   [(ngModel)]=\"user.buyerName\"\n                   required=\"\"\n                   placeholder=\"Enter the name of the refinery or organization\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"isInvalid\"\n             class=\"alert alert-danger\">\n          {{notificationMessage}}\n        </div>\n\n        <a class=\"btn btn-primary btn-block\"\n           (click)=\"editProfile()\">Save Profile</a>\n\n      </form>\n    </div>\n\n\n</div>\n</div>\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n    <!--heading on the nav bar-->\n      <div class=\"col-sm-10 col-md-10 col-lg-10 col-xs-10\">\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user']\">\n        <b>Home</b>\n      </a>\n    </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'sell']\">\n        <b>Sell</b>\n      </a>\n    </p>\n\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'dropoff']\" >\n            <b>DropOffs</b>\n          </a>\n        </p>\n\n    <p class=\"navbar-text\">\n      <a [routerLink]= \" [ '/user' , userId, 'pickup']\" >\n        <b>Pickup</b>\n      </a>\n    </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'cpoint']\" >\n            <b>Collection Points</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'catalog']\" >\n            <b>Catalog</b>\n          </a>\n        </p>\n\n        <p class=\"navbar-text\">\n          <a [routerLink]= \" [ '/user' , userId, 'manage','user']\" >\n            <b>Manage Users</b>\n          </a>\n        </p>\n    <!--tick mark-->\n\n\n  </div>\n      <div class=\"col-sm-2 col-md-2 col-lg-2 col-xs-2\">\n        <button type=\"button\" class=\"btn btn-default btn-sm\" (click)=\"logout()\">\n          <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n        </button>\n      </div>\n  </div>\n  </div>\n</nav>\n\n\n\n\n\n<div class=\"container-fluid\">\n  <div class=\"panel panel-primary\" style=\"margin:50px;\">\n    <div class=\"panel-heading\">\n      <h3 class=\"panel-title\">Profile</h3>\n    </div>\n    <div class=\"panel-body\">\n      <form #f=\"ngForm\">\n        <div class=\"form-group\">\n          <label for=\"username\">Username</label>\n          <input type=\"text\" name=\"username\" class=\"form-control\" id=\"username\" [(ngModel)]=\"user.username\"  ngModel=\"\" required #username=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!username.valid && username.touched\">\n      Please enter username!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"email\">Email </label>\n          <input type=\"email\" name=\"email\" class=\"form-control\" id=\"email\" [(ngModel)]=\"user.email\" ngModel=\"\" email #email=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!email.valid && email.touched\">\n      Please enter a valid email!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"first-name\">First Name</label>\n          <input type=\"text\" name=\"firstname\" class=\"form-control\" id=\"first-name\" [(ngModel)]=\"user.firstName\" ngModel=\"\" required #firstname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!firstname.valid && firstname.touched\">\n      Please enter a valid first name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"last-name\">Last Name</label>\n          <input type=\"text\" name=\"lastname\" class=\"form-control\" id=\"last-name\" [(ngModel)]=\"user.lastName\" ngModel=\"\" required #lastname=\"ngModel\">\n          <span class=\"help-block\" *ngIf=\"!lastname.valid && lastname.touched\">\n      Please enter a valid second name!\n      </span>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"address\">Address</label>\n          <textarea id=\"address\"  class=\"form-control\" name=\"address\" rows=\"5\"  #buyerAddress=\"ngModel\" [(ngModel)]=user.address required>\n        </textarea>\n        </div>\n\n        <div *ngIf=\"this.user.role=='Organization'\">\n          <div class=\"form-group\">\n            <label for=\"orgName\">Organization Name</label>\n            <input name=\"orgName\"\n                   id=\"orgName\"\n                   [(ngModel)]=\"user.organizationName\"\n                   required=\"\"\n                   placeholder=\"Organization Name\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Employee'\">\n          <div class=\"form-group\">\n            <label>EmployeeId</label>\n            <input name=\"empId\"\n                   id=\"empId\"\n                   [(ngModel)]=\"user.employeeId\"\n                   required=\"\"\n                   placeholder=\"Your Employee ID\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"user.role=='Buyer'\">\n          <div class=\"form-group\">\n            <label>Buyer Name</label>\n            <input name=\"buyerName\"\n                   id=\"buyerName\"\n                   [(ngModel)]=\"user.buyerName\"\n                   required=\"\"\n                   placeholder=\"Enter the name of the refinery or organization\"\n                   type=\"text\"\n                   class=\"form-control\"\n                   #lastName=\"ngModel\"/>\n          </div>\n        </div>\n\n        <div *ngIf=\"isInvalid\"\n             class=\"alert alert-danger\">\n          {{notificationMessage}}\n        </div>\n\n        <a class=\"btn btn-primary btn-block\"\n           (click)=\"editProfile()\">Save Profile</a>\n\n      </form>\n    </div>\n\n\n</div>\n</div>\n\n\n<!-- Footer -->\n<nav class=\"navbar navbar-default navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a href=\"profile.html\">\n        <span class=\"glyphicon glyphicon-user\"></span>\n      </a>\n    </p>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -2583,6 +2648,18 @@ var DropOffService = (function () {
     };
     DropOffService.prototype.findDropOffs = function (collectionPointId) {
         return this._http.get(this.baseUrl + '/api/collection/' + collectionPointId + '/dropoff')
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    DropOffService.prototype.getDropOff = function (dropId) {
+        return this._http.get(this.baseUrl + '/api/dropoff/' + dropId)
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    DropOffService.prototype.updateDropOff = function (cId, dropOff, dropOffId) {
+        return this._http.put(this.baseUrl + '/api/collection/' + cId + '/dropoff/' + dropOffId, dropOff)
             .map(function (res) {
             return res.json();
         });

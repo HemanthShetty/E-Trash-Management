@@ -32,5 +32,23 @@ export class DropOffService {
       );
   }
 
+  getDropOff(dropId)
+  {
+    return this._http.get(this.baseUrl + '/api/dropoff/'+dropId)
+      .map((res: Response) => {
+          return res.json();
+        }
+      );
+  }
+
+  updateDropOff(cId,dropOff,dropOffId)
+  {
+    return this._http.put(this.baseUrl + '/api/collection/'+cId+'/dropoff/'+dropOffId,dropOff)
+      .map((res: Response) => {
+          return res.json();
+        }
+      );
+  }
+
 
 }
