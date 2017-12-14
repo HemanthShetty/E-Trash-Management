@@ -68,17 +68,33 @@
       </p>
       </div>
     </div>
-    <div class="container-fluid" *ngFor="let dropOff of dropOffs">
-      <ul class="list-group">
-        <li class="list-group-item"><b> ID : {{dropOff._id}}</b>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Customer ID</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let dropOff of dropOffs">
+        <td>{{dropOff._id}}</td>
+        <td>{{dropOff.customerId}}</td>
+        <td>
+          <span *ngIf="dropOff.status=='Uncollected'">
+            <label class="label label-warning">{{dropOff.status}}</label>
+          </span>
+          <span *ngIf="dropOff.status=='Collected'">
+            <label class="label label-success">{{dropOff.status}}</label>
+          </span>
           <a [routerLink]= " ['/user' , userId , 'cpoint' , collectionPointId,'dropoff',dropOff._id]">
             <span class="pull-right glyphicon glyphicon-edit">
-                {{dropOff.status}}
             </span>
           </a>
-        </li>
-      </ul>
-    </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
