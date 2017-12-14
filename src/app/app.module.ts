@@ -33,6 +33,7 @@ import { CreateComponent } from './components/user/create/create.component';
 import { EditComponent } from './components/user/edit/edit.component';
 import { ListComponent } from './components/user/list/list.component';
 import { DropoffEditComponent } from './components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component';
+import { BuyComponent } from './components/buy/buy.component';
 
 @NgModule({
   // Declare components here
@@ -58,7 +59,8 @@ import { DropoffEditComponent } from './components/dropoff/dropoff-collectionpoi
     CreateComponent,
     EditComponent,
     ListComponent,
-    DropoffEditComponent
+    DropoffEditComponent,
+    BuyComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,45 @@
+
+<nav class="navbar-inverse bg-inverse bg-primary" >
+
+
+  <div class=" container-fluid topnav" id="myTopnav">
+    <a class="navbar-brand pull-left" href="#">Home</a>
+    <a class="navbar-brand pull-left" href="#">About Us</a>
+    <a class="navbar-brand pull-left" [routerLink]= " [ '/buy']">Buy</a>
+    <a class="navbar-brand pull-right" [routerLink]= " [ '/login']">Login</a>
+    <a class="navbar-brand pull-right" [routerLink]= " [ '/register']">Register</a>
+  </div>
+</nav>
+
+
+
+<div class =container-fluid style="margin-top: 50px">
+    <div class="row-fluid">
+      <div class="span3"><span class="h4 text-primary">Catalog</span> <p class="pull-right">
+        <a [routerLink]= " [ '/user' , userId , 'catalog' , 'new']" class="navbar-link">
+          <span class="glyphicon glyphicon-plus"></span>
+        </a>
+      </p>
+      </div>
+    </div>
+    <div class="container-fluid" *ngFor="let item of catalog">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-4 col-lg-4 col-xs-2">
+              <img class="etm-catalog-image" src={{item.imageUrl}} alt="" />
+            </div>
+            <div class="col-md-8 col-lg-8 col-xs-10">
+              <a><b>{{item.name}}</b></a>
+              <a [routerLink]= " [ '/user' , userId , 'catalog' , item._id]"> <span class="pull-right glyphicon glyphicon-cog"></span></a><br/>
+              <span>Description:{{item.description}}</span><br/>
+              <span>Price:{{item.price}}</span>
+              <span>Quantity:{{item.quantity}}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  <button type="button" class="pull-right btn btn-success btn-lg" (click)="buy()">NEXT <span class="glyphicon glyphicon-arrow-right"></span></button>
+</div>
+

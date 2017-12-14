@@ -23,6 +23,7 @@ import {ListComponent} from "./components/user/list/list.component";
 import {CreateComponent} from "./components/user/create/create.component";
 import {EditComponent} from "./components/user/edit/edit.component";
 import {DropoffEditComponent} from "./components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component";
+import {BuyComponent} from "./components/buy/buy.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -31,6 +32,7 @@ const APP_ROUTES: Routes = [
   {path: 'register', component : RegisterComponent},
   {path : 'login' , component: LoginComponent},
   {path:  'user', component: ProfileComponent},
+  {path:  'buy', component: BuyComponent},
   {path : 'user/:uid/manage/user', component: ListComponent},
   {path : 'user/:uid/manage/user/new', component: CreateComponent},
   {path : 'user/:uid/manage/user/:userId', component: EditComponent},
