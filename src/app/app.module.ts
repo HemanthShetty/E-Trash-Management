@@ -35,6 +35,7 @@ import { ListComponent } from './components/user/list/list.component';
 import { DropoffEditComponent } from './components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component';
 import { BuyComponent } from './components/buy/buy.component';
 import {AuthGuard} from "./services/auth-guard.service";
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   // Declare components here
@@ -61,7 +62,8 @@ import {AuthGuard} from "./services/auth-guard.service";
     EditComponent,
     ListComponent,
     DropoffEditComponent,
-    BuyComponent
+    BuyComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
