@@ -24,6 +24,8 @@ import {CreateComponent} from "./components/user/create/create.component";
 import {EditComponent} from "./components/user/edit/edit.component";
 import {DropoffEditComponent} from "./components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component";
 import {BuyComponent} from "./components/buy/buy.component";
+import {AuthGuard} from './services/auth-guard.service';
+
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -31,7 +33,7 @@ const APP_ROUTES: Routes = [
   {path: 'home', component : HomeComponent},
   {path: 'register', component : RegisterComponent},
   {path : 'login' , component: LoginComponent},
-  {path:  'user', component: ProfileComponent},
+  {path:  'user', component: ProfileComponent,canActivate: [AuthGuard]},
   {path:  'buy', component: BuyComponent},
   {path : 'user/:uid/manage/user', component: ListComponent},
   {path : 'user/:uid/manage/user/new', component: CreateComponent},

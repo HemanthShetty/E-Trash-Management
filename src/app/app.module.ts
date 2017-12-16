@@ -34,6 +34,7 @@ import { EditComponent } from './components/user/edit/edit.component';
 import { ListComponent } from './components/user/list/list.component';
 import { DropoffEditComponent } from './components/dropoff/dropoff-collectionpoint/dropoff-edit/dropoff-edit.component';
 import { BuyComponent } from './components/buy/buy.component';
+import {AuthGuard} from "./services/auth-guard.service";
 
 @NgModule({
   // Declare components here
@@ -74,7 +75,7 @@ import { BuyComponent } from './components/buy/buy.component';
     })
   ],
   // Client Side services here
-  providers: [ TestService, UserService, SharedService, CollectionPointService, CatalogService, GoogleMapsService, DropOffService],
+  providers: [ TestService, UserService, SharedService, CollectionPointService, CatalogService, GoogleMapsService, DropOffService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
