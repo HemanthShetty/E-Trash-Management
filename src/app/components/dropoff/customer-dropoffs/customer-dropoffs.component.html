@@ -2,23 +2,23 @@
   <div class="container-fluid">
     <div class="row">
       <!--heading on the nav bar-->
-      <div class="col-sm-10 col-md-10 col-lg-10 col-xs-10">
+      <div class="col-sm-11 col-md-10 col-lg-10 col-xs-12">
 
 <span *ngIf="userIdentity.role=='Admin'||userIdentity.role=='User'||userIdentity.role=='Employee'||userIdentity.role=='Organization'">
-        <p class="navbar-text">
+        <p class="pull-left navbar-text">
       <a [routerLink]= " [ '/user']">
         <b>Home</b>
       </a>
     </p>
   <span *ngIf="userIdentity.role=='Admin'||userIdentity.role=='User'">
-    <p class="navbar-text">
+    <p class="pull-left navbar-text">
       <a [routerLink]= " [ '/user' , userId, 'sell']">
         <b>Sell</b>
       </a>
     </p>
 
 
-        <p class="navbar-text">
+        <p class="pull-left navbar-text">
           <a [routerLink]= " [ '/user' , userId, 'dropoff']" >
             <b>DropOffs</b>
           </a>
@@ -26,20 +26,20 @@
   </span>
 
 <span *ngIf="userIdentity.role=='Admin'||userIdentity.role=='Employee'">
-        <p class="navbar-text">
+        <p class="pull-left navbar-text">
           <a [routerLink]= " [ '/user' , userId, 'cpoint']" >
             <b>Collection Points</b>
           </a>
         </p>
 
-        <p class="navbar-text">
+        <p class="pull-left navbar-text">
           <a [routerLink]= " [ '/user' , userId, 'catalog']" >
             <b>Catalog</b>
           </a>
         </p>
 </span>
   <span *ngIf="userIdentity.role=='Admin'">
-        <p class="navbar-text">
+        <p class="pull-left navbar-text">
           <a [routerLink]= " [ '/user' , userId, 'manage','user']" >
             <b>Manage Users</b>
           </a>
@@ -50,7 +50,7 @@
 
 
       </div>
-      <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
+      <div class="col-sm-1 col-md-2 col-lg-2 col-xs-1">
         <button type="button" class="btn btn-default btn-sm" (click)="logout()">
           <span class="glyphicon glyphicon-log-out"></span> Log out
         </button>
